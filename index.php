@@ -29,43 +29,20 @@ ob_start();
 <body>
 
 <?php
-echo "before defines </br>";
 
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
 	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
 	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
 
-echo "before 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error()); </br>";
-
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
 	
-echo "before   mysql_select_db(DB_DATABASE) or die(mysql_error()); </br>";   
-
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 	
-// echo "before old db$ connect </br>";
-
-//	$db=mysqli_connect("localhost","appuser","quizapp","pcredo") or die("Error " . mysqli_error($db));
-
-// $db== mysqli_connect(DB_HOST, DB_USER, DB_PASS, "", DB_PORT) or die("Error: " . mysqli_error($db));
-// mysqli_select_db($db, DB_NAME) or die("Error: " . mysqli_error($db));
-echo "after connect";
-//	if(mysqli_connect_errno())
-//		{
-//		echo "failed MYSQL connect:  ".mysqli_connect_error();
-//		};
-
 	$qry1 = "SELECT wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks";
 	$qry2 = " WHERE DATE_FORMAT(wrelease, '%Y%m%d%k%i') <= " . date("YmdHi") . " ORDER BY wrelease DESC";
 	
-// echo $qry1 . $qry2;
-
-//	$results = mysqli_query($db , $qry1 . $qry2);
-
-echo "before  $results = mysql_query($qry1 . $qry2) or die(mysql_error()); </br>";  
-
-$results = mysql_query($qry1 . $qry2) or die(mysql_error());
+	$results = mysql_query($qry1 . $qry2) or die(mysql_error());
 
 //	$results = mysqli_query($db , "SELECT wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks ORDER BY wid DESC");
 
