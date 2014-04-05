@@ -29,8 +29,9 @@ ob_start();
 <body>
 
 <?php
-
-	$db=mysqli_connect("localhost","898695_app","quizapp","pcredo_zxq_quiz");
+echo "before connect";
+	$db=mysqli_connect('localhost','898695_app','quizapp','pcredo');
+echo "after connect";
 	if(mysqli_connect_errno())
 		{
 		echo "failed MYSQL connect:  ".mysqli_connect_error();
