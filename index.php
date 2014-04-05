@@ -42,9 +42,7 @@ ob_start();
 	$qry1 = "SELECT wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks";
 	$qry2 = " WHERE DATE_FORMAT(wrelease, '%Y%m%d%k%i') <= " . date("YmdHi") . " ORDER BY wrelease DESC";
 	
-	$results = mysql_query($qry1 . $qry2) or die(mysql_error());
-
-//	$results = mysqli_query($db , "SELECT wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks ORDER BY wid DESC");
+	$results = mysql_query($qry1) or die(mysql_error());
 
 	while($row=mysqli_fetch_array($results))
 	{
@@ -55,8 +53,7 @@ ob_start();
 		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td></tr>";
 		echo "</table>";
 	}
-
-
+mysql_close();
 
 ?>
 </body>
