@@ -30,7 +30,7 @@ ob_start();
 
 <?php
 echo "before connect </br>";
-	$db=mysqli_connect("localhost","898695_app","quizapp","pcredo") or die("Error " . mysqli_error($db));
+	$db=mysqli_connect("localhost","appuser","quizapp","pcredo") or die("Error " . mysqli_error($db));
 echo "after connect";
 	if(mysqli_connect_errno())
 		{
