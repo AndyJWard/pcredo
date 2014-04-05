@@ -49,8 +49,8 @@ ob_start();
 		$rdat = strtotime($row['wrelease']->createdate);
 
 		echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
-		echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
-		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td></tr>";
+		echo "<tr><td class=\"index_left\">" . $row['rdat'] . " rdat </td>";
+		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . " wid \"> " . $row['wsubject'] . " subject </a></td></tr>";
 		echo "</table>";
 	}
 mysql_close();
