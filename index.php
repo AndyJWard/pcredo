@@ -29,13 +29,25 @@ ob_start();
 <body>
 
 <?php
-define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
-define('DB_USER', getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-define('DB_PASS', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-define('DB_NAME', getenv('OPENSHIFT_APP_NAME'));
-echo "before connect </br>";
+echo "before defines </br>";
+
+	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
+	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
+	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
+	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
+
+echo "before 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error()); </br>";
+
+	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
+	
+echo "before   mysql_select_db(DB_DATABASE) or die(mysql_error()); </br>";   
+
+	mysql_select_db(DB_DATABASE) or die(mysql_error());
+	
+echo "before old db$ connect </br>";
+
 //	$db=mysqli_connect("localhost","appuser","quizapp","pcredo") or die("Error " . mysqli_error($db));
+
 $db== mysqli_connect(DB_HOST, DB_USER, DB_PASS, "", DB_PORT) or die("Error: " . mysqli_error($db));
 mysqli_select_db($db, DB_NAME) or die("Error: " . mysqli_error($db));
 echo "after connect";
