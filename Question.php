@@ -33,18 +33,18 @@ ob_start();
 
 	$ans = htmlspecialchars($_GET["reveal"]);	// reveal=Y or reveal=N
 
-	$wk_res = mysqli_query("SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $id );
+	$wk_res = mysql_query("SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $id );
 
-	$wk_row = mysqli_fetch_array($wk_res);
+	$wk_row = mysql_fetch_array($wk_res);
 
 
 	echo "<table><tr><td class=\"bl\">" . $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
 
 	echo "<tr><td class=\"bk90i\">" . $wk_row['wcomment'] . "</td></tr></table><table>";
 
-	$res = mysqli_query("SELECT * FROM questions WHERE qwid = " . $id . " ORDER BY qnum");
+	$res = mysql_query("SELECT * FROM questions WHERE qwid = " . $id . " ORDER BY qnum");
 
-	while ($row = mysqli_fetch_array($res))
+	while ($row = mysql_fetch_array($res))
 		{
 		echo "<tr><td class=\"bk\" size=\"2\">" . $row['qnum'] . "</td>";
 		echo "<td class=\"bk\" size=\"100\">" . $row['qquestion'] . "</td></tr>";
