@@ -52,15 +52,16 @@ ob_start();
 	
 	$results = mysql_query($qry1) or die(mysql_error());
 
-echo "Post mysql_query <br/>" . $results . "</br>";
+// echo "Post mysql_query <br/>" . $results . "</br>";
 
 	while($row=mysql_fetch_array($results))
 	{
-echo "inside while - wrelease: " . $row['wrelease'] . "<br/>"; 
+// echo "inside while - wrelease: " . $row['wrelease'] . "<br/>"; 
 		$rdat = strtotime($row['wrelease']->createdate);
+		
 		echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
-		echo "<tr><td class=\"index_left\">" . $row['rdat'] . " rdat </td>";
-		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . " wid \"> " . $row['wsubject'] . " subject </a></td></tr>";
+		echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
+		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td></tr>";
 		echo "</table>";
 	}
 mysql_close();
