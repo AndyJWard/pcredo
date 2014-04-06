@@ -54,7 +54,7 @@ ob_start();
 
 echo "Post mysql_query <br/>" . $results . "</br>";
 
-	while($row=mysqli_fetch_array($results))
+	while($row=mysql_fetch_array($results))
 	{
 echo "inside while - wrelease: " . $row['wrelease'] . "<br/>"; 
 		$rdat = strtotime($row['wrelease']->createdate);
