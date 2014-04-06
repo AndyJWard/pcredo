@@ -37,6 +37,7 @@ ob_start();
 
 	$wk_row = mysql_fetch_array($wk_res);
 
+echo "User: " . DB_USER . "<br/>";
 
 	echo "<table><tr><td class=\"bl\">" . $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
 
