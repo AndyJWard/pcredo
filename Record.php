@@ -62,7 +62,7 @@ echo "<nav>";
 echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
 echo "<td width=\"40%\" align=\"center\">";
-echo "<select style=\"width: 170px;\" id=\"WHO\" size=\"1\" onchange=\"who_change()\">";
+echo "<select style=\"width: 170px;\" id=\"WHO\" size=\"1\" onchange=\"who_change(" . $id . ")\">";
 echo "<option value=\"0\">Record Your Score";
 while ($per_row = mysql_fetch_array($per_res))
 		{			
@@ -80,10 +80,10 @@ echo "</nav>";
 ?>
 
 <script type="text/javascript" >
-function who_change() {
+function who_change(id) {
 	var x=document.getElementById("WHO");
 	var pid=x.selectedIndex + 1;
-	var redirect = "Record2.php?Pid=" + pid;
+	var redirect = "Record2.php?question=" + id + "&Pid=" + pid;
 	document.location.href = redirect;
 }
 </script>
