@@ -40,12 +40,12 @@ echo "<td colspan=\"1\" width=\"70%\" align=\"left\">" .  $wk_row['rdate'] . " -
 	$per_res = mysql_query("SELECT * FROM persons ORDER BY pname");
 
 echo "<td colspan=\"1\" style=\"font-family: arial, helvetica, sans-serif; font-size: 12; color:maroon; width:30%;\" align=\"left\">";
-// echo "<select style=\"width: 200px;\" name=\"WhoRU\" size=\"1\">";
+echo "<select style=\"width: 200px;\" name=\"WhoRU\" size=\"1\">";
 
 
 	while ($per_row = mysql_fetch_array($per_res))
 		{
-//		echo "<option value=\"" . $per_row['pname'] . "\">" . $per_row['pname'] . "</option>";
+		echo "<option value=\"" . $per_row['pname'] . "\">" . $per_row['pname'] . "</option>";
 		}
 
 echo "</td></tr>";
@@ -73,6 +73,7 @@ echo "<td width=\"50%\"><a href=\"Question.php?question=" . $id . "\">Back</a></
 echo "<tr></tr></table>";
 echo "</nav>";
 
+mysql_close();
 
 ?>
 

@@ -37,8 +37,6 @@ ob_start();
 
 	$wk_row = mysql_fetch_array($wk_res);
 
-echo "User: " . DB_USER . "<br/>";
-
 	echo "<table><tr><td class=\"bl\">" . $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
 
 	echo "<tr><td class=\"bk90i\">" . $wk_row['wcomment'] . "</td></tr></table><table>";
@@ -56,6 +54,8 @@ echo "User: " . DB_USER . "<br/>";
 	echo "<p></p><a href=\"index.php\">Home</a>";
 
 	echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=Answer.php?question=" . $id . ">Answers</a>";
+	
+	mysql_close();
 
 ?>
 </body>
