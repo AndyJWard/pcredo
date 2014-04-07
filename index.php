@@ -39,20 +39,14 @@ ob_start();
 
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
 
-// echo "Post connect server:" . DB_SERVER . "  user:" . DB_USER . "<br/>";
-	
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-// echo "Post select_db <br/>";
-	
 	$qry1 = "SELECT wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks";
 	$qry2 = " WHERE DATE_FORMAT(wrelease, '%Y%m%d%k%i') <= " . date("YmdHi") . " ORDER BY wrelease DESC";
 
-// echo "Post create variables <br/>qry1:" . $qry1 . "<br/>qry2:" . $qry2 . " <br/>";
-	
-	$results = mysql_query($qry1) or die(mysql_error());
+echo $qry1 . $qry2 . "<br/>";
 
-// echo "Post mysql_query <br/>" . $results . "</br>";
+	$results = mysql_query($qry1.$qry2) or die(mysql_error());
 
 	while($row=mysql_fetch_array($results))
 	{
