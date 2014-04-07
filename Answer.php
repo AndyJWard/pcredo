@@ -18,21 +18,13 @@ ob_start();
 	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
 	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
 
- echo "Post defines <br/>";
-
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
 
- echo "Post connect server:" . DB_SERVER . "  user:" . DB_USER . "<br/>";
-	
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
-
- echo "Post select_db <br/>";
 
 	$id = htmlspecialchars($_GET["question"]);
 	
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $id;
-
-echo $query . "<br/>";
 
 	$wk_res = mysql_query($query);
 
