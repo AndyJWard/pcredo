@@ -2,6 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 ob_start();
 ?>
+ 
 <head>
 <!--[if lt IE 9]>
 <script src="html5shiv.js"></script>
@@ -9,8 +10,11 @@ ob_start();
 </head>
 <header>
 <link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Post Credo Answer</title>
+<title>Post Credo Record</title>
 </header>
+
+<!-- onchange event for person selector - used to set default privacy choice to the recorded one -->
+
 <?php
 
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
@@ -30,46 +34,56 @@ ob_start();
 
 	$wk_row = mysql_fetch_array($wk_res);
 
-echo "<table width=\"1000\"><tr align=\"left\" style=\"font-size: 15; color: blue;\">";
-echo "<td colspan=\"1\" width=\"70%\" align=\"left\">" .  $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
+echo "<table width=\"1200\"><tr align=\"left\" style=\"font-size: 15; color: blue;\">";
 
-	$per_res = mysql_query("SELECT * FROM persons ORDER BY pname");
+echo "<td>" .  $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
+// Top line on page -  left side is date and title ... right side is person selector;
 
-echo "<td colspan=\"1\" style=\"font-family: arial, helvetica, sans-serif; font-size: 12; color:maroon; width:30%;\" align=\"left\">";
-echo "<select style=\"width: 200px;\" name=\"WhoRU\" size=\"1\">";
+	$per_res = mysql_query("SELECT * FROM persons ORDER BY Fieldtype, pname");
+	// find the names for the select field (to save results);
 
 
-	while ($per_row = mysql_fetch_array($per_res))
-		{
-		echo "<option value=\"" . $per_row['pname'] . "\">" . $per_row['pname'] . "</option>";
-		}
+echo "</td></tr></table>";
 
-echo "</td></tr>";
-echo "<tr><td colspan=\"1\" style=\"font-family: arial, helvetica, sans-serif; font-size: 12; color: maroon; width:30%\" align=\"left\">" . $wk_row['wcomment'] . "</td></tr>";
-echo "</table>";
-
-echo "<table>";
+echo "<table width=\"1200\">";
 
 	$res = mysql_query("SELECT * FROM questions WHERE qwid = " . $id . " ORDER BY qnum");
 
 	while ($row = mysql_fetch_array($res))
 		{
 		echo "<tr><td class=\"bk\" style=\"width:4%\">" . $row['qnum'] . "</td>";
-		echo "<td class=\"bk\" style=\"width:96%\">" . $row['qquestion'] . "</td></tr>";
+		echo "<td class=\"bk\" style=\"width:80%\">" . $row['qquestion'] . "</td></tr>";
 		echo "<tr><td></td><td class=\"bl\">" . $row['qanswer'] . "</td></tr>";
 		}
 
 	echo "</table>";
 
 echo "<nav>";
-echo "<table width=\"200\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
+echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
-echo "<td width=\"50%\"><a href=\"index.php\">Home</a></td>";
-echo "<td width=\"50%\"><a href=\"Question.php?question=" . $id . "\">Back</a></td>";
+echo "<td width=\"40%\" align=\"center\">";
+echo "<select style=\"width: 170px;\" id=\"WHO\" size=\"1\" onchange=\"who_change(" . $id . ")\">";
+echo "<option value=\"0\">Record Your Score";
+while ($per_row = mysql_fetch_array($per_res))
+		{			
+		echo "<option value=\"" . $per_row['pid'] . "\">" . $per_row['pname'] . "</option>";
+		}
+echo "</td>";
+echo "<td width=\"30%\" class=\"bk90i\"><a href=\"Results.php\">View the recorded results</a></td>";
+echo "<td width=\"15%\" class=\"bk90i\"><a href=\"Question.php?question=" . $id . "\">Questions</a></td>";
+echo "<td width=\"15%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
 echo "<tr></tr></table>";
 echo "</nav>";
 
-mysql_close();
+	mysql_close();
 
 ?>
 
+<script type="text/javascript" >
+function who_change(id) {
+	var x=document.getElementById("WHO");
+	var pid=x.value;
+	var redirect = "Record2.php?Question=" + id + "&Pid=" + pid;
+	document.location.href = redirect;
+}
+</script>
