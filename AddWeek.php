@@ -22,8 +22,19 @@ ob_start();
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
+	
+	$rdate = $_POST["release_date"];
+	
+	$hour = date("H", $rdate);
+	
+	if($hour=0)
+		{
+		date_time_set($rdate, 11);
+		}
+	
+	
 
-	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $_POST["release_date"] . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
+	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $rdate . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
 
 	mysql_query($query);		// create new entry in table    weeks
 
