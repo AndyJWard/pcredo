@@ -82,8 +82,8 @@ echo "</nav>";
 <script type="text/javascript" >
 function who_change(id) {
 	var x=document.getElementById("WHO");
-	var pid=x.selectedIndex + 1;
-	var redirect = "Record2.php?question=" + id + "&Pid=" + pid;
+	var pid=x.value;
+	var redirect = "Record2.php?Question=" + id + "&Pid=" + pid;
 	document.location.href = redirect;
 }
 </script>
