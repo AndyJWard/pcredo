@@ -31,7 +31,7 @@ ob_start();
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $id;
 
 	$wk_res = mysql_query($query);
-
+echo $query . "<br/>";
 	$wk_row = mysql_fetch_array($wk_res);
 
 echo "<table width=\"1000\"><tr align=\"left\" style=\"font-size: 15; color: blue;\">";
