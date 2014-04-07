@@ -6,7 +6,7 @@ ob_start();
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Post Credo Save Week Header</title>
+<title>Post Credo Save Week</title>
 
 </head>
 
@@ -23,29 +23,29 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-
 	$post_wid = htmlspecialchars($_GET["wid"]);
 
-	if($_POST["wrelease"] <> "")
-		{
-		$week_bit = ", wrelease='" . $_POST["wrelease"] . "'";
-		}
-	else
-		{
-		$week_bit = "";
-		}
+	for ($qno = 1; $qno <= 10; $qno++)
+	{
+		$qfld = "q" . $qno;
+		$qval = $_POST[$qfld];
+		$afld = "a" . $qno;
+		$aval = $_POST[$afld];
+		$qnfld = "qn" . $qno;
+		$qnval = $_POST[$qnfld];
+		$qidfld = "qid" . $qno;
+		$qidval = $_POST[$qidfld];
+	
+		$query = "UPDATE questions SET qnum=\"" . $_POST[$qnfld] . "\", qquestion=\"" . $_POST[$qfld] . "\", qanswer=\"" . $_POST[$afld] . "\" WHERE qid = " . $_POST[$qidfld];
 
-$query = "UPDATE weeks SET wsubject=\"" . $_POST["wsubject"] . "\", wcomment=\"" . $_POST["wcomment"] . "\"" . $week_bit . " WHERE wid = " . $post_wid;
+//echo "1 qnum: " . $qnval . "   q: " . $qval  . "   a: " . $aval  . "   qid: " . $qidval . "<br />";
 
-//echo $week_bit . "<br />";
 //echo $query . "<br />";
 
-
 		mysql_query($query);
-	
+	}
 
 	mysql_close();
-
 	echo "Updates done<br />";
 	echo "<p></p><a href=\"DataChange.php\">More Changes</a><br />";
 	echo "<p></p><a href=\"index.php\">Home</a>";

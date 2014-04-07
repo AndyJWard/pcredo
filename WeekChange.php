@@ -47,7 +47,7 @@ $week = mysql_query("SELECT wcomment, wsubject, DATE_FORMAT(wrelease, '%d %b %Y 
 
 	echo "<p></p>&nbsp;&nbsp;&nbsp;<a href=\"DataChange.php\">Amend Home</a>&nbsp;&nbsp;&nbsp;";
 
-	mysql_close($db);
+	mysql_close();
 
 
 ?>

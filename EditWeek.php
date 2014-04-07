@@ -79,7 +79,7 @@ echo "</nav>";
 	echo "</form>";
 
 
-	mysql_close($db);
+	mysql_close();
 
 
 ?>
