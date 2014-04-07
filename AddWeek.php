@@ -26,14 +26,12 @@ ob_start();
 	$rdate = $_POST["release_date"];
 	
 	$hour = date("H", $rdate);
-	
+	echo $hour . "<br/>";
 	if($hour=0)
 		{
 		date_time_set($rdate, 11);
 		}
-	
-	
-
+		
 	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $rdate . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
 
 	mysql_query($query);		// create new entry in table    weeks
