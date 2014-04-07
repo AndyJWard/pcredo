@@ -44,13 +44,10 @@ ob_start();
 	$qry1 = "SELECT wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks";
 	$qry2 = " WHERE DATE_FORMAT(wrelease, '%Y%m%d%k%i') <= " . date("YmdHi") . " ORDER BY wrelease DESC";
 
-echo $qry1 . $qry2 . "<br/>";
-
 	$results = mysql_query($qry1.$qry2) or die(mysql_error());
 
 	while($row=mysql_fetch_array($results))
 	{
-// echo "inside while - wrelease: " . $row['wrelease'] . "<br/>"; 
 		$rdat = strtotime($row['wrelease']->createdate);
 		
 		echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
