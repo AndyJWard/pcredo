@@ -26,8 +26,8 @@ ob_start();
 	$rdate = $_POST["release_date"];
 	
 	$hour = date("H", $rdate);
-	echo $hour . "<br/>";
-	if($hour=0)
+	
+	if($hour='00')
 		{
 		date_time_set($rdate, 11);
 		}
