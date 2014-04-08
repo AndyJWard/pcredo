@@ -23,17 +23,9 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 	
-	$rdate = $_POST["release_date"];
-	
-	$hour = date("H", $rdate);
-	echo $rdate . "<br/>";
-	echo $hour . "<br/>";
-	if($hour="00")
-		{
-		$rdate1 = DateTime::createFromFormat('d/m/y H:i:s', $rdate . "11:00:00");
-		}
-		
-	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $rdate1 . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
+	$rdate = strtotime($_POST["release_date"] . '11:00:00');
+				
+	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $rdate . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
 
 	mysql_query($query);		// create new entry in table    weeks
 
