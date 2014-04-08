@@ -25,6 +25,7 @@ td.r80 { font-size:80%; color:red}
 td.r70 { font-size:70%; color:red}
 td.t-home {font-size:100%}
 td.t-link { font-size:200%}
+td.inp_no_border {font-size:50%; border:none}
 
 td.index_left { font-size:90%; color:black; padding-right:40px; width:100px}
 td.index_right { font-size:90%; color:blue; width:600px}
