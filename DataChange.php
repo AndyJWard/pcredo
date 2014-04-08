@@ -11,7 +11,7 @@ ob_start();
 <body>
 <?php
 
-if($_POST["release_date"]='quizmaster')
+if($_POST["pwd"]='quizmaster')
 	{
 
 echo "<nav>";
