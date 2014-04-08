@@ -11,7 +11,7 @@ ob_start();
 <body>
 <?php
 
-if($_POST["pwd"]='quizmaster')
+if($_POST["pwd"] = "quizmaster")
 	{
 
 echo "<nav>";
@@ -64,7 +64,7 @@ echo "</nav>";
 
 	echo "<p></p><a href=\"DataChange.php?new=Y\">New</a>&nbsp;&nbsp;&nbsp;<a href=\"index.php\">Home</a>";
 
-}
+	}
 ?>
 </body>
 

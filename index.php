@@ -47,6 +47,7 @@ ob_start();
 	echo "<form action=\"DataChange.php\" method=\"post\">";
 
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
+	
 	echo "<tr><td><input type=\"text\" name=\"pwd\"></td></tr>";
 	while($row=mysql_fetch_array($results))
 	{
