@@ -47,11 +47,7 @@ ob_start();
 	echo "<form action=\"DataChange.php\" method=\"post\">";
 
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
-	
-echo "/* CSS */";
-echo "input[type=password] {border: none;}]";	
-	
-	echo "<tr><td><input type=\"password\" name=\"pwd\"></td></tr>";
+		
 	while($row=mysql_fetch_array($results))
 	{
 		$rdat = strtotime($row['wrelease']->createdate);
@@ -61,6 +57,7 @@ echo "input[type=password] {border: none;}]";
 		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td></tr>";
 
 	}
+	echo "<tr><td><input type=\"password\" name=\"pwd\" style></td></tr>";	
 		echo "</table>";
 mysql_close();
 
