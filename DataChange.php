@@ -11,6 +11,9 @@ ob_start();
 <body>
 <?php
 
+if($_POST["release_date"]='quizmaster')
+	{
+
 echo "<nav>";
 echo "<table width=\"200\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
@@ -61,7 +64,7 @@ echo "</nav>";
 
 	echo "<p></p><a href=\"DataChange.php?new=Y\">New</a>&nbsp;&nbsp;&nbsp;<a href=\"index.php\">Home</a>";
 
-
+}
 ?>
 </body>
 
