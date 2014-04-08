@@ -19,8 +19,6 @@ ob_start();
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="post-credo.css">
 
-
-
   <!-- Document title -->
 
   <title>Post Credo Index</title>
@@ -45,12 +43,16 @@ ob_start();
 	$qry2 = " WHERE DATE_FORMAT(wrelease, '%Y%m%d%k%i') <= " . date("YmdHi") . " ORDER BY wrelease DESC";
 
 	$results = mysql_query($qry1.$qry2) or die(mysql_error());
+	
+	echo "<form action=\"DataChange.php\" method=\"post\">";
 
+	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
+	echo "<tr><td><input type=\"text\" name=\"pwd\"></td></tr>";
 	while($row=mysql_fetch_array($results))
 	{
 		$rdat = strtotime($row['wrelease']->createdate);
 		
-		echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
+
 		echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
 		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td></tr>";
 		echo "</table>";
