@@ -31,11 +31,11 @@ ob_start();
 	if($hour="00")
 		{
 			echo "inside if" . "<br/>";
-		$rdate->add(new DateInterval('PT11H'));
-		echo $rdate . "<br/>";
+		$rdate1 = $rdate . "11:00:00";
+		echo $rdate1 . "<br/>";
 		}
 		
-	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $rdate . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
+	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $rdate1 . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
 
 	mysql_query($query);		// create new entry in table    weeks
 
