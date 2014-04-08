@@ -26,9 +26,10 @@ ob_start();
 	$rdate = $_POST["release_date"];
 	
 	$hour = date("H", $rdate);
-	
+	echo $hour . "<br/>";
 	if($hour="00")
 		{
+			echo "inside if";
 		date_time_set($rdate, 11);
 		}
 		
