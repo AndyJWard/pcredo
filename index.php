@@ -48,7 +48,12 @@ ob_start();
 
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
 	
-	echo "<tr><td><input type=\"text\" name=\"pwd\" class=\"inp_no_border\"></td></tr>";
+	echo "<style>";
+	
+echo "/* CSS */";
+echo "input[type=password] {border: none;}]";	
+	
+	echo "<tr><td><input type=\"password\" name=\"pwd\"></td></tr>";
 	while($row=mysql_fetch_array($results))
 	{
 		$rdat = strtotime($row['wrelease']->createdate);

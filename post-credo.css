@@ -8,8 +8,6 @@ p.bk   { font-size:100%; color:black}
 p.bl90i { font-size:90%; font-style:italic; color:blue}
 p.bk90i { font-size:90%; font-style:italic; color:black}
 
-td.inp_no_border {font-size:50%; border:none}
-
 table 	{border:none}
 td	{font-family:"Verdana"; color:black; font-size:130%; height:150%}
 td.bk   { font-size:100%; color:black}
