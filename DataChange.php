@@ -11,6 +11,8 @@ ob_start();
 <body>
 <?php
 
+echo $_POST["pwd"];
+
 if($_POST["pwd"] = "quizmaster")
 	{
 
