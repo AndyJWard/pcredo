@@ -27,7 +27,7 @@ ob_start();
 	
 	$hour = date("H", $rdate);
 	
-	if($hour='00')
+	if($hour="00")
 		{
 		date_time_set($rdate, 11);
 		}
