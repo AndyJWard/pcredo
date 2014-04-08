@@ -30,9 +30,7 @@ ob_start();
 	echo $hour . "<br/>";
 	if($hour="00")
 		{
-			echo "inside if" . "<br/>";
-		$rdate1 = $rdate . "11:00:00";
-		echo $rdate1 . "<br/>";
+		$rdate1 = DateTime::createFromFormat('d/m/y H:i:s', $rdate . "11:00:00");
 		}
 		
 	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $rdate1 . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
