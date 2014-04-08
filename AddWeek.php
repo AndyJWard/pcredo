@@ -23,7 +23,7 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 		
-	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $_POST["release_date"]->add(new DateInterval('PT11H')) . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
+	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $_POST["release_date"] . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
 
 	mysql_query($query);		// create new entry in table    weeks
 
