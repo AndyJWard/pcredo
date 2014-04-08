@@ -26,11 +26,13 @@ ob_start();
 	$rdate = $_POST["release_date"];
 	
 	$hour = date("H", $rdate);
+	echo $rdate . "<br/>";
 	echo $hour . "<br/>";
 	if($hour="00")
 		{
-			echo "inside if";
+			echo "inside if" . "<br/>";
 		date_time_set($rdate, 11);
+		echo $rdate . "<br/>";
 		}
 		
 	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $rdate . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
