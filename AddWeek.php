@@ -31,7 +31,7 @@ ob_start();
 	if($hour="00")
 		{
 			echo "inside if" . "<br/>";
-		$rdate->add(new DateInterval('P11h'));
+		$rdate->add(new DateInterval('PT11H'));
 		echo $rdate . "<br/>";
 		}
 		
