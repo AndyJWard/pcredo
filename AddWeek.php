@@ -22,10 +22,8 @@ ob_start();
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
-	
-	$rdate = DateTime::createFromFormat('dmYHis', $_POST["release_date"] . '110000' );
 		
-	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $rdate . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
+	$query = "INSERT INTO weeks (wrelease, wsubject, wcomment) VALUES ( \"" . $_POST["release_date"] . '110000' . "\", \"" . $_POST["subject"] . "\", \"" . $_POST["comment"] . "\")";
 
 	mysql_query($query);		// create new entry in table    weeks
 
