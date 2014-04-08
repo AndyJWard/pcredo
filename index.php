@@ -48,7 +48,7 @@ ob_start();
 
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
 	
-	echo "<tr><td><input type=\"text\" name=\"pwd\"></td></tr>";
+	echo "<tr><td><input type=\"hidden\" name=\"pwd\"></td></tr>";
 	while($row=mysql_fetch_array($results))
 	{
 		$rdat = strtotime($row['wrelease']->createdate);
