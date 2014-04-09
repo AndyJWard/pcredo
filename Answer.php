@@ -69,7 +69,7 @@ while ($per_row = mysql_fetch_array($per_res))
 		echo "<option value=\"" . $per_row['pid'] . "\">" . $per_row['pname'] . "</option>";
 		}
 echo "</td>";
-echo "<td width=\"30%\" class=\"bk90i\"><a href=\"Results.php\">View the recorded results</a></td>";
+echo "<td width=\"30%\" class=\"bk90i\"><a href=\"ViewResults.php\">View the recorded results</a></td>";
 echo "<td width=\"15%\" class=\"bk90i\"><a href=\"Question.php?question=" . $id . "\">Questions</a></td>";
 echo "<td width=\"15%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
 echo "<tr></tr></table>";
@@ -83,7 +83,7 @@ echo "</nav>";
 function who_change(id) {
 	var x=document.getElementById("WHO");
 	var pid=x.value;
-	var redirect = "Record2.php?Question=" + id + "&Pid=" + pid;
+	var redirect = "Record.php?Question=" + id + "&Pid=" + pid;
 	document.location.href = redirect;
 }
 </script>
