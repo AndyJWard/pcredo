@@ -50,8 +50,8 @@ echo "</nav>";
 	}
 	echo "</table>";
 
-	if ($ans == "Y")
-	{
+//	if ($ans == "Y")
+//	{
 		echo "<form action=\"AddWeek.php\" method=\"post\">";
 		echo "Add: <input type=\"hidden\" name=\"add\" value=\"Y\"><br>";
 		echo "Subject: <input type=\"text\" name=\"subject\"><br>";
@@ -59,7 +59,7 @@ echo "</nav>";
 		echo "Release Date: <input type=\"text\" name=\"release_date\"><br>";
 		echo "<input type=\"submit\" value=\"SAVE\">";
 		echo "</form>";
-	}
+//	}
 
 
 	echo "<p></p><a href=\"DataChange.php?new=Y\">New</a>&nbsp;&nbsp;&nbsp;<a href=\"index.php\">Home</a>";
