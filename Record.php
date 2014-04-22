@@ -9,7 +9,7 @@ ob_start();
 </head>
 <header>
 <link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Post Credo Record(2)</title>
+<title>Post Credo Record</title>
 </header>
 
 <!-- onchange event for person selector - used to set default privacy choice to the recorded one -->
@@ -62,9 +62,9 @@ echo "<table width=\"900\">";
 echo "<nav>";
 echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
-echo "<td width=\"30%\" class=\"bk90i\"><a href=\"SaveResults.php\">Save you results</a></td>";
+echo "<td width=\"20%\" class=\"bk90i\"><a href=\"SaveResults.php\">Save you results</a></td>";
 echo "<td width=\"30%\" class=\"bk90i\"><a href=\"ViewResults.php\">View the recorded results</a></td>";
-echo "<td width=\"15%\" class=\"bk90i\"><a href=\"Preferences.php?question=" . $id . "\">Change your recording preferences</a></td>";
+echo "<td width=\"30%\" class=\"bk90i\"><a href=\"Preferences.php?Pid=" . $pid . "&Question=" . $id . "\">Change your recording preferences</a></td>";
 echo "<td width=\"15%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
 echo "<tr></tr></table>";
 echo "</nav>";
