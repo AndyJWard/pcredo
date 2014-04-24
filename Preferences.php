@@ -31,17 +31,28 @@ ob_start();
 	$per_row = mysql_fetch_assoc($per_res);
 	$Who = $per_row['pname'];
 	$email = $per_row['pemail'];
-	$Privy = $per_row['Privatee'];
+	$Privy = $per_row['Private'];
 	$Pwd = $per_row['Password'];
 	$Annony = $per_row['Annonymous'];
-		
+	
+	if($Annony=='1') {
+		$Anon="Yes";
+	} else {
+		$Anon="No";
+	}
+	
 	echo '<table>';
 	echo '<tr>';
 	echo '<td>If you are happy to record your results without being identified tick this box</td>';
 	echo '<td><input type="checkbox" id="anon" value="' . $Anon . '"></td>';
 	echo '</tr>';
+	echo '<tr>';
+	echo '<td>If you want to record you results for your own eyes only put a password (of your choosing) in this box</td>';
+	echo '<td><input type="text" id="priv" value="' . $Pwd . '"></td>';
+	echo '</tr>';
 	echo '</table>';
 	
-	?>;
+?> 
+	
 	
 	
