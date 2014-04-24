@@ -50,7 +50,7 @@ ob_start();
 	echo '<td class="bk90">If you want to record you results for your own eyes only put a password (of your choosing) in this box</td>';
 	echo '<td class "bl90i"><input type="text" id="priv" value="' . $Pwd . '"></td>';
 	echo '</tr>';
-	 
+	echo '<tr><td class "bl90i">If you leave the fields unchecked and blank respectively, any results you record will be attributable to you and visible to everybody</td></tr>' 
 	echo '</table>';
 	
 ?>
