@@ -43,12 +43,12 @@ ob_start();
 	
 	echo '<table>';
 	echo '<tr>';
-	echo '<td>If you are happy to record your results without being identified tick this box</td>';
-	echo '<td><input type="checkbox" id="anon" value="' . $Anon . '"></td>';
+	echo '<td class="bk90">If you prefer to record your results without being identified tick this box</td>';
+	echo '<td class="r120"><input type="checkbox" id="anon" value="' . $Anon . '"></td>';
 	echo '</tr>';
 	echo '<tr>';
-	echo '<td>If you want to record you results for your own eyes only put a password (of your choosing) in this box</td>';
-	echo '<td><input type="text" id="priv" value="' . $Pwd . '"></td>';
+	echo '<td class="bk90">If you want to record you results for your own eyes only put a password (of your choosing) in this box</td>';
+	echo '<td class "bl90i"><input type="text" id="priv" value="' . $Pwd . '"></td>';
 	echo '</tr>';
 	echo '</table>';
 	
