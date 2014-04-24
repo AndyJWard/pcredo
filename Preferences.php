@@ -50,9 +50,9 @@ ob_start();
 	echo '<td class="bk90">If you want to record you results for your own eyes only put a password (of your choosing) in this box</td>';
 	echo '<td class "bl90i"><input type="text" id="priv" value="' . $Pwd . '"></td>';
 	echo '</tr>';
-	echo '<tr><td>If you leave the fields unchecked and blank respectively, any results you record will be attributable to you and visible to everybody</td></tr>'
-	echo '<tr><td>If you want to keep a private record of your results then leave the box unchecked and enter a password</td></tr>';
-	echo '<tr><td>Results you do record (regardless of the above) will be used to help me try to pitch the questions - e.g. I will be able to see if any questions defeated everybody etc.</td></tr>'; 
+	echo '<tr><td class "bl90i">If you leave the fields unchecked and blank respectively, any results you record will be attributable to you and visible to everybody</td></tr>'
+	echo '<tr><td class "bl90i">If you want to keep a private record of your results then leave the box unchecked and enter a password</td></tr>';
+	echo '<tr><td class "bl90i">Results you do record (regardless of the above) will be used to help me try to pitch the questions - e.g. I will be able to see if any questions defeated everybody etc.</td></tr>'; 
 	echo '</table>';
 	
 ?> 
