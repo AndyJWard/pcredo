@@ -44,7 +44,7 @@ ob_start();
 	echo '<table>';
 	echo '<tr>';
 	echo '<td class="bk90">If you prefer to record your results without being identified tick this box</td>';
-	echo '<td class="bk200"><input type="checkbox" id="anon" value="' . $Anon . '"></td>';
+	echo '<td ><input type="checkbox" id="anon" value="' . $Anon . '"></td>';
 	echo '</tr>';
 	echo '<tr>';
 	echo '<td class="bk90">If you want to record you results for your own eyes only put a password (of your choosing) in this box</td>';
@@ -55,7 +55,7 @@ ob_start();
 	echo '<tr><td class "bl90i">Results you do record (regardless of the above) will be used to help me try to pitch the questions - e.g. I will be able to see if any questions defeated everybody etc.</td></tr>'; 
 	echo '</table>';
 	
-?> 
+?>
 	
 	
 	
