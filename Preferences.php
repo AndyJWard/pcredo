@@ -52,6 +52,7 @@ ob_start();
 	echo '<tr>';
 	echo '<td></td><td class="bk90i"><input type="text" value="' . $email . '" name="email" size="60"></td>';
 	echo '</tr>';
+	echo '</table><table>';
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">If you want to record you results for your own eyes only put a password (of your choosing) in this box</td>';
 	echo '<td class "bl90i"><input type="text" id="priv" value="' . $Pwd . '" name="pwd" size="40"></td>';
