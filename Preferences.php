@@ -45,7 +45,7 @@ ob_start();
 	echo '<table>';
 	echo '<tr><td class="bl">' . $Who . '</td></tr>';
 	echo '<tr></tr><tr>';
-	echo '<td></td><td class="bk90i"><input type="text" value="' . $email . '" name="email" size="60"></td>';
+	echo '<td class="bk90i"><input type="text" value="' . $email . '" name="email" size="60"></td>';
 	echo '</tr>';	
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">If you prefer to record your results without being identified tick this box</td>';
