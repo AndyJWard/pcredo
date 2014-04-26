@@ -35,7 +35,7 @@ ob_start();
 	$Pwd = $per_row['Password'];
 	$Annony = $per_row['Annonymous'];
 	
-	if($Annony=='1') {
+	if($Annony==1) {
 		$Anon="Yes";
 	} else {
 		$Anon="No";
