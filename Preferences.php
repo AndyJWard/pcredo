@@ -35,10 +35,10 @@ ob_start();
 	$Pwd = $per_row['Password'];
 	$Annony = $per_row['Annonymous'];
 	
-	if($Annony==1) {
-		$Anon="Yes";
-	} else {
+	if($Annony==0) {
 		$Anon="No";
+	} else {
+		$Anon="Yes";
 	}
 	
 	echo '<table>';
