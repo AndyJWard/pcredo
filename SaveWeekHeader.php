@@ -47,7 +47,7 @@ $query = "UPDATE weeks SET wsubject=\"" . $_POST["wsubject"] . "\", wcomment=\""
 	mysql_close();
 
 	echo "Updates done<br />";
-	echo "<p></p><a href=\"DataChange.php\">More Changes</a><br />";
+	echo '<p></p><a href="DataChange.php?encore=1">More Changes</a><br />';
 	echo "<p></p><a href=\"index.php\">Home</a>";
 
 
