@@ -17,13 +17,11 @@ if($encore=="1") {
 	$pwd="quizmaster";
 }
 
-if ($pwd == "quizmaster")
-	{
+if ($pwd == "quizmaster")	{
 
 echo "<nav>";
 echo "<table width=\"200\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
-echo "<td width=\"50%\"><a href=\"DataChange.php?new=Y\">New</a></td>";
 echo "<td width=\"50%\"><a href=\"index.php\">Home</a></td>";
 echo "<tr></tr></table>";
 echo "</nav>";
@@ -68,7 +66,7 @@ echo "</nav>";
 //	}
 
 
-	echo "<p></p><a href=\"DataChange.php?new=Y\">New</a>&nbsp;&nbsp;&nbsp;<a href=\"index.php\">Home</a>";
+	echo "<p></p><a href=\"index.php\">Home</a>";
 
 	}
 ?>
