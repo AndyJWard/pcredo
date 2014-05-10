@@ -27,40 +27,76 @@ ob_start();
 	
 	$id = htmlspecialchars($_GET["Question"]);
 	
-	$per_res = mysql_query("SELECT * FROM persons WHERE pid =" . $pid . " limit 1");
+	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
-	$Who = $per_row['pname'];
-	$email = $per_row['pemail'];
+	$Who = $per_row['Pname'];
+	$email = $per_row['Pemail'];
 	$Privy = $per_row['Private'];
 	$Pwd = $per_row['Password'];
 	$Annony = $per_row['Annonymous'];
+	$Recy = $per_row['Receive'];
+	$Pub = $per_row['Publish'];
+	$Sec = $per_row['Secret'];
 	
-	if($Annony==0) {
-		$Anon='"No"';
-	} else {
-		$Anon='"Yes" checked';
-	}
+	
 	echo '<form action="SavePreferences.php?Pid='. $pid . '&Question=' . $id .'" method="post">';
 	
 	echo '<table>';
-	echo '<tr><td class="bl">' . $Who . '</td></tr>';
+	echo '<tr><td class="bl"><input type="text" value="' . $Who . '" name="person" size="50"></td></tr>';
 	echo '<tr></tr><tr>';
 	echo '<td class="bk90i"><input type="text" value="' . $email . '" name="email" size="60"></td>';
-	echo '</tr>';	
+	echo '</tr>';
+
+	if($Sec=="N") {
+		$Secret='"No"';
+	} else {
+		$Secret='"Yes" checked';
+	}	
 	echo '<tr>';
-	echo '<td class="bl90i" width="70%">If you prefer to record your results without being identified tick this box</td>';
+	echo '<td class="bl90i" width="70%">If you want to keep secret the scores you record then tick this box</td>';
+	echo '<td class="bk200"><input type="checkbox" id="secret" value=' . $Secret . '></td>';
+	echo '</tr>';	
+	
+	if($Annony=="N") {
+		$Anon='"No"';
+	} else {
+		$Anon='"Yes" checked';
+	}	
+	echo '<tr>';
+	echo '<td class="bl90i" width="70%">If you want to record scores anonymously (you will not be able to see your performance but your scores will count toward the averages) then tick this box</td>';
 	echo '<td class="bk200"><input type="checkbox" id="anon" value=' . $Anon . '></td>';
 	echo '</tr>';
+
+	if($Recy=="N") {
+		$Receive;
+	} else {
+		$Receive='"Yes" checked';
+	}	
 	echo '<tr>';
-	echo '<td class="bl90i" width="70%">If you want to record you results for your own eyes only put a password (of your choosing) in this box</td>';
+	echo '<td class="bl90i" width="70%">To receive emails about other peoples recorded results tick this box</td>';
+	echo '<td class="bk200"><input type="checkbox" id="receive" value=' . $Receive . '></td>';
+	echo '</tr>';	
+
+	if($Pub=="N") {
+		$Publish;
+	} else {
+		$Publish='"Yes" checked';
+	}	
+	echo '<tr>';
+	echo '<td class="bl90i" width="70%">To send emails about other people about your recorded results tick this box</td>';
+	echo '<td class="bk200"><input type="checkbox" id="publish" value=' . $Publish . '></td>';
+	echo '</tr>';		
+	
+	echo '<tr>';
+	echo '<td class="bl90i" width="70%">Create a password to control access to your scores</td>';
 	echo '<td class "bl90i"><input type="text" id="priv" value="' . $Pwd . '" name="pwd" size="40"></td>';
 	echo '</tr>';
 
 	echo '</table><table>';
-	echo '<tr><td class="bk90" width="70%">If you leave the fields unchecked and blank respectively, any results you record will be attributable to you and visible to everybody</td></tr>';
-	echo '<tr><td class="bk90" width="70%">If you want to keep a private record of your results then leave the box unchecked and enter a password</td></tr>';
-	echo '<tr><td class="bk90" width="70%">Results you do record (regardless of the above) will be used to help me try to pitch the questions - e.g. I will be able to see if any questions defeated everybody etc.</td></tr>'; 
-	echo '<tr></tr>';
+	//echo '<tr><td class="bk90" width="70%">If you leave the fields unchecked and blank respectively, any results you record will be attributable to you and visible to everybody</td></tr>';
+	//echo '<tr><td class="bk90" width="70%">If you want to keep a private record of your results then leave the box unchecked and enter a password</td></tr>';
+	//echo '<tr><td class="bk90" width="70%">Results you do record (regardless of the above) will be used to help me try to pitch the questions - e.g. I will be able to see if any questions defeated everybody etc.</td></tr>'; 
+	//echo '<tr></tr>';
 	echo '<tr>';
 	echo '<td class="bk90i"><input type="submit" value="Save" name="save"></td>';
 	echo '<td class="bk90i"><input type="submit" value="Cancel" name="cancel"></td>';
