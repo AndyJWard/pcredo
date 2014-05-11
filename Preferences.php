@@ -31,7 +31,7 @@ ob_start();
 	$per_row = mysql_fetch_assoc($per_res);
 	$Who = $per_row['Pname'];
 	$email = $per_row['Pemail'];
-	$Privy = $per_row['Private'];
+//	$Privy = $per_row['Private'];
 	$Pwd = $per_row['Password'];
 	$Annony = $per_row['Annonymous'];
 	$Pub = $per_row['Publish'];
@@ -61,37 +61,54 @@ if($Sec=="N") {
 else {
 		echo '   <input type="radio" name="secret" value="No" />No';
 	}
-
-	echo '</tr>';	
-	
-	if($Annony=="N") {
-		$Anon='"No"';
-	} else {
-		$Anon='"Yes" checked';
-	}	
+	echo '</tr>';
+		
 	echo '<tr>';
-	echo '<td class="bl90i" width="70%">If you want to record your scores anonymously (you will not be able to see your performance but your scores will count toward the averages) tick this box</td>';
-	echo '<td class="bk200"><input type="checkbox" id="anon" value=' . $Anon . '></td>';
+	echo '<td class="bl90i" width="70%">Do you want to record your scores anonymously? (you will not be able to see your performance but your scores will count toward the averages)</td>';	
+if($Annony=="Y") {
+	echo '<td class="bk200"><input type="radio" name="anon" value="Yes" checked="checked"/>Yes';		
+}
+else {
+		echo '<td class="bk200"><input type="radio" name="anon" value="Yes"/>Yes';
+	}	
+if($Annony=="N") {
+	echo '   <input type="radio" name="anon" value="No" checked="checked"/>No';		
+}
+else {
+		echo '   <input type="radio" name="anon" value="No"/>No';
+	}	
 	echo '</tr>';
 
-	if($Recy=="N") {
-		$Receive;
-	} else {
-		$Receive='"Yes" checked';
-	}	
 	echo '<tr>';
-	echo '<td class="bl90i" width="70%">To receive emails about results other people have recorded tick this box</td>';
-	echo '<td class="bk200"><input type="checkbox" id="receive" value=' . $Receive . '></td>';
+	echo '<td class="bl90i" width="70%">Do you want to receive emails about results other people have recorded?</td>';
+if($Recy=="Y") {
+	echo '<td class="bk200"><input type="radio" name="receive" value="Yes" checked="checked"/>Yes';		
+}
+else {
+		echo '<td class="bk200"><input type="radio" name="receive" value="Yes"/>Yes';
+	}	
+if($Recy=="N") {
+	echo '   <input type="radio" name="receive" value="No" checked="checked"/>No';		
+}
+else {
+		echo '   <input type="radio" name="receive" value="No"/>No';
+	}	
 	echo '</tr>';	
 
-	if($Pub=="N") {
-		$Publish;
-	} else {
-		$Publish='"Yes" checked';
-	}	
 	echo '<tr>';
-	echo '<td class="bl90i" width="70%">To send emails about other people about your recorded results tick this box</td>';
-	echo '<td class="bk200"><input type="checkbox" id="publish" value=' . $Publish . '></td>';
+	echo '<td class="bl90i" width="70%">Do you want to send emails about other people about your recorded results</td>';
+if($Pub=="Y") {
+	echo '<td class="bk200"><input type="radio" name="publish" value="Yes" checked="checked"/>Yes';		
+}
+else {
+		echo '<td class="bk200"><input type="radio" name="publish" value="Yes"/>Yes';
+	}	
+if($Pub=="N") {
+	echo '   <input type="radio" name="publish" value="No" checked="checked"/>No';		
+}
+else {
+		echo '   <input type="radio" name="publish" value="No"/>No';
+	}	
 	echo '</tr>';		
 	
 	echo '<tr>';
