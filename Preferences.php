@@ -46,21 +46,16 @@ ob_start();
 	echo '<tr></tr><tr>';
 	echo '<td class="bk90i"><input type="text" value="' . $email . '" name="email" size="60"></td>';
 	echo '</tr>';
-
-
-	if($Sec=="Y") {
-		$Secret='checked="checked"';
-	} 
 		
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">If you want scores that you record kept secret then tick this box</td>';
-if($sSec=="Y") {
+if($Sec=="Y") {
 	echo '<td class="bk200"><input type="radio" name="secret" value="Yes" checked="checked"/>Yes';
 }
 else {
 		echo '<td class="bk200"><input type="radio" name="secret" value="Yes"/>Yes';
 	}
-if($sSec=="N") {
+if($Sec=="N") {
 	echo '<td class="bk200"><input type="radio" name="secret" value="No" checked="checked"/>No';
 }
 else {
