@@ -29,7 +29,7 @@ ob_start();
 	
 	$Who = $_POST['person'];
 	$email = $_POST['email'];
-	if(isset($_POST['secret'])) {	
+	if(isset($_POST['secret']) && $_POST['secret'] == "Yes") {	
 		$Secret = "Y";
 		}
 		else { $Secret = "N";
