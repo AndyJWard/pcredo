@@ -55,8 +55,8 @@ ob_start();
 	}	
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">If you want scores that you record kept secret then tick this box</td>';
-	echo '<td class="bk200"><input type="radio" name="secret"' . if (isset($secret) && $secret=="Yes") echo "checked" . 'value="Yes">Yes'; 
-	echo '<td class="bk200"><input type="radio" name="secret"' . if (isset($secret) && $secret=="No") echo "checked" . 'value="No">No';
+	echo '<td class="bk200"><input type="radio" name="secret" value="Yes"/>Yes'; 
+	echo '<td class="bk200"><input type="radio" name="secret" value="No"/>No';
 	
 //	echo '<td class="bk200"><input type="checkbox" id="secret" name="secret"  value=' . $Secret . '></td>';
 	echo '</tr>';	
