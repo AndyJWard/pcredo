@@ -32,6 +32,8 @@ ob_start();
 	if(isset($_POST['secret'])) {	
 		$Secret = "Y";
 		}
+		else { $Secret = "N";
+	}
 	if(isset($_POST['anon'])) {
 		$Annony = "Y";
 		}
