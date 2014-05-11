@@ -9,7 +9,7 @@ ob_start();
 </head>
 <header>
 <link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Post Credo Record</title>
+<title>Save Preferences</title>
 </header>
 
 <?php
@@ -29,7 +29,7 @@ ob_start();
 	
 	$Who = $_POST['person'];
 	$email = $_POST['email'];
-	if(isset($_POST['secret']) {	
+	if(isset($_POST['secret'])) {	
 		$Secret = "Y";
 	}
 	$Annony = $_POST['anon'];
