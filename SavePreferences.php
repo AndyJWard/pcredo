@@ -44,6 +44,9 @@ ob_start();
 //	$per_res = mysql_query("SELECT * FROM persons WHERE pid =" . $pid . " limit 1");
 //	$per_row = mysql_fetch_assoc($per_res);
 
+foreach ($_POST as $key => $value)
+ echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+
 	if (isset($_POST['cancel'])) {
 		echo "Cancellled person " . $Who . " / email " . $email . " / pwd " . $Pwd . " / anon " . $Annony . " / receive " . $Recy . " / publish " . $Pub . " / secret " . $Secret ;
 	}
