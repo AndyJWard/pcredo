@@ -47,6 +47,7 @@ ob_start();
 	echo '<td class="bk90i"><input type="text" value="' . $email . '" name="email" size="60"></td>';
 	echo '</tr>';
 
+
 	if($Sec=="N") {
 		$Secret='"No" checked';
 	} else {
@@ -54,8 +55,10 @@ ob_start();
 	}	
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">If you want scores that you record kept secret then tick this box</td>';
-echo '<td><input type="hidden" name="secret" value="No"></td>';
-	echo '<td class="bk200"><input type="checkbox" id="secret" name="secret"  value=' . $Secret . '></td>';
+	echo '<td class="bk200"><input type="radio" name="secret"' . if (isset($secret) && $secret=="Yes") echo "checked" . 'value="Yes">Yes'; 
+	echo '<td class="bk200"><input type="radio" name="secret"' . if (isset($secret) && $secret=="No") echo "checked" . 'value="No">No';
+	
+//	echo '<td class="bk200"><input type="checkbox" id="secret" name="secret"  value=' . $Secret . '></td>';
 	echo '</tr>';	
 	
 	if($Annony=="N") {
