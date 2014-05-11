@@ -34,8 +34,8 @@ ob_start();
 	$Privy = $per_row['Private'];
 	$Pwd = $per_row['Password'];
 	$Annony = $per_row['Annonymous'];
-	$Recy = $per_row['Receive'];
 	$Pub = $per_row['Publish'];
+	$Recy = $per_row['Receive'];
 	$Sec = $per_row['Secret'];
 	
 	
@@ -48,20 +48,20 @@ ob_start();
 	echo '</tr>';
 		
 	echo '<tr>';
-	echo '<td class="bl90i" width="70%">If you want scores that you record kept secret then tick this box</td>';
+	echo '<td class="bl90i" width="70%">Do you want scores that you record kept secret?</td>';
 if($Sec=="Y") {
-	echo '<td class="bk200"><input type="radio" name="secret" value="Yes" checked="checked"/>Yes';
+	echo '<td class="bk100"><input type="radio" name="secret" value="Yes" checked="checked"/>Yes';
 }
 else {
-		echo '<td class="bk200"><input type="radio" name="secret" value="Yes"/>Yes';
+		echo '<td class="bk100"><input type="radio" name="secret" value="Yes"/>Yes';
 	}
 if($Sec=="N") {
-	echo '<td class="bk200"><input type="radio" name="secret" value="No" checked="checked"/>No';
+	echo '   <input type="radio" name="secret" value="No" checked="checked"/>No';
 }
 else {
-		echo '<td class="bk200"><input type="radio" name="secret" value="No" />No';
+		echo '   <input type="radio" name="secret" value="No" />No';
 	}
-//	echo '<td class="bk200"><input type="checkbox" id="secret" name="secret"  value=' . $Secret . '></td>';
+
 	echo '</tr>';	
 	
 	if($Annony=="N") {
