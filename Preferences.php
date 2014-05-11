@@ -54,7 +54,7 @@ ob_start();
 	}	
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">If you want scores that you record kept secret then tick this box</td>';
-	echo '<td class="bk200"><input type="checkbox" id="secret" value=' . $Secret . '></td>';
+	echo '<td class="bk200"><input type="checkbox" id="secret" name="secret"  value=' . $Secret . '></td>';
 	echo '</tr>';	
 	
 	if($Annony=="N") {
