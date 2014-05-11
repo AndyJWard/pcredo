@@ -48,12 +48,13 @@ ob_start();
 	echo '</tr>';
 
 	if($Sec=="N") {
-		$Secret='"No" checked';
+		$Secret='"No"';
 	} else {
 		$Secret='"Yes" checked';
 	}	
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">If you want scores that you record kept secret then tick this box</td>';
+echo '<td><input type="hidden" name="secret" value="No"></td>';
 	echo '<td class="bk200"><input type="checkbox" id="secret" name="secret"  value=' . $Secret . '></td>';
 	echo '</tr>';	
 	
