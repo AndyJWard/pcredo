@@ -45,7 +45,7 @@ ob_start();
 		echo "Cancellled person " . $Who . " / email " . $email . " / secret " . $Pwd . " / anon " . $Annony . " / receive " . $Recy . " / publish " . $Pub . " / private " . $Privy ;
 	}
 	if (isset($_POST['save'])){
-	
+		echo "Saved person " . $Who . " / email " . $email . " / secret " . $Pwd . " / anon " . $Annony . " / receive " . $Recy . " / publish " . $Pub . " / private " . $Privy ;
 	}
 ?>
 	
