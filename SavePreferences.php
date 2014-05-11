@@ -35,7 +35,7 @@ if (isset($_POST['save'])){
 	$email = $_POST['email'];
 
 	if (isset($_POST['secret'])) { 
-		$Secret= $_POST['secret']; 
+		$secret= $_POST['secret']; 
 	}
 
 	if(isset($_POST['anon'])) {
