@@ -25,7 +25,7 @@ ob_start();
 
 	$pid = htmlspecialchars($_GET["Pid"]);
 	
-	$id = htmlspecialchars($_GET["Question"]);
+	// $id = htmlspecialchars($_GET["Question"]);
 	
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
@@ -39,7 +39,7 @@ ob_start();
 	$Sec = $per_row['Secret'];
 	
 	
-	echo '<form action="SavePreferences.php?Pid='. $pid . '&Question=' . $id .'" method="post">';
+	echo '<form action="SavePreferences.php?Pid='. $pid . '" method="post">';
 	
 	echo '<table>';
 	echo '<tr><td class="bl"><input type="text" value="' . $Who . '" name="person" size="50"></td></tr>';
