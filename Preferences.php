@@ -89,7 +89,7 @@ ob_start();
 	
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">Create a password to control access to your scores</td>';
-	echo '<td class "bl90i"><input type="text" id="priv" value="' . $Pwd . '" name="pwd" size="40"></td>';
+	echo '<td class "bl90i"><input type="text" value="' . $Pwd . '" name="pwd" size="40"></td>';
 	echo '</tr>';
 
 	echo '</table><table>';

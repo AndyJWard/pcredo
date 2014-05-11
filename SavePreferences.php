@@ -29,19 +29,24 @@ ob_start();
 	
 	$Who = $_POST['person'];
 	$email = $_POST['email'];
-	$Pwd = $_POST['secret'];
+	if(isset($_POST['secret']) {	
+		$Secret = "Y";
+	}
 	$Annony = $_POST['anon'];
 	$Recy = $_POST['receive'];
 	$Pub = $_POST['publish'];
 	$Privy = $_POST['priv'];	
-	
+	$Pwd = $_POST['pwd'];
+		
 //	$per_res = mysql_query("SELECT * FROM persons WHERE pid =" . $pid . " limit 1");
 //	$per_row = mysql_fetch_assoc($per_res);
 
 	if (isset($_POST['cancel'])) {
 		echo "Cancellled person " . $Who . " / email " . $email . " / secret " . $Pwd . " / anon " . $Annony . " / receive " . $Recy . " / publish " . $Pub . " / private " . $Privy ;
 	}
+	if (isset($_POST['save'])){
 	
+	}
 ?>
 	
 	
