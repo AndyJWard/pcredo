@@ -48,7 +48,7 @@ ob_start();
 	echo '</tr>';
 
 	if($Sec=="N") {
-		$Secret='"No"';
+		$Secret='"No" checked';
 	} else {
 		$Secret='"Yes" checked';
 	}	
