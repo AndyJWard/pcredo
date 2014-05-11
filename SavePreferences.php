@@ -16,7 +16,7 @@ ob_start();
 $pid = htmlspecialchars($_GET["Pid"]);
 
 if (isset($_POST['cancel'])) {
-	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?=' . $pid . '">';	
+	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
 }
 if (isset($_POST['save'])){
 		
