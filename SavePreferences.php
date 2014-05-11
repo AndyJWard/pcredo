@@ -31,21 +31,22 @@ ob_start();
 	$email = $_POST['email'];
 	if(isset($_POST['secret'])) {	
 		$Secret = "Y";
-	}
-	$Annony = $_POST['anon'];
+		}
+	if(isset($_POST['anon'])) {
+		$Annony = "Y";
+		}
 	$Recy = $_POST['receive'];
 	$Pub = $_POST['publish'];
-	$Privy = $_POST['priv'];	
 	$Pwd = $_POST['pwd'];
 		
 //	$per_res = mysql_query("SELECT * FROM persons WHERE pid =" . $pid . " limit 1");
 //	$per_row = mysql_fetch_assoc($per_res);
 
 	if (isset($_POST['cancel'])) {
-		echo "Cancellled person " . $Who . " / email " . $email . " / secret " . $Pwd . " / anon " . $Annony . " / receive " . $Recy . " / publish " . $Pub . " / private " . $Privy ;
+		echo "Cancellled person " . $Who . " / email " . $email . " / pwd " . $Pwd . " / anon " . $Annony . " / receive " . $Recy . " / publish " . $Pub . " / secret " . $Secret ;
 	}
 	if (isset($_POST['save'])){
-		echo "Saved person " . $Who . " / email " . $email . " / secret " . $Pwd . " / anon " . $Annony . " / receive " . $Recy . " / publish " . $Pub . " / private " . $Privy ;
+		echo "Saved person " . $Who . " / email " . $email . " / pwd " . $Pwd . " / anon " . $Annony . " / receive " . $Recy . " / publish " . $Pub . " / secret " . $Secret ;
 	}
 ?>
 	
