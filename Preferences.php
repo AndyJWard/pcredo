@@ -50,64 +50,64 @@ ob_start();
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">Do you want scores that you record kept secret?</td>';
 if($Sec=="Y") {
-	echo '<td class="bk100"><input type="radio" name="secret" value="Yes" checked="checked"/>Yes';
+	echo '<td class="bk100"><input type="radio" name="secret" value="Y" checked="checked"/>Yes';
 }
 else {
-		echo '<td class="bk100"><input type="radio" name="secret" value="Yes"/>Yes';
+		echo '<td class="bk100"><input type="radio" name="secret" value="Y"/>Yes';
 	}
 if($Sec=="N") {
-	echo '   <input type="radio" name="secret" value="No" checked="checked"/>No';
+	echo '   <input type="radio" name="secret" value="N" checked="checked"/>No';
 }
 else {
-		echo '   <input type="radio" name="secret" value="No" />No';
+		echo '   <input type="radio" name="secret" value="N" />No';
 	}
 	echo '</tr>';
 		
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">Do you want to record your scores anonymously? (you will not be able to see your performance but your scores will count toward the averages)</td>';	
 if($Annony=="Y") {
-	echo '<td class="bk100"><input type="radio" name="anon" value="Yes" checked="checked"/>Yes';		
+	echo '<td class="bk100"><input type="radio" name="anon" value="Y" checked="checked"/>Yes';		
 }
 else {
-		echo '<td class="bk100"><input type="radio" name="anon" value="Yes"/>Yes';
+		echo '<td class="bk100"><input type="radio" name="anon" value="Y"/>Yes';
 	}	
 if($Annony=="N") {
-	echo '   <input type="radio" name="anon" value="No" checked="checked"/>No';		
+	echo '   <input type="radio" name="anon" value="N" checked="checked"/>No';		
 }
 else {
-		echo '   <input type="radio" name="anon" value="No"/>No';
+		echo '   <input type="radio" name="anon" value="N"/>No';
 	}	
 	echo '</tr>';
 
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">Do you want to receive emails about results other people have recorded?</td>';
 if($Recy=="Y") {
-	echo '<td class="bk100"><input type="radio" name="receive" value="Yes" checked="checked"/>Yes';		
+	echo '<td class="bk100"><input type="radio" name="receive" value="Y" checked="checked"/>Yes';		
 }
 else {
-		echo '<td class="bk100"><input type="radio" name="receive" value="Yes"/>Yes';
+		echo '<td class="bk100"><input type="radio" name="receive" value="Y"/>Yes';
 	}	
 if($Recy=="N") {
-	echo '   <input type="radio" name="receive" value="No" checked="checked"/>No';		
+	echo '   <input type="radio" name="receive" value="N" checked="checked"/>No';		
 }
 else {
-		echo '   <input type="radio" name="receive" value="No"/>No';
+		echo '   <input type="radio" name="receive" value="N"/>No';
 	}	
 	echo '</tr>';	
 
 	echo '<tr>';
 	echo '<td class="bl90i" width="70%">Do you want to send emails about other people about your recorded results</td>';
 if($Pub=="Y") {
-	echo '<td class="bk100"><input type="radio" name="publish" value="Yes" checked="checked"/>Yes';		
+	echo '<td class="bk100"><input type="radio" name="publish" value="Y" checked="checked"/>Yes';		
 }
 else {
-		echo '<td class="bk100"><input type="radio" name="publish" value="Yes"/>Yes';
+		echo '<td class="bk100"><input type="radio" name="publish" value="Y"/>Yes';
 	}	
 if($Pub=="N") {
-	echo '   <input type="radio" name="publish" value="No" checked="checked"/>No';		
+	echo '   <input type="radio" name="publish" value="N" checked="checked"/>No';		
 }
 else {
-		echo '   <input type="radio" name="publish" value="No"/>No';
+		echo '   <input type="radio" name="publish" value="N"/>No';
 	}	
 	echo '</tr>';		
 	

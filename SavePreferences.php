@@ -13,7 +13,13 @@ ob_start();
 </header>
 
 <?php
+$pid = htmlspecialchars($_GET["Pid"]);
 
+if (isset($_POST['cancel'])) {
+	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?=' . $pid . '">';	
+}
+if (isset($_POST['save'])){
+		
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
 	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
@@ -23,42 +29,39 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-	$pid = htmlspecialchars($_GET["Pid"]);
-	
 //	$id = htmlspecialchars($_GET["Question"]);
 	
 	$Who = $_POST['person'];
 	$email = $_POST['email'];
-//	if(isset($_POST['secret']) && $_POST['secret'] == "Yes") {	
-//		$Secret = "Y";
-//		}
-//		else { $Secret = "N";
-//	}
 
-if (isset($_POST['secret'])) { 
-echo "secret checked </br>"; 
-}
-
+	if (isset($_POST['secret'])) { 
+		$Secret= $_POST['secret']; 
+	}
 
 	if(isset($_POST['anon'])) {
-		$Annony = "Y";
-		}
-	$Recy = $_POST['receive'];
-	$Pub = $_POST['publish'];
+		$Annony = $_POST['anon'];
+	}
+	
+	if(isset($_POST['receive'])) {
+		$receive = $_POST['receive'];
+	}
+	
+	if(isset($_POST['publish'])) {
+		$publish = $_POST['publish'];
+	}
+	
 	$Pwd = $_POST['pwd'];
 		
-//	$per_res = mysql_query("SELECT * FROM persons WHERE pid =" . $pid . " limit 1");
+	$query= 'UPDATE persons SET Pname=' . $Who . ', Pemail=' . $email . ', Password=' . $Pwd . ', Annonymous=' . $Annony . ', Publish=' . $publish . ', Receive=' . $receive . ', Secret=' . $secret . ' WHERE pid =' . $pid . ' limit 1';
 //	$per_row = mysql_fetch_assoc($per_res);
+
+	mysql_query($query);
+	mysql_close();
 
 foreach ($_POST as $key => $value)
  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-
-	if (isset($_POST['cancel'])) {
-		echo "Cancellled person " . $Who . " / email " . $email . " / pwd " . $Pwd . " / anon " . $Annony . " / receive " . $Recy . " / publish " . $Pub . " / secret " . $Secret ;
-	}
-	if (isset($_POST['save'])){
-		echo "Saved person " . $Who . " / email " . $email . " / pwd " . $Pwd . " / anon " . $Annony . " / receive " . $Recy . " / publish " . $Pub . " / secret " . $Secret ;
-	}
+		
+}
 ?>
 	
 	
