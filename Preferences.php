@@ -53,7 +53,7 @@ ob_start();
 		$Secret='"Yes" checked';
 	}	
 	echo '<tr>';
-	echo '<td class="bl90i" width="70%">If you want to keep secret the scores you record then tick this box</td>';
+	echo '<td class="bl90i" width="70%">If you want scores that you record kept secret then tick this box</td>';
 	echo '<td class="bk200"><input type="checkbox" id="secret" value=' . $Secret . '></td>';
 	echo '</tr>';	
 	
@@ -63,7 +63,7 @@ ob_start();
 		$Anon='"Yes" checked';
 	}	
 	echo '<tr>';
-	echo '<td class="bl90i" width="70%">If you want to record scores anonymously (you will not be able to see your performance but your scores will count toward the averages) then tick this box</td>';
+	echo '<td class="bl90i" width="70%">If you want to record your scores anonymously (you will not be able to see your performance but your scores will count toward the averages) tick this box</td>';
 	echo '<td class="bk200"><input type="checkbox" id="anon" value=' . $Anon . '></td>';
 	echo '</tr>';
 
@@ -73,7 +73,7 @@ ob_start();
 		$Receive='"Yes" checked';
 	}	
 	echo '<tr>';
-	echo '<td class="bl90i" width="70%">To receive emails about other peoples recorded results tick this box</td>';
+	echo '<td class="bl90i" width="70%">To receive emails about results other people have recorded tick this box</td>';
 	echo '<td class="bk200"><input type="checkbox" id="receive" value=' . $Receive . '></td>';
 	echo '</tr>';	
 
