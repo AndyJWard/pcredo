@@ -44,25 +44,25 @@ $chk2 = "Y";
 	
 	
 	
-	$query = 'INSERT INTO results ("Wid", "Qid", "Pid", "Result") VALUES (' . $id . ', 1, ' . $pid . ', "' . $chk1 . '"';
+	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 1, ' . $pid . ', "' . $chk1 . '")';
 echo $query . '<br>'; 
-	$query = 'INSERT INTO results ' . $id . ', 2, ' . $pid . ', ' . $chk2;
+	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 2, ' . $pid . ', "' . $chk2 . '")';
 echo $query . '<br>';
-	$query = 'INSERT INTO results ' . $id . ', 3, ' . $pid . ', ' . $_POST['check3'];
+	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 3, ' . $pid . ', "' . $chk3 . '")';
 echo $query . '<br>';
-	$query = 'INSERT INTO results ' . $id . ', 4, ' . $pid . ', ' . $_POST['check4'];
+	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 4, ' . $pid . ', "' . $chk4 . '")';
 echo $query . '<br>';
-	$query = 'INSERT INTO results ' . $id . ', 5, ' . $pid . ', ' . $_POST['check5'];
+	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 5, ' . $pid . ', "' . $chk5 . '")';
 echo $query . '<br>';
-	$query = 'INSERT INTO results ' . $id . ', 6, ' . $pid . ', ' . $_POST['check6'];
+	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 6, ' . $pid . ', "' . $chk6 . '")';
 echo $query . '<br>';
-	$query = 'INSERT INTO results ' . $id . ', 7, ' . $pid . ', ' . $_POST['check7'];
+	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 7, ' . $pid . ', "' . $chk7 . '")';
 echo $query . '<br>';
-	$query = 'INSERT INTO results ' . $id . ', 8, ' . $pid . ', ' . $_POST['check8'];
+	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 8, ' . $pid . ', "' . $chk8 . '")';
 echo $query . '<br>';
-	$query = 'INSERT INTO results ' . $id . ', 9, ' . $pid . ', ' . $_POST['check9'];
+	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 9, ' . $pid . ', "' . $chk9 . '")';
 echo $query . '<br>';
-	$query = 'INSERT INTO results ' . $id . ', 10, ' . $pid . ', ' . $_POST['check10'];
+	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 10, ' . $pid . ', "' . $chk10 . '")';
 echo $query . '<br>';
 	
 //	mysql_query($query);
