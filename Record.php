@@ -54,8 +54,8 @@ echo "<table width=\"900\">";
 		echo "<tr><td class=\"bk70\" style=\"width:4%\">" . $row['qnum'] . "</td>";
 		echo "<td class=\"bk70\" style=\"width:96%\">" . $row['qquestion'] . "</td></tr>";
 		$chkname = "check" . $row['qnum'];
-		echo "<tr><td class=\"r70\"><input type=\"checkbox\" id=\"" . $chkname . "\" checked></td>";
-		echo "<td class=\"bl80\" style=\"width:96%\">" . $row['qanswer'] . "</td></tr>";
+		echo '<tr><td class="r70"><input type="checkbox" name="' . $chkname . '" checked></td>';
+		echo '<td class="bl80" style="width:96%">' . $row['qanswer'] . '</td></tr>';
 		}
 
 	echo "</table>";
