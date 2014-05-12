@@ -44,7 +44,7 @@ $chk2 = "Y";
 	
 	
 	
-	$query = 'INSERT INTO results ' . $id . ', 1, ' . $pid . ', ' . $chk1;
+	$query = 'INSERT INTO results ("Wid", "Qid", "Pid", "Result") VALUES (' . $id . ', 1, ' . $pid . ', "' . $chk1 . '"';
 echo $query . '<br>'; 
 	$query = 'INSERT INTO results ' . $id . ', 2, ' . $pid . ', ' . $chk2;
 echo $query . '<br>';
