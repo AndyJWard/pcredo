@@ -96,7 +96,7 @@ else {
 	echo '</tr>';	
 
 	echo '<tr>';
-	echo '<td class="bl90i" width="70%">Do you want to send emails about other people about your recorded results</td>';
+	echo '<td class="bl90i" width="70%">Do you want to send emails to other people about your recorded results</td>';
 if($Pub=="Y") {
 	echo '<td class="bk100"><input type="radio" name="publish" value="Y" checked="checked"/>Yes';		
 }

@@ -29,9 +29,9 @@ ob_start();
 	
 	$id = htmlspecialchars($_GET["Question"]);
 	
-	$per_res = mysql_query("SELECT * FROM persons WHERE pid =" . $pid . " limit 1");
+	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
-	$Who = $per_row['pname'];
+	$Who = $per_row['Pname'];
 	
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $id . " limit 1";
 
@@ -65,7 +65,7 @@ echo "<tr></tr>";
 echo "<td width=\"20%\" class=\"bk90i\"><a href=\"SaveResults.php\">Save you results</a></td>";
 echo "<td width=\"30%\" class=\"bk90i\"><a href=\"ViewResults.php\">View the recorded results</a></td>";
 echo "<td width=\"30%\" class=\"bk90i\"><a href=\"Preferences.php?Pid=" . $pid . "&Question=" . $id . "\">Change your recording preferences</a></td>";
-echo "<td width=\"15%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
+echo "<td width=\"20%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
 echo "<tr></tr></table>";
 echo "</nav>";
 
