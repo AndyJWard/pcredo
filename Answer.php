@@ -39,7 +39,8 @@ echo "<table width=\"1200\"><tr align=\"left\" style=\"font-size: 15; color: blu
 echo "<td>" .  $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
 // Top line on page -  left side is date and title ... right side is person selector;
 
-	$per_res = mysql_query("SELECT * FROM persons ORDER BY Fieldtype, pname");
+//	$per_res = mysql_query("SELECT * FROM persons ORDER BY Fieldtype, Pname");
+	$per_res = mysql_query("SELECT * FROM persons ORDER BY Pname");
 	// find the names for the select field (to save results);
 
 
@@ -66,7 +67,7 @@ echo "<tr></tr>";
  echo "<option value=\"0\">Record Your Score";
  while ($per_row = mysql_fetch_array($per_res))
  		{			
- 		echo "<option value=\"" . $per_row['pid'] . "\">" . $per_row['pname'] . "</option>";
+ 		echo "<option value=\"" . $per_row['Pid'] . "\">" . $per_row['Pname'] . "</option>";
  		}
  echo "</td>";
  echo "<td width=\"30%\" class=\"bk90i\"><a href=\"ViewResults.php\">View the recorded results</a></td>";
