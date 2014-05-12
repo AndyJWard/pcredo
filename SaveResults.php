@@ -42,8 +42,46 @@ if ($_POST['check2']) {
 $chk2 = "Y";
 }
 	
+$chk3="N";
+if ($_POST['check3']) {
+$chk3 = "Y";
+}
 	
+$chk4="N";
+if ($_POST['check4']) {
+$chk4 = "Y";
+}	
 	
+$chk5="N";
+if ($_POST['check5']) {
+$chk5 = "Y";
+}
+	
+$chk6="N";
+if ($_POST['check6']) {
+$chk6 = "Y";
+}
+
+$chk7="N";
+if ($_POST['check7']) {
+$chk7 = "Y";
+}
+	
+$chk8="N";
+if ($_POST['check8']) {
+$chk8 = "Y";
+}
+
+$chk9="N";
+if ($_POST['check9']) {
+$chk9 = "Y";
+}
+	
+$chk10="N";
+if ($_POST['check10']) {
+$chk10 = "Y";
+}
+
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 1, ' . $pid . ', "' . $chk1 . '")';
 echo $query . '<br>'; 
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 2, ' . $pid . ', "' . $chk2 . '")';
@@ -68,8 +106,8 @@ echo $query . '<br>';
 //	mysql_query($query);
 	mysql_close();
 
-foreach ($_POST as $key => $value)
- echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+//foreach ($_POST as $key => $value)
+// echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 		
 }
 ?>
