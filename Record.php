@@ -63,10 +63,10 @@ echo "<table width=\"900\">";
 echo "<nav>";
 echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
-echo "<td width=\"20%\" class=\"bk90i\"><input type="submit" value="Save" name="save"></td>";
-echo "<td width=\"30%\" class=\"bk90i\"><a href=\"ViewResults.php\">View the recorded results</a></td>";
-echo "<td width=\"30%\" class=\"bk90i\"><a href=\"Preferences.php?Pid=" . $pid . "&Question=" . $id . "\">Change your recording preferences</a></td>";
-echo "<td width=\"20%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
+echo '<td width="20%" class="bk90i"><input type="submit" value="Save" name="save"></td>';
+echo '<td width="30%" class="bk90i"><a href="ViewResults.php">View the recorded results</a></td>';
+echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
+echo '<td width="20%" class="bk90i"><a href="index.php">Home</a></td>';
 echo "<tr></tr></table>";
 echo "</nav>";
 
