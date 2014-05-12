@@ -61,15 +61,15 @@ echo "<table width=\"1200\">";
 echo "<nav>";
 echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
-// echo "<td width=\"40%\" align=\"center\">";
-// echo "<select style=\"width: 170px;\" id=\"WHO\" size=\"1\" onchange=\"who_change(" . $id . ")\">";
-// echo "<option value=\"0\">Record Your Score";
-// while ($per_row = mysql_fetch_array($per_res))
-// 		{			
-// 		echo "<option value=\"" . $per_row['pid'] . "\">" . $per_row['pname'] . "</option>";
-// 		}
-// echo "</td>";
-// echo "<td width=\"30%\" class=\"bk90i\"><a href=\"ViewResults.php\">View the recorded results</a></td>";
+ echo "<td width=\"40%\" align=\"center\">";
+ echo "<select style=\"width: 170px;\" id=\"WHO\" size=\"1\" onchange=\"who_change(" . $id . ")\">";
+ echo "<option value=\"0\">Record Your Score";
+ while ($per_row = mysql_fetch_array($per_res))
+ 		{			
+ 		echo "<option value=\"" . $per_row['pid'] . "\">" . $per_row['pname'] . "</option>";
+ 		}
+ echo "</td>";
+ echo "<td width=\"30%\" class=\"bk90i\"><a href=\"ViewResults.php\">View the recorded results</a></td>";
 echo "<td width=\"15%\" class=\"bk90i\"><a href=\"Question.php?question=" . $id . "\">Questions</a></td>";
 echo "<td width=\"15%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
 echo "<tr></tr></table>";
