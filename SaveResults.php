@@ -31,27 +31,39 @@ if (isset($_POST['save'])){
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
 //	$id = htmlspecialchars($_GET["Question"]);
+
+$chk1="N";
+if ($_POST['check1']) {
+$chk1 = "Y";
+}
 	
-	$query = 'INSERT INTO results ' . $id . ', 1, ' . $pid . ', ' . $_POST['check1'];
-echo $query; 
-	$query = 'INSERT INTO results ' . $id . ', 2, ' . $pid . ', ' . $_POST['check2'];
-echo $query;
+$chk2="N";
+if ($_POST['check2']) {
+$chk2 = "Y";
+}
+	
+	
+	
+	$query = 'INSERT INTO results ' . $id . ', 1, ' . $pid . ', ' . $chk1;
+echo $query . '<br>'; 
+	$query = 'INSERT INTO results ' . $id . ', 2, ' . $pid . ', ' . $chk2;
+echo $query . '<br>';
 	$query = 'INSERT INTO results ' . $id . ', 3, ' . $pid . ', ' . $_POST['check3'];
-echo $query;
+echo $query . '<br>';
 	$query = 'INSERT INTO results ' . $id . ', 4, ' . $pid . ', ' . $_POST['check4'];
-echo $query;
+echo $query . '<br>';
 	$query = 'INSERT INTO results ' . $id . ', 5, ' . $pid . ', ' . $_POST['check5'];
-echo $query;
+echo $query . '<br>';
 	$query = 'INSERT INTO results ' . $id . ', 6, ' . $pid . ', ' . $_POST['check6'];
-echo $query;
+echo $query . '<br>';
 	$query = 'INSERT INTO results ' . $id . ', 7, ' . $pid . ', ' . $_POST['check7'];
-echo $query;
+echo $query . '<br>';
 	$query = 'INSERT INTO results ' . $id . ', 8, ' . $pid . ', ' . $_POST['check8'];
-echo $query;
+echo $query . '<br>';
 	$query = 'INSERT INTO results ' . $id . ', 9, ' . $pid . ', ' . $_POST['check9'];
-echo $query;
+echo $query . '<br>';
 	$query = 'INSERT INTO results ' . $id . ', 10, ' . $pid . ', ' . $_POST['check10'];
-echo $query;
+echo $query . '<br>';
 	
 //	mysql_query($query);
 	mysql_close();
