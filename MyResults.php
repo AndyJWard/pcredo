@@ -33,8 +33,8 @@ $id = htmlspecialchars($_GET["Question"]);
 
 	while ($row = mysql_fetch_array($res))
 		{
-		echo "<tr><td class=\"bk\" style=\"width:4%\">" . $row['wrelease'] . "</td>";
-		echo "<td class=\"bk\" style=\"width:4%\">" . $row['wsubject'] . "</td>";
+		echo "<tr><td class=\"bk\" style=\"width:10%\">" . $row['wrelease'] . "</td>";
+		echo "<td class=\"bk\" style=\"width:40%\">" . $row['wsubject'] . "</td>";
 		echo "<td></td><td class=\"bl\">" . $row['Correct'] . "</td></tr>";
 		}
 
