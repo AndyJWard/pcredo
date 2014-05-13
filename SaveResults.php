@@ -83,27 +83,26 @@ $chk10 = "Y";
 }
 
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 1, ' . $pid . ', "' . $chk1 . '")';
-echo $query . '<br>'; 
+mysql_query($query); 
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 2, ' . $pid . ', "' . $chk2 . '")';
-echo $query . '<br>';
+mysql_query($query);
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 3, ' . $pid . ', "' . $chk3 . '")';
-echo $query . '<br>';
+mysql_query($query);
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 4, ' . $pid . ', "' . $chk4 . '")';
-echo $query . '<br>';
+mysql_query($query);
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 5, ' . $pid . ', "' . $chk5 . '")';
-echo $query . '<br>';
+mysql_query($query);
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 6, ' . $pid . ', "' . $chk6 . '")';
-echo $query . '<br>';
+mysql_query($query);
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 7, ' . $pid . ', "' . $chk7 . '")';
-echo $query . '<br>';
+mysql_query($query);
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 8, ' . $pid . ', "' . $chk8 . '")';
-echo $query . '<br>';
+mysql_query($query);
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 9, ' . $pid . ', "' . $chk9 . '")';
-echo $query . '<br>';
+mysql_query($query);
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 10, ' . $pid . ', "' . $chk10 . '")';
-echo $query . '<br>';
-	
-//	mysql_query($query);
+mysql_query($query);
+
 	mysql_close();
 
 //foreach ($_POST as $key => $value)
