@@ -16,11 +16,6 @@ ob_start();
 $pid = htmlspecialchars($_GET["Pid"]);
 $id = htmlspecialchars($_GET["Question"]);
 
-if (isset($_POST['cancel'])) {
-	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
-}
-if (isset($_POST['save'])){
-		
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
 	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
@@ -32,7 +27,9 @@ if (isset($_POST['save'])){
 
 	echo "<table width=\"1200\">";
 
-	$res = mysql_query('SELECT * FROM results WHERE Pid=' . $pid . " ORDER BY Wid, Qid");
+	$query = 'SELECT * FROM results WHERE Pid=' . $pid . ' ORDER BY Wid, Qid';
+	
+	$res = mysql_query($query);
 
 	while ($row = mysql_fetch_array($res))
 		{
@@ -48,7 +45,6 @@ if (isset($_POST['save'])){
 //foreach ($_POST as $key => $value)
 // echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 		
-}
 ?>
 	
 	
