@@ -30,10 +30,6 @@ if (isset($_POST['save'])){
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-	$query = 'SELECT * FROM results WHERE Pid=' . $pid
-
-	mysql_query($query);
-
 	echo "<table width=\"1200\">";
 
 	$res = mysql_query('SELECT * FROM results WHERE Pid=' . $pid . " ORDER BY Wid, Qid");
