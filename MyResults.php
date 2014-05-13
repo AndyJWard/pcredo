@@ -27,15 +27,15 @@ $id = htmlspecialchars($_GET["Question"]);
 
 	echo "<table width=\"1200\">";
 
-	$query = 'SELECT wrelease, wsubject ,COUNT(Result) AS Correct FROM results LEFT JOIN weeks ON results.Wid=weeks.wid  WHERE Result="Y" AND Pid=' . $pid . ' GROUP BY Pid, Wid';
+	$query = 'SELECT wrelease, wsubject, COUNT(Result) AS Correct FROM results LEFT JOIN weeks ON results.Wid=weeks.wid  WHERE Result="Y" AND Pid=' . $pid . ' GROUP BY Pid, results.Wid';
 	
 	$res = mysql_query($query);
 
 	while ($row = mysql_fetch_array($res))
 		{
-		echo "<tr><td class=\"bk\" style=\"width:4%\">" . $row['Wid'] . "</td>";
-		echo "<td class=\"bk\" style=\"width:4%\">" . $row['Correct'] . "</td>";
-		echo "<td></td><td class=\"bl\">" . $row['Result'] . "</td></tr>";
+		echo "<tr><td class=\"bk\" style=\"width:4%\">" . $row['wrelease'] . "</td>";
+		echo "<td class=\"bk\" style=\"width:4%\">" . $row['wsubject'] . "</td>";
+		echo "<td></td><td class=\"bl\">" . $row['Correct'] . "</td></tr>";
 		}
 
 	echo "</table>";
