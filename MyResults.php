@@ -9,7 +9,7 @@ ob_start();
 </head>
 <header>
 <link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Save Results</title>
+<title>My Results</title>
 </header>
 
 <?php
@@ -27,7 +27,7 @@ $id = htmlspecialchars($_GET["Question"]);
 
 	echo "<table width=\"1200\">";
 
-	$query = 'SELECT * FROM results WHERE Pid=' . $pid . ' ORDER BY Wid, Qid';
+	$query = 'SELECT Wid,COUNT(Result) FROM results  WHERE Result="Y" AND Pid=' . $pid . ' GROUP BY Pid, Wid';
 	
 	$res = mysql_query($query);
 
