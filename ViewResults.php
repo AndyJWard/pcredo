@@ -28,8 +28,11 @@ $id = htmlspecialchars($_GET["Question"]);
 
 //	$id = htmlspecialchars($_GET["Question"]);
 
+echo 'pre-query </br>';
 
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
+	
+echo 'pre-fetch </br>';
 	$per_row = mysql_fetch_assoc($per_res);
 
 echo "<nav>";
@@ -40,6 +43,8 @@ $hid = '<type="hidden" ';
 if($per_row['Password') {
 	$hid = 'Enter your password <type="input" ';
 }
+
+echo 'hid' . $hid . ' </br>';
 
 echo '<td width="20%" class="bk90i">' . $hid . 'name="password"></td>';
 echo '<td width="30%" class="bk90i"><a href="ViewResults.php?Pid=' . $pid . '&Question=' . $id . '">View the recorded results</a></td>';
