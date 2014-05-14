@@ -37,12 +37,12 @@ echo "<nav>";
 echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
 
-$hid = '<type="hidden" '; 
+$pwd = '<td width="20%" class="bk90i"></td>'; 
 if($per_row['Password']) {
-	$hid = 'Enter your password <type="input" ';
+	$pwd = '<td width="20%" class="bk90i">Enter your password <type="input" name="password"></td>';
 }
 
-echo '<td width="20%" class="bk90i">' . $hid . 'name="password"></td>';
+echo $pwd;
 echo '<td width="30%" class="bk90i"><a href="ViewResults.php?Pid=' . $pid . '&Question=' . $id . '">View the recorded results</a></td>';
 echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
 echo '<td width="10%" class="bk90i"><a href="index.php">Home</a></td>';
