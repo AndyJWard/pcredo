@@ -29,11 +29,8 @@ $id = htmlspecialchars($_GET["Question"]);
 //	$id = htmlspecialchars($_GET["Question"]);
 
 
-	$query = 'SELECT * FROM persons WHERE Pid=' . $pid ;
-		
-	mysql_query($query);
-
-	$per_row = mysql_fetch_assoc($query);
+	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
+	$per_row = mysql_fetch_assoc($per_res);
 
 echo "<nav>";
 echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
