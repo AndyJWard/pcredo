@@ -13,6 +13,7 @@ ob_start();
 </header>
 
 <?php
+
 $pid = htmlspecialchars($_GET["Pid"]);
 $id = htmlspecialchars($_GET["Question"]);
 
@@ -34,18 +35,16 @@ $id = htmlspecialchars($_GET["Question"]);
 
 	$per_row = mysql_fetch_assoc($query);
 
-	mysql_close();
-
 echo "<nav>";
 echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
 
-$hid=' type="hidden" '; 
+$hid = '<type="hidden" '; 
 if($per_row['Password') {
-	$hid = ' type="input" ';
+	$hid = 'Enter your password <type="input" ';
 }
 
-echo '<td width="20%" class="bk90i">Enter your password <input ' . $hid . 'name="password"></td>';
+echo '<td width="20%" class="bk90i">' . $hid . 'name="password"></td>';
 echo '<td width="30%" class="bk90i"><a href="ViewResults.php?Pid=' . $pid . '&Question=' . $id . '">View the recorded results</a></td>';
 echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
 echo '<td width="10%" class="bk90i"><a href="index.php">Home</a></td>';
@@ -55,7 +54,7 @@ echo "</nav>";
 
 //foreach ($_POST as $key => $value)
 // echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-		
+	mysql_close();		
 		
 ?>
 	
