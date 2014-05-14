@@ -40,7 +40,7 @@ echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 12; color: blac
 echo "<tr></tr>";
 
 $hid = '<type="hidden" '; 
-if($per_row['Password') {
+if($per_row['Password']) {
 	$hid = 'Enter your password <type="input" ';
 }
 
