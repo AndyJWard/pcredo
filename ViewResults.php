@@ -16,11 +16,6 @@ ob_start();
 $pid = htmlspecialchars($_GET["Pid"]);
 $id = htmlspecialchars($_GET["Question"]);
 
-if (isset($_POST['cancel'])) {
-	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
-}
-if (isset($_POST['save'])){
-		
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
 	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
@@ -62,9 +57,6 @@ echo "</nav>";
 // echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 		
 		
-		
-		
-}
 ?>
 	
 	
