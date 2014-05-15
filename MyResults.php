@@ -27,16 +27,16 @@ $pid = htmlspecialchars($_GET["Pid"]);
 	
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");	
 	$per_row = mysql_fetch_assoc($per_res);
-	if($per_row['Password']=="") {
-		$Display="Y";		// assume we can display no password is on file
-	}
-	else {
+	if($per_row['Password']>'') {		// test if there is a password
 		if (isset($_POST['password'])){
-			$Display="N";		// can't display beacuse no password supplied or no match
+			$Display="N";		// can't display beacause no password no match
 			if ($per_row['Password']==$_POST(['password']) {
 				$Display="Y";		// password matches so OK to display
 			}		 
 		}
+	}
+	else {
+		$Display="Y";		// we can display as no password is on file
 	}
 
 if($Display=="Y") {

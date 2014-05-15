@@ -39,11 +39,11 @@ echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 12; color: blac
 echo "<tr></tr>";
 
  
-if($per_row['Password']=="") {
-	$pwdtxt1 = '<tr><td width="20%" class="bk90i"><a href="MyResults.php?Pid='. $pid . '"></td>';
+if($per_row['Password']>'') {
+	$pwdtxt1 = '<tr><td width="20%" class="bk90i">Enter your password <input type="text" name="password" size="40"></td><input type="submit" value="Look at my results">';
 }
 else {
-	$pwdtxt1 = '<tr><td width="20%" class="bk90i">Enter your password <input type="text" name="password" size="40"></td><input type="submit" value="Look at my results">';
+	$pwdtxt1 = '<tr><td width="20%" class="bk90i"><a href="MyResults.php?Pid='. $pid . '"></td>';	
 }
 
 echo $pwdtxt1;
