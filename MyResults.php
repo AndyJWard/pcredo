@@ -1,6 +1,7 @@
 <?php 	
 header('Content-Type: text/html; charset=utf-8');
 ob_start();
+error_reporting(22527);
 ?>
 <head>
 <!--[if lt IE 9]>
