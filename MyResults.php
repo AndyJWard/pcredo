@@ -15,7 +15,7 @@ ob_start();
 <?php
 
 $pid = htmlspecialchars($_GET["Pid"]);
-
+echo $pid . '<br>';
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
 	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
@@ -27,6 +27,9 @@ $pid = htmlspecialchars($_GET["Pid"]);
 	
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");	
 	$per_row = mysql_fetch_assoc($per_res);
+	
+echo 'password from db ' . $per_row['Password'] . '</br>';	
+	
 	if($per_row['Password']>'') {		// test if there is a password
 		if (isset($_POST['password'])){
 			$Display="N";		// can't display beacause no password no match
@@ -38,6 +41,8 @@ $pid = htmlspecialchars($_GET["Pid"]);
 	else {
 		$Display="Y";		// we can display as no password is on file
 	}
+
+echo $Display
 
 if($Display=="Y") {
 
