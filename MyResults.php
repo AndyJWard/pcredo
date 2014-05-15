@@ -1,7 +1,6 @@
 <?php 	
 header('Content-Type: text/html; charset=utf-8');
 ob_start();
-error_reporting(22527);
 ?>
 <head>
 <!--[if lt IE 9]>
@@ -14,7 +13,7 @@ error_reporting(22527);
 </header>
 
 <?php
-
+error_reporting(22527);
 $pid = htmlspecialchars($_GET["Pid"]);
 echo $pid . '<br>';
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
@@ -30,19 +29,20 @@ echo $pid . '<br>';
 	$per_row = mysql_fetch_assoc($per_res);
 	
 echo 'password from db ' . $per_row['Password'] . '</br>';	
-	
-	if($per_row['Password']>'') {		// test if there is a password
+	// test if there is a password
+	if($per_row['Password']>'') {		
 		if (isset($_POST['password'])){
-			$Display="N";		// can't display beacause no password no match
+			// can't display beacause no password no match
+			$Display="N";		
 			if ($per_row['Password']==$_POST(['password']) {
-				$Display="Y";		// password matches so OK to display
+				// password matches so OK to display
+				$Display="Y";		
 			}		 
 		}
 	}
 	else {
 		$Display="Y";		// we can display as no password is on file
 	}
-
 echo $Display
 
 if($Display=="Y") {
