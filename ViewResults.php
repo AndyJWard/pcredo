@@ -40,11 +40,11 @@ echo "<tr></tr>";
 
 $pwdtxt1 = '<td width="20%" class="bk90i"><a href="MyResults.php?Pid='. $pid . '"></td>'; 
 if($per_row['Password']) {
-	$pwdtxt1 = '<td width="20%" class="bk90i">Enter your password <input type="text" name="password" size="40"></td>';
+	$pwdtxt1 = '<td width="20%" class="bk90i">Enter your password <input type="text" name="password" size="40"></td><input type="submit" value="Look at my results">';
 }
 
 echo $pwdtxt1;
-echo '<td width="30%" class="bk90i"><a href="ViewResults.php?Pid=' . $pid . '&Question=' . $id . '">View the recorded results</a></td>';
+echo '<td width="30%" class="bk90i"><a href="ViewResults.php?Pid=' . $pid . '&Question=' . $id . '">View all results</a></td>';
 echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
 echo '<td width="10%" class="bk90i"><a href="index.php">Home</a></td>';
 echo "<tr></tr></table>";
