@@ -39,7 +39,7 @@ echo "<tr></tr>";
 
 $pwd = '<td width="20%" class="bk90i"></td>'; 
 if($per_row['Password']) {
-	$pwd = '<td width="20%" class="bk90i">Enter your password <type="input" name="password"></td>';
+	$pwd = '<td width="20%" class="bk90i">Enter your password <input type="text" name="password" size="40"></td>';
 }
 
 echo $pwd;
