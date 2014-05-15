@@ -13,8 +13,8 @@ ob_start();
 </header>
 
 <?php
+
 $pid = htmlspecialchars($_GET["Pid"]);
-$id = htmlspecialchars($_GET["Question"]);
 
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
@@ -24,6 +24,22 @@ $id = htmlspecialchars($_GET["Question"]);
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
+	
+	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");	
+	$per_row = mysql_fetch_assoc($per_res);
+	if($per_row['Password']=="") {
+		$Display="Y";		// assume we can display no password is on file
+	}
+	else {
+		if (isset($_POST['password'])){
+			$Display="N";		// can't display beacuse no password supplied or no match
+			if ($per_row['Password']==$_POST(['password']) {
+				$Display="Y";		// password matches so OK to display
+			}		 
+		}
+	}
+
+if($Display=="Y") {
 
 	echo "<table width=\"1200\">";
 
@@ -33,13 +49,16 @@ $id = htmlspecialchars($_GET["Question"]);
 
 	while ($row = mysql_fetch_array($res))
 		{
-		echo "<tr><td class=\"bk\" style=\"width:10%\">" . $row['wrelease'] . "</td>";
-		echo "<td class=\"bk\" style=\"width:40%\">" . $row['wsubject'] . "</td>";
-		echo "<td></td><td class=\"bl\">" . $row['Correct'] . "</td></tr>";
+		echo '<tr><td class="bk80" style="width:10%">' . $row['wrelease'] . '</td>';
+		echo '<td class="bk80" style="width:40%">' . $row['wsubject'] . '</td>';
+		echo '<td></td><td class="bl80">' . $row['Correct'] . '</td></tr>';
 		}
 
 	echo "</table>";
-
+}
+else {
+	echo 'Sorry wrong password';
+}
 	mysql_close();
 	
 //foreach ($_POST as $key => $value)

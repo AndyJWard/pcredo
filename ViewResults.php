@@ -34,15 +34,16 @@ $id = htmlspecialchars($_GET["Question"]);
 	$per_row = mysql_fetch_assoc($per_res);
 
 echo "<nav>";
+echo '<form action="MyResults.php" method="post">';
 echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
 
-$pwd = '<td width="20%" class="bk90i"></td>'; 
+$pwdtxt1 = '<td width="20%" class="bk90i"><a href="MyResults.php?Pid='. $pid . '"></td>'; 
 if($per_row['Password']) {
-	$pwd = '<td width="20%" class="bk90i">Enter your password <input type="text" name="password" size="40"></td>';
+	$pwdtxt1 = '<td width="20%" class="bk90i">Enter your password <input type="text" name="password" size="40"></td>';
 }
 
-echo $pwd;
+echo $pwdtxt1;
 echo '<td width="30%" class="bk90i"><a href="ViewResults.php?Pid=' . $pid . '&Question=' . $id . '">View the recorded results</a></td>';
 echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
 echo '<td width="10%" class="bk90i"><a href="index.php">Home</a></td>';
