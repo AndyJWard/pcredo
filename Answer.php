@@ -59,6 +59,8 @@ echo "<table width=\"1200\">";
 
 	echo "</table>";
 
+$test=1;
+if($test==1) {
 echo "<nav>";
 echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
@@ -75,7 +77,17 @@ echo "<td width=\"15%\" class=\"bk90i\"><a href=\"Question.php?question=" . $id 
 echo "<td width=\"15%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
 echo "<tr></tr></table>";
 echo "</nav>";
-
+}
+else {
+echo "<nav>";
+echo "<table width=\"200\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
+echo "<tr></tr>";
+echo "<td width=\"50%\"><a href=\"index.php\">Home</a></td>";
+echo "<td width=\"50%\"><a href=\"Question.php?question=" . $id . "\">Back</a></td>";
+echo "<tr></tr></table>";
+echo "</nav>";
+}	
+	
 	mysql_close();
 
 ?>
