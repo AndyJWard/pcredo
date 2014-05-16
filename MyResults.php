@@ -27,10 +27,11 @@ $pid = htmlspecialchars($_GET["Pid"]);
 	
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");	
 	$per_row = mysql_fetch_assoc($per_res);
-	foreach ($_POST as $key => $value) {
-		echo "Field " . htmlspecialchars($key) . " is " . htmlspecialchars($value) . "<br>";
-	}
-
+	
+//	foreach ($_POST as $key => $value) {
+//		echo "Field " . htmlspecialchars($key) . " is " . htmlspecialchars($value) . "<br>";
+//	}
+print_r($_POST);
 	// test if there is a password
 //	if is_null($per_row['Password']) {
 //		$Display="Y";
