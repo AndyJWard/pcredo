@@ -34,7 +34,7 @@ $id = htmlspecialchars($_GET["Question"]);
 	$per_row = mysql_fetch_assoc($per_res);
 
 echo "<nav>";
-echo '<form action="MyResults.php" method="post">';
+echo '<form action="MyResults.php?Pid=' . $pid . '" method="post">';
 echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 echo "<tr></tr>";
 
