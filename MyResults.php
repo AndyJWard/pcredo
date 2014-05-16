@@ -45,7 +45,7 @@ echo 'password from db ' . $per_row['Password'] . '</br>';
 		// we can display as no password is on file
 	}
 echo "Display " . $Display;
-
+$Display="Y";
 if($Display=="Y") {
 
 	echo "<table width=\"1200\">";
