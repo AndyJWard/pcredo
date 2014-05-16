@@ -36,7 +36,7 @@ $pid = htmlspecialchars($_GET["Pid"]);
 			$Display="N";		
 //			if ($per_row['Password']==$_POST(['password']) {
 				// password matches so OK to display
-				$Display="Y";		
+//				$Display="Y";		
 //			}		 
 //		}
 	}
