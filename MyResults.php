@@ -40,10 +40,10 @@ echo 'password from db ' . $per_row['Password'] . '</br>';
 //			}		 
 //		}
 	}
-//	else {
+	else {
 		$Display="Y";
 		// we can display as no password is on file
-//	}
+	}
 echo "Display " . $Display;
 $Display="Y";
 if($Display=="Y") {
