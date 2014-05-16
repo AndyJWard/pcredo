@@ -26,9 +26,6 @@ $id = htmlspecialchars($_GET["Question"]);
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-//	$id = htmlspecialchars($_GET["Question"]);
-
-
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	
 	$per_row = mysql_fetch_assoc($per_res);
