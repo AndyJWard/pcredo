@@ -60,7 +60,7 @@ echo "<table width=\"1200\">";
 	echo "</table>";
 
 $test = htmlspecialchars($_GET["test"]);
-echo $test;
+echo 'test - ' . $test . '<br>';
 if($test==1) {
 echo "<nav>";
 echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
