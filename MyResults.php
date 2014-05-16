@@ -30,19 +30,19 @@ $pid = htmlspecialchars($_GET["Pid"]);
 	
 
 	// test if there is a password
-	if($per_row['Password']>'') {		
-//		if (isset($_POST['password'])) {
-			// can't display beacause no password no match
-			$Display="N";		
-//			if ($per_row['Password']==$_POST(['password']) {
-				// password matches so OK to display
-//				$Display="Y";		
-//			}		 
-//		}
+	if is_null($per_row['Password']) {
+		$Display="Y";
+		// we can display as no password is on file		
 	}
 	else {
-		$Display="Y";
-		// we can display as no password is on file
+		$Display = "N";
+		// password is required - start by assuming it is wrong or missing
+		if (isset($_POST['password'])) {
+			if ($per_row['Password']==$_POST(['password']) {
+				// password matches so OK to display
+				$Display="Y";		
+			}		 
+		}
 	}
 
 $Display="Y";
