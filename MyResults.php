@@ -37,12 +37,12 @@ $pid = htmlspecialchars($_GET["Pid"]);
 	else {
 		$Display = "N";
 		// password is required - start by assuming it is wrong or missing
-		if (isset($_POST['password'])) {
-			if ($per_row['Password']==$_POST(['password']) {
+//		if (isset($_POST['password'])) {
+//			if ($per_row['Password']==$_POST(['password']) {
 				// password matches so OK to display
-				$Display="Y";		
-			}		 
-		}
+//				$Display="Y";		
+//			}		 
+//		}
 	}
 
 $Display="Y";
