@@ -31,19 +31,19 @@ echo $pid . '<br>';
 echo 'password from db ' . $per_row['Password'] . '</br>';	
 	// test if there is a password
 	if($per_row['Password']>'') {		
-		if (isset($_POST['password'])){
+//		if (isset($_POST['password'])) {
 			// can't display beacause no password no match
 			$Display="N";		
-			if ($per_row['Password']==$_POST(['password']) {
+//			if ($per_row['Password']==$_POST(['password']) {
 				// password matches so OK to display
 				$Display="Y";		
-			}		 
-		}
+//			}		 
+//		}
 	}
-	else {
+//	else {
 		$Display="Y";
 		// we can display as no password is on file
-	}
+//	}
 echo "Display " . $Display;
 $Display="Y";
 if($Display=="Y") {
