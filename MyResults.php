@@ -13,7 +13,7 @@ ob_start();
 </header>
 
 <?php
-error_reporting(22527);
+
 $pid = htmlspecialchars($_GET["Pid"]);
 echo $pid . '<br>';
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
@@ -30,20 +30,20 @@ echo $pid . '<br>';
 	
 echo 'password from db ' . $per_row['Password'] . '</br>';	
 	// test if there is a password
-	if($per_row['Password']>'') {		
-		if (isset($_POST['password'])){
+//	if($per_row['Password']>'') {		
+//		if (isset($_POST['password'])){
 			// can't display beacause no password no match
-			$Display="N";		
-			if ($per_row['Password']==$_POST(['password']) {
+//			$Display="N";		
+//			if ($per_row['Password']==$_POST(['password']) {
 				// password matches so OK to display
-				$Display="Y";		
-			}		 
-		}
-	}
-	else {
-		$Display="Y";		// we can display as no password is on file
-	}
-echo $Display
+//				$Display="Y";		
+//			}		 
+//		}
+//	}
+//	else {
+//		$Display="Y";		// we can display as no password is on file
+//	}
+echo "Display " . $Display;
 
 if($Display=="Y") {
 
