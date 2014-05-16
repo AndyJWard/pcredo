@@ -31,22 +31,21 @@ $pid = htmlspecialchars($_GET["Pid"]);
 //	foreach ($_POST as $key => $value) {
 //		echo "Field " . htmlspecialchars($key) . " is " . htmlspecialchars($value) . "<br>";
 //	}
-print_r($_POST);
+
 	// test if there is a password
-//	if is_null($per_row['Password']) {
-//		$Display="Y";
+	if is_null($per_row['Password']) {
+		$Display="Y";
 		// we can display as no password is on file		
-//	}
-//	else {
-//		$Display = "N";
+	}
+	else {
+		$Display = "N";
 		// password is required - start by assuming it is wrong or missing
-//		if (isset($_POST['password'])) {
+		if (isset($_POST['password'])) {
 //			if ($per_row['Password']==$_POST(['password']) {
 				// password matches so OK to display
-//				$Display="Y";		
-//			}		 
-//		}
-//	}
+				$Display="Y";		
+		}
+	}
 
 $Display="Y";
 
