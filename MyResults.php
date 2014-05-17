@@ -28,9 +28,9 @@ $pid = htmlspecialchars($_GET["Pid"]);
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");	
 	$per_row = mysql_fetch_assoc($per_res);
 	
-	foreach ($_POST as $key => $value) {
-		echo "Field " . htmlspecialchars($key) . " is " . htmlspecialchars($value) . "<br>";
-	}
+//	foreach ($_POST as $key => $value) {
+//		echo "Field " . htmlspecialchars($key) . " is " . htmlspecialchars($value) . "<br>";
+//	}
 
 	$Display="Y";									// assume passwords match or that none is required
 
@@ -61,7 +61,7 @@ if($Display=="Y") {
 	echo "</table>";
 }
 else {
-	echo 'Sorry wrong password';
+	echo 'Sorry wrong password <a href="ViewResults.php?Pid=' . $pid . '">Back</a>';
 }
 	mysql_close();
 	
