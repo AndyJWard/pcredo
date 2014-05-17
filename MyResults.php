@@ -45,19 +45,18 @@ $pid = htmlspecialchars($_GET["Pid"]);
 
 if($Display=="Y") {
 
-	echo "<table width=\"1200\">";
-
 	$query = 'SELECT DATE_FORMAT(wrelease, "%d %b %Y") AS rdat, wsubject, COUNT(Result) AS Correct FROM results LEFT JOIN weeks ON results.Wid=weeks.wid  WHERE Result="Y" AND Pid=' . $pid . ' GROUP BY Pid, results.Wid';
 	
 	$res = mysql_query($query);
 	
 	if(mysql_num_rows($res) == 0) {
-		echo '<tr><td class="bk90">Sorry, you have no results recorded</td><td class="bk100"><a href="ViewResults.php?Pid=' . $pid . '">Back</a></td></tr>';
+		echo '<tr><td class="bk90i" style="width:20%">Sorry, you have no results recorded</td><td class="bk100"><a href="ViewResults.php?Pid=' . $pid . '">   Back</a></td></tr>';
 	}
 	else {
+		echo "<table width=\"1200\">";
 		while ($row = mysql_fetch_array($res))
 			{
-			echo '<tr><td class="bk80" style="width:10%">' . $row['rdat'] . '</td>';
+			echo '<tr><td class="bk80" style="width:20%">' . $row['rdat'] . '</td>';
 			echo '<td class="bk80" style="width:40%">' . $row['wsubject'] . '</td>';
 			echo '<td></td><td class="bl80">' . $row['Correct'] . '</td></tr>';
 			}
@@ -66,7 +65,7 @@ if($Display=="Y") {
 	echo "</table>";
 }
 else {
-	echo '<tr><td class="bk90">Sorry, wrong password</td><td class="bk100"><a href="ViewResults.php?Pid=' . $pid . '">Back</a></td></tr>';
+	echo '<tr><td class="bk90">Sorry, wrong password</td><td class="bk100"><a href="ViewResults.php?Pid=' . $pid . '">   Back</a></td></tr>';
 }
 	mysql_close();
 	
