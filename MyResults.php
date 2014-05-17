@@ -50,7 +50,9 @@ if($Display=="Y") {
 	$res = mysql_query($query);
 	
 	if(mysql_num_rows($res) == 0) {
-		echo '<tr><td class="bk90i" style="width:20%">Sorry, you have no results recorded</td><td class="bk100"><a href="ViewResults.php?Pid=' . $pid . '">   Back</a></td></tr>';
+		echo '<table>';
+		echo '<tr><td class="bk90i" style="width:20%">Sorry, you have no results recorded   </td><td class="bk100"><a href="ViewResults.php?Pid=' . $pid . '">Back</a></td></tr>';
+		echo '</table>';
 	}
 	else {
 		echo "<table width=\"1200\">";
@@ -60,12 +62,14 @@ if($Display=="Y") {
 			echo '<td class="bk80" style="width:40%">' . $row['wsubject'] . '</td>';
 			echo '<td></td><td class="bl80">' . $row['Correct'] . '</td></tr>';
 			}
+		echo "</table>";
 	}
-	
-	echo "</table>";
+
 }
 else {
+	echo '<table>';
 	echo '<tr><td class="bk90">Sorry, wrong password</td><td class="bk100"><a href="ViewResults.php?Pid=' . $pid . '">   Back</a></td></tr>';
+	echo '</table>';
 }
 	mysql_close();
 	
