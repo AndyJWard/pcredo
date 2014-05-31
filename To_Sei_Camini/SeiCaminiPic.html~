@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="SeiCamini.css">
+<title>To Sei Camini Picture</title>
+<script language="JavaScript" type="text/javascript" >
+
+function GetUrlValue(VarSearch)
+{
+var SearchString = window.location.search.substring(1);
+var VariableArray = SearchString.split('&');
+   for(var i = 0; i < VariableArray.length; i++){
+        var KeyValuePair = VariableArray[i].split('=');
+        if(KeyValuePair[0] == VarSearch){
+            return KeyValuePair[1];
+        }
+    }
+}
+
+</script>
+
+
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+
+
+var $picurl = GetUrlValue('pic');
+
+var $prevpic = parseInt($picurl)-1;
+var $nextpic = parseInt($picurl)+1;
+
+$next_pic_strg = 'SeiCaminiPic.html?pic=' + $nextpic;
+if ($picurl=='20') {
+	$next_pic_strg ='Falconara to Sei Camini.html'; 
+}
+
+
+$prev_pic_strg = 'SeiCaminiPic.html?pic=' + $prevpic;
+if ($picurl=='1') {
+	$prev_pic_strg ='Falconara to Sei Camini.html'; 	
+}
+
+
+
+
+document.write('<img src=images/' + $picurl + '.png>');
+
+
+document.write('<table>');
+document.write('<td width="33%" class="bk90i"><a href="' + $prev_pic_strg + '">Previous</a></td>');
+document.write('<td width="33%" class="bk90i"><a href="Falconara to Sei Camini.html">Home</a></td>');
+document.write('<td width="33%" class="bk90i"><a href="' + $next_pic_strg  + '">Next</a></td>');
+
+
+</script>
+
+</body>
+
+</html>
