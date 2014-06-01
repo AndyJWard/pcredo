@@ -26,10 +26,8 @@ ob_start();
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
 	$pid = htmlspecialchars($_GET["Pid"]);
-	echo '<input type="hidden" name="Pid" value ="' . $pid . '">';
 		
 	$id = htmlspecialchars($_GET["Question"]);
-	echo '<input type="hidden" name="Qid" value ="' . $id . '">';
 	
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
@@ -42,6 +40,8 @@ ob_start();
 	$wk_row = mysql_fetch_array($wk_res);
 	
 echo '<form action="PostSubmit.php" method="post">';
+	echo '<input type="hidden" name="Pid" value ="' . $pid . '">';
+	echo '<input type="hidden" name="Qid" value ="' . $id . '">';
 //echo '<form action="SaveResults.php?Question=' . $id . '&Pid='. $pid . '" method="post" action="#">';
 echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 15; color: blue;\">";
 echo "<td width=\"70%\" align=\"left\">" .  $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
