@@ -17,8 +17,8 @@ ob_start();
 $pid = htmlspecialchars($_GET["Pid"]);
 $qid = htmlspecialchars($_GET["Question"]);
 
-echo '<input type="hidden" name="Pid" value="' . $pid . '"/>';
-echo '<input type="hidden" name="Qid" value="' . $qid . '"/>';
+echo '<input type="hidden" name="Pid" value=' . $pid . '>';
+echo '<input type="hidden" name="Qid" value=' . $qid . '>';
 
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
