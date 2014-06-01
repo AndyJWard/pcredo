@@ -20,6 +20,7 @@ foreach ($_POST as $key => $value)
 foreach ($_POST as $key => $value)
 	$pars = $pars . htmlspecialchars($key) . '=' . htmlspecialchars($value);
 	
+	$pars = $_POST;
 	echo $pars;
 
 if (isset($_POST["save"])) {
@@ -38,19 +39,19 @@ $url = "Preferences.php" ;
 	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 	$response = curl_exec( $ch );
 	curl_close($ch);
-	return false;
 
-$pid = htmlspecialchars($_GET["Pid"]);
 
-if (isset($_POST['cancel'])) {
-	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
-}
+//$pid = htmlspecialchars($_GET["Pid"]);
+
+//if (isset($_POST['cancel'])) {
+//	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
+//}
 //if (isset($_POST['save'])){
 		
-	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
-	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
-	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
-	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
+//	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
+//	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
+//	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
+//	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
 
 //	$id = htmlspecialchars($_GET["Question"]);
 	
