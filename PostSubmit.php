@@ -21,6 +21,7 @@ $encoded = '';
 foreach($_POST as $name => $value) {
  	$encoded .= urlencode($name) . '=' . urlencode($value) . '&';
 	}
+$encoded = substr($encoded, 0, strlen($encoded)-1);	// chop off trailing &
 
 if (isset($_POST["save"])) {
 	$url = "SaveResults.php" ;
@@ -33,13 +34,23 @@ if (isset($_POST["CRP"])) {
 echo $url;
 
 	$ch = curl_init($url);
-	$encoded = substr($encoded, 0, strlen($encoded)-1);	// chop off trailing &
-	curl_setopt($ch, CURLOPT_POSTFIELDS,  $encoded);
-	curl_setopt($ch, CURLOPT_HEADER, 0);
-	curl_setopt($ch, CURLOPT_POST, 1);
-	if(curl_errno($ch)) {
-		echo 'curl error:' . curl_error($ch);	
-		}
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($_POST));
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HEADER, false);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+	$response = curl_exec($ch);
+// $response will contain the output of the OTHER website processing the form submission
+// you can echo it to the screen or do your own processing if you want.
+	echo $response;
+
+//	$ch = curl_init($url);
+//	curl_setopt($ch, CURLOPT_POSTFIELDS,  $encoded);
+//	curl_setopt($ch, CURLOPT_HEADER, 0);
+//	curl_setopt($ch, CURLOPT_POST, 1);
+//	if(curl_errno($ch)) {
+//		echo 'curl error:' . curl_error($ch);	
+//		}
 	curl_close($ch);
 
 
