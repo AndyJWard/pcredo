@@ -16,6 +16,19 @@ ob_start();
 
 <?php
 
+function submitting($whereto,$Qidy,$Pidy) {
+	$url =  $whereto;
+	$pars = 'Pid=' .$Pidy . 'Qid=' . $Qidy;
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_POST,1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $pars);
+	curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+	curl_setopt( $ch, CURLOPT_HEADER, 0);
+	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+	$response = curl_exec( $ch );
+	curl_close($ch);
+}
+
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
 	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
@@ -26,8 +39,10 @@ ob_start();
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
 	$pid = htmlspecialchars($_GET["Pid"]);
-	
+	echo '<input type="hidden" name="Pid" value ="' . $pid . '">';
+		
 	$id = htmlspecialchars($_GET["Question"]);
+	echo '<input type="hidden" name="Qid" value ="' . $id . '">';
 	
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
@@ -65,7 +80,8 @@ echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: blac
 echo "<tr></tr>";
 echo '<td width="20%" class="bk90i"><input type="submit" value="Save" name="save"></td>';
 echo '<td width="30%" class="bk90i"><a href="ViewResults.php">View the recorded results</a></td>';
-echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
+//echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
+echo '<td width="30%" class="bk90i"><input type"submit" value="Change Recording Preferences" onclick="submitting(Preferences.php,' . $id . ',' . $pid . ');return false">;
 echo '<td width="20%" class="bk90i"><a href="index.php">Home</a></td>';
 echo "<tr></tr></table>";
 echo "</nav>";
