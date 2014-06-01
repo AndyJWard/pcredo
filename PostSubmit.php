@@ -19,16 +19,16 @@ foreach ($_POST as $key => $value)
 
 $encoded = '';
 foreach($_POST as $name => $value) {
-  $encoded .= urlencode($name) . '=' . urlencode($value) . '&';
-}
+ 	$encoded .= urlencode($name) . '=' . urlencode($value) . '&';
+	}
 
 if (isset($_POST["save"])) {
-$url = "SaveResults.php" ;
-}		
+	$url = "SaveResults.php" ;
+	}		
 
 if (isset($_POST["CRP"])) {
-$url = "Preferences.php" ;
-}		
+	$url = "Preferences.php" ;
+	}		
 
 echo $url;
 
@@ -37,7 +37,9 @@ echo $url;
 	curl_setopt($ch, CURLOPT_POSTFIELDS,  $encoded);
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_POST, 1);
-	curl_exec($ch);
+	if(curl_errno($ch)) {
+		echo 'curl error:' . curl_error($ch);	
+		}
 	curl_close($ch);
 
 
