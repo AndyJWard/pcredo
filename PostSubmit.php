@@ -17,13 +17,13 @@ ob_start();
 foreach ($_POST as $key => $value)
   echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
+foreach ($_POST as $key => $value)
 	$pars = $pars . htmlspecialchars($key) . '=' . htmlspecialchars($value);
 	
 	echo $pars;
 
 if (isset($_POST["save"])) {
 $url = "SaveResults.php" ;
-foreach ($_POST as $key => $value)
 }		
 
 if (isset($_POST["CRP"])) {
