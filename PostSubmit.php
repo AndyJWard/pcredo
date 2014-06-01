@@ -17,14 +17,10 @@ ob_start();
 foreach ($_POST as $key => $value)
   echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
-foreach ($_POST as $key => $value)
-	$pars = $pars . htmlspecialchars($key) . '=' . htmlspecialchars($value);
-	
+$encoded = '';
 foreach($_POST as $name => $value) {
   $encoded .= urlencode($name) . '=' . urlencode($value) . '&';
 }
-
-	echo $pars;
 
 if (isset($_POST["save"])) {
 $url = "SaveResults.php" ;
@@ -33,6 +29,8 @@ $url = "SaveResults.php" ;
 if (isset($_POST["CRP"])) {
 $url = "Preferences.php" ;
 }		
+
+echo $url;
 
 	$ch = curl_init($url);
 	$encoded = substr($encoded, 0, strlen($encoded)-1);	// chop off trailing &
