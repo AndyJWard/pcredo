@@ -20,7 +20,10 @@ foreach ($_POST as $key => $value)
 foreach ($_POST as $key => $value)
 	$pars = $pars . htmlspecialchars($key) . '=' . htmlspecialchars($value);
 	
-	$pars = $_POST;
+foreach($_POST as $name => $value) {
+  $encoded .= urlencode($name) . '=' . urlencode($value) . '&';
+}
+
 	echo $pars;
 
 if (isset($_POST["save"])) {
@@ -31,14 +34,12 @@ if (isset($_POST["CRP"])) {
 $url = "Preferences.php" ;
 }		
 
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL,$url);
-	curl_setopt($ch, CURLOPT_POST,1);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $pars);
-	curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
-	curl_setopt( $ch, CURLOPT_HEADER, 0);
-	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
-	$response = curl_exec( $ch );
+	$ch = curl_init($url);
+	$encoded = substr($encoded, 0, strlen($encoded)-1);	// chop off trailing &
+	curl_setopt($ch, CURLOPT_POSTFIELDS,  $encoded);
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_exec($ch);
 	curl_close($ch);
 
 
