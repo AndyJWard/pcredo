@@ -41,7 +41,8 @@ ob_start();
 
 	$wk_row = mysql_fetch_array($wk_res);
 	
-echo '<form action="SaveResults.php?Question=' . $id . '&Pid='. $pid . '" method="post" action="#">';
+echo '<form action="send2pref('. $id . ',' . $pid . ')">';
+//echo '<form action="SaveResults.php?Question=' . $id . '&Pid='. $pid . '" method="post" action="#">';
 echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 15; color: blue;\">";
 echo "<td width=\"70%\" align=\"left\">" .  $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
 echo "<td class=\"r120\" width=\"30%\">Results for " . $Who . "</td></tr>";
