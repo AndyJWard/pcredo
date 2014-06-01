@@ -14,14 +14,8 @@ ob_start();
 
 <?php
 
-foreach ($_POST as $key => $value)
-  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-
-$encoded = '';
-foreach($_POST as $name => $value) {
- 	$encoded .= urlencode($name) . '=' . urlencode($value) . '&';
-	}
-$encoded = substr($encoded, 0, strlen($encoded)-1);	// chop off trailing &
+//foreach ($_POST as $key => $value)
+//  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
 if (isset($_POST["save"])) {
 	$url = "http://pcredo-fridayquiz.rhcloud.com/SaveResults.php" ;
@@ -31,7 +25,7 @@ if (isset($_POST["CRP"])) {
 	$url = "http://pcredo-fridayquiz.rhcloud.com/Preferences.php" ;
 	}		
 
-echo $url;
+//echo $url;
 
 	$ch = curl_init($url);
 	curl_setopt($ch, CURLOPT_POST, true);
