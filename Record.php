@@ -68,7 +68,7 @@ echo "<tr></tr>";
 echo '<td width="20%" class="bk90i"><input type="submit" value="Save" name="save"></td>';
 echo '<td width="30%" class="bk90i"><a href="ViewResults.php">View the recorded results</a></td>';
 //echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
-echo '<td width="30%" class="bk90i"><input type="submit" value="Change Recording Preferences" onclick="submitting(Preferences.php,' . $id . ',' . $pid . ');return false">';
+echo '<td width="30%" class="bk90i"><input type="submit" value="Change Recording Preferences" onclick="send2pref(' . $id . ',' . $pid . ');return false">';
 echo '<td width="20%" class="bk90i"><a href="index.php">Home</a></td>';
 echo "<tr></tr></table>";
 echo "</nav>";
@@ -76,8 +76,8 @@ echo "</nav>";
 	mysql_close();
 	
 	
-function submitting($whereto,$Qidy,$Pidy) {
-	$url =  $whereto;
+function send2pref($Qidy,$Pidy) {
+	$url =  'Preferences.php';
 	$pars = 'Pid=' .$Pidy . 'Qid=' . $Qidy;
 	$ch = curl_init($url);
 	curl_setopt($ch, CURLOPT_POST,1);
