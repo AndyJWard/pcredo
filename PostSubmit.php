@@ -16,17 +16,27 @@ ob_start();
 
 foreach ($_POST as $key => $value)
   echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-		
 
-	$url =  'Preferences.php';
-	$pars = 'Pid=' .$Pidy . 'Qid=' . $Qidy;
+	$pars = $pars . htmlspecialchars($key) . '=' . htmlspecialchars($value);
+	
+	echo $pars;
+
+if (isset($_POST["save"])) {
+$url = "SaveResults.php" ;
+foreach ($_POST as $key => $value)
+}		
+
+if (isset($_POST["CRP"])) {
+$url = "Preferences.php" ;
+}		
+
 	$ch = curl_init($url);
 	curl_setopt($ch, CURLOPT_POST,1);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $pars);
 	curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
 	curl_setopt( $ch, CURLOPT_HEADER, 0);
 	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
-//	$response = curl_exec( $ch );
+	$response = curl_exec( $ch );
 	curl_close($ch);
 	return false;
 
