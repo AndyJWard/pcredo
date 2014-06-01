@@ -24,11 +24,11 @@ foreach($_POST as $name => $value) {
 $encoded = substr($encoded, 0, strlen($encoded)-1);	// chop off trailing &
 
 if (isset($_POST["save"])) {
-	$url = "/SaveResults.php" ;
+	$url = "http://pcredo-fridayquiz.rhcloud.com/SaveResults.php" ;
 	}		
 
 if (isset($_POST["CRP"])) {
-	$url = "/Preferences.php" ;
+	$url = "http://pcredo-fridayquiz.rhcloud.com/Preferences.php" ;
 	}		
 
 echo $url;
