@@ -23,12 +23,12 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-foreach ($_POST as $key => $value)
-  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+//foreach ($_POST as $key => $value)
+//  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
   
 //	$pid = htmlspecialchars($_GET["Pid"]);
 	$pid = $_POST['Pid'];
-	echo $pid;
+//	echo $pid;
 	
 	// $id = htmlspecialchars($_GET["Question"]);
 	
@@ -44,8 +44,8 @@ foreach ($_POST as $key => $value)
 	$Sec = $per_row['Secret'];
 	
 	
-	echo '<form action="SavePreferences.php?Pid='. $pid . '" method="post">';
-	
+	echo '<form action="SavePreferences.php" method="post">';
+	echo '<input type="hidden" name="Pid" value="' . $pid . '">";
 	echo '<table>';
 	echo '<tr><td class="bl"><input type="text" value="' . $Who . '" name="person" size="50"></td></tr>';
 	echo '<tr></tr><tr>';

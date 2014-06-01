@@ -13,7 +13,9 @@ ob_start();
 </header>
 
 <?php
-$pid = htmlspecialchars($_GET["Pid"]);
+// $pid = htmlspecialchars($_GET["Pid"]);
+
+	$pid = $_POST['Pid'];
 
 if (isset($_POST['cancel'])) {
 	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
@@ -58,8 +60,8 @@ if (isset($_POST['save'])){
 	mysql_query($query);
 	mysql_close();
 
-foreach ($_POST as $key => $value)
- echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+// foreach ($_POST as $key => $value)
+//  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 		
 }
 ?>
