@@ -14,6 +14,9 @@ ob_start();
 
 <?php
 
+foreach ($_POST as $key => $value)
+  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+		
 
 	$url =  'Preferences.php';
 	$pars = 'Pid=' .$Pidy . 'Qid=' . $Qidy;
@@ -26,9 +29,6 @@ ob_start();
 //	$response = curl_exec( $ch );
 	curl_close($ch);
 	return false;
-
-
-
 
 $pid = htmlspecialchars($_GET["Pid"]);
 
@@ -46,9 +46,7 @@ if (isset($_POST['cancel'])) {
 	
 
 
- foreach ($_POST as $key => $value)
-  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-		
+ 
 //}
 ?>
 	
