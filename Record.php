@@ -41,7 +41,7 @@ ob_start();
 
 	$wk_row = mysql_fetch_array($wk_res);
 	
-echo '<form action="send2pref('. $id . ',' . $pid . ')">';
+echo '<form action="PostSubmit.php" method="post">';
 //echo '<form action="SaveResults.php?Question=' . $id . '&Pid='. $pid . '" method="post" action="#">';
 echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 15; color: blue;\">";
 echo "<td width=\"70%\" align=\"left\">" .  $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
@@ -69,26 +69,13 @@ echo "<tr></tr>";
 echo '<td width="20%" class="bk90i"><input type="submit" value="Save" name="save"></td>';
 echo '<td width="30%" class="bk90i"><a href="ViewResults.php">View the recorded results</a></td>';
 //echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
-echo '<td width="30%" class="bk90i"><input type="submit" value="Change Recording Preferences" onclick="return send2pref(' . $id . ',' . $pid . ')">';
+echo '<td width="30%" class="bk90i"><input type="submit" value="Change Recording Preferences" name="CRP">';
 echo '<td width="20%" class="bk90i"><a href="index.php">Home</a></td>';
 echo "<tr></tr></table>";
 echo "</nav>";
 
 	mysql_close();
 	
-	
-function send2pref($Qidy,$Pidy) {
-	$url =  'Preferences.php';
-	$pars = 'Pid=' .$Pidy . 'Qid=' . $Qidy;
-	$ch = curl_init($url);
-	curl_setopt($ch, CURLOPT_POST,1);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $pars);
-	curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
-	curl_setopt( $ch, CURLOPT_HEADER, 0);
-	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
-	$response = curl_exec( $ch );
-	curl_close($ch);
-	return false;
-}
+
 
 ?>
