@@ -25,9 +25,10 @@ ob_start();
 
 foreach ($_POST as $key => $value)
   echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+  
 //	$pid = htmlspecialchars($_GET["Pid"]);
-	$pid = $_POST('Pid');
-	
+	$pid = $_POST['Pid'];
+	echo $pid;
 	
 	// $id = htmlspecialchars($_GET["Question"]);
 	
