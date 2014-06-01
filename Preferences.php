@@ -45,7 +45,7 @@ ob_start();
 	
 	
 	echo '<form action="SavePreferences.php" method="post">';
-	echo '<input type="hidden" name="Pid" value="' . $pid . '">";
+	echo '<input type="hidden" name="Pid" value="' . $pid . '">';
 	echo '<table>';
 	echo '<tr><td class="bl"><input type="text" value="' . $Who . '" name="person" size="50"></td></tr>';
 	echo '<tr></tr><tr>';
