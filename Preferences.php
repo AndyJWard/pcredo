@@ -23,7 +23,9 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-	$pid = htmlspecialchars($_GET["Pid"]);
+//	$pid = htmlspecialchars($_GET["Pid"]);
+	$pid = $_POST('Pid');
+	
 	
 	// $id = htmlspecialchars($_GET["Question"]);
 	

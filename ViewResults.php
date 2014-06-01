@@ -15,7 +15,10 @@ ob_start();
 <?php
 
 $pid = htmlspecialchars($_GET["Pid"]);
-$id = htmlspecialchars($_GET["Question"]);
+$qid = htmlspecialchars($_GET["Question"]);
+
+echo '<input type="hidden" name="Pid" value="' & $pid & '"/>';
+echo '<input type="hidden" name="Qid" value="' & $qid & '"/>';
 
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
@@ -44,8 +47,8 @@ else {
 }
 
 echo $pwdtxt1;
-echo '<td width="30%" class="bk90i"><a href="ViewResults.php?Pid=' . $pid . '&Question=' . $id . '">View all results</a></td>';
-echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
+echo '<td width="30%" class="bk90i"><a href="ViewResults.php?Pid=' . $pid . '&Question=' . $qid . '">View all results</a></td>';
+echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $qid . '">Change your recording preferences</a></td>';
 echo '<td width="10%" class="bk90i"><a href="index.php">Home</a></td></tr>';
 echo "<tr></tr></table>";
 echo "</nav>";
