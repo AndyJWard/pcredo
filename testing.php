@@ -55,7 +55,7 @@ function redirect_post() {
     $('<form />')
       .hide()
       .attr({ method : "post" })
-      .attr({ action : "ViewResults.php"})
+      .attr({ action : "http://pcredo-fridayquiz.rhcloud.com/ViewResults.php"})
       .append($('<input />')
         .attr("type","hidden")
         .attr({ "name" : "Pid" })
