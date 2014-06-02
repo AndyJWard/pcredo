@@ -27,7 +27,7 @@ ob_start();
 	echo '<table width="800"><tr align="left" style="font-size: 12; color: black;">';
 	echo '<tr></tr>';
  	echo '<td width="40%" align="center">';
- 	echo '<select style="width: 170px;" id="WHO" size="1" onchange="redirect_post(\"ViewResults.php\")">';
+ 	echo '<select style="width: 170px;" id="WHO" size="1" onchange="redirect_post(ViewResults.php)">';
  	echo '<option value="0">Record Your Score';
 	$per_res = mysql_query("SELECT * FROM persons ORDER BY Pname");
 // find the names for the select field (to save results);
