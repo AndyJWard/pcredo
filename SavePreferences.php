@@ -62,6 +62,10 @@ if (isset($_POST['save'])){
 
 // foreach ($_POST as $key => $value)
 //  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+
+echo '<body>';
+echo 'Where to now?</br><a href="ViewResults.php"View all results</a>';
+echo '</body>';
 		
 }
 ?>
