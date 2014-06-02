@@ -45,7 +45,7 @@ ob_start();
 <script type="text/javascript" >
 
 var myRedirect = function(redirectUrl) {
-var form = $('<form action="' + redirectUrl + '" method="post">' +
+var form = $('<form action="http://pcredo-fridayquiz.rhcloud.com/ViewResults.php" method="post">' +
 '<input type="hidden" name="Pid" value="12" />' +
 '</form>');
 $('body').append(form);
