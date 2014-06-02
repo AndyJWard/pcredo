@@ -49,7 +49,7 @@ function who_change(id) {
 	var redirect = "Record.php?Question=" + id + "&Pid=" + pid;
 	document.location.href = redirect;
 }
-function redirect_post(url) {
+function redirect_post() {
 	var x=document.getElementById("WHO");
 	var pid=x.value;
     $('<form />')
