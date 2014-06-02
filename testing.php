@@ -27,7 +27,7 @@ ob_start();
 	echo '<table width="800"><tr align="left" style="font-size: 12; color: black;">';
 	echo '<tr></tr>';
  	echo '<td width="40%" align="center">';
- 	echo '<select style="width: 170px;" id="WHO" size="1" onchange="redirect_post()">';
+ 	echo '<select style="width: 170px;" id="WHO" size="1" onchange="myRedirect">';
  	echo '<option value="0">Record Your Score';
 	$per_res = mysql_query("SELECT * FROM persons ORDER BY Pname");
 // find the names for the select field (to save results);
@@ -43,6 +43,17 @@ ob_start();
 	echo "</nav>";
 ?>
 <script type="text/javascript" >
+
+var myRedirect = function(redirectUrl) {
+var form = $('<form action="' + redirectUrl + '" method="post">' +
+'<input type="hidden" name="Pid" value="12" />' +
+'</form>');
+$('body').append(form);
+$(form).submit();
+};
+
+
+
 function who_change(id) {
 	var x=document.getElementById("WHO");
 	var pid=x.value;
