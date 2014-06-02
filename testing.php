@@ -51,15 +51,14 @@ function who_change(id) {
 }
 function redirect_post() {
 	var x=document.getElementById("WHO");
-	var pid=x.value;
     $('<form />')
       .hide()
-      .attr({ method : "post" })
+      .attr({ method : "POST" })
       .attr({ action : "http://pcredo-fridayquiz.rhcloud.com/ViewResults.php"})
       .append($('<input />')
         .attr("type","hidden")
         .attr({ "name" : "Pid" })
-        .val(pid)
+        .val(x.value)
       )
       .append('<input type="submit" />')
       .appendTo($("body"))
