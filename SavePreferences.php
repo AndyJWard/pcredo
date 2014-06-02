@@ -64,7 +64,7 @@ if (isset($_POST['save'])){
 //  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
 echo '<body>';
-echo 'Where to now?</br><a href="ViewResults.php"View all results</a>';
+echo 'Where to now?</br><a href="ViewResults.php">View all results</a>';
 echo '</body>';
 		
 }
