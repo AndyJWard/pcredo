@@ -28,9 +28,9 @@ ob_start();
 foreach ($_POST as $key => $value)
   echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
-	$pid = $_POST["Pid"];
+//	$pid = $_POST["Pid"];
 		
-	$qid = $_POST["Qid"]);
+//	$qid = $_POST["Qid"]);
 		
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
