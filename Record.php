@@ -25,8 +25,8 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-//foreach ($_POST as $key => $value)
-//  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+foreach ($_POST as $key => $value)
+	echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
 	$pid = $_POST["Pid"];
 	$qid = $_POST["Qid"];
@@ -38,6 +38,7 @@ ob_start();
 	$Who = $per_row['Pname'];
 	
 if ($per_row["Password"]==$pwd) {
+	
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $qid . " limit 1";
 
 	$wk_res = mysql_query($query);
@@ -57,7 +58,6 @@ if ($per_row["Password"]==$pwd) {
 
 	echo "<table width=\"900\">";
 	$res = mysql_query("SELECT * FROM questions WHERE qwid = " . $qid . " ORDER BY qnum");
-
 	while ($row = mysql_fetch_array($res))
 		{
 		echo "<tr><td class=\"bk70\" style=\"width:4%\">" . $row['qnum'] . "</td>";
@@ -66,7 +66,6 @@ if ($per_row["Password"]==$pwd) {
 		echo '<tr><td class="r70"><input type="checkbox" name="' . $chkname . '" checked></td>';
 		echo '<td class="bl80" style="width:96%">' . $row['qanswer'] . '</td></tr>';
 		}
-
 	echo "</table>";
 
 	echo "<nav>";
@@ -80,14 +79,16 @@ if ($per_row["Password"]==$pwd) {
 	echo "<tr></tr></table>";
 	echo "</nav>";
 }
+
 else {
 	echo "<nav>";
 	echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 	echo "<tr></tr>";
 	echo '<td  width="30%" class="bk90i"> Sorry, wrong password.</td>' 
-echo '<td width="20%" class="bk90i"><a href="index.php">Home</a></td>';
+	echo '<td width="20%" class="bk90i"><a href="index.php">Home</a></td>';
+	echo "<tr></tr></table>";
+	echo "</nav>";
+}
 	mysql_close();
-
-
 
 ?>
