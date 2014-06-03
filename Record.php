@@ -25,8 +25,8 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-//foreach ($_POST as $key => $value)
-//  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+foreach ($_POST as $key => $value)
+  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
 	$pid = $_POST["Pid"];
 	$qid = $_POST["Qid"];
