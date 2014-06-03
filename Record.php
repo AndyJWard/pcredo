@@ -30,7 +30,9 @@ foreach ($_POST as $key => $value)
 
 	// $pid = $_POST["Pid"];
 		
-	$id = $_POST["Qid"]);
+//	$id = $_POST["Qid"]);
+	$id = 12;
+	$pid = 84;
 	
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
