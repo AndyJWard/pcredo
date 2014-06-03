@@ -25,35 +25,36 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-foreach ($_POST as $key => $value)
-  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+//foreach ($_POST as $key => $value)
+//  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
-//	$pid = $_POST["Pid"];
-		
-//	$qid = $_POST["Qid"]);
+	$pid = $_POST["Pid"];
+	$qid = $_POST["Qid"];
+	$pwd = $_POST["Pwd"];
 		
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
+
 	$Who = $per_row['Pname'];
-	
+if($per_row["Password"]==$pwd) {
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $qid . " limit 1";
 
 	$wk_res = mysql_query($query);
 
 	$wk_row = mysql_fetch_array($wk_res);
 	
-echo '<form action="PostSubmit.php" method="post">';
+	echo '<form action="PostSubmit.php" method="post">';
 
 	echo '<input type="hidden" name="Pid" value ="' . $pid . '">';
 	echo '<input type="hidden" name="Qid" value ="' . $qid . '">';
 //echo '<form action="SaveResults.php?Question=' . $id . '&Pid='. $pid . '" method="post" action="#">';
-echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 15; color: blue;\">";
-echo "<td width=\"70%\" align=\"left\">" .  $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
-echo "<td class=\"r120\" width=\"30%\">Results for " . $Who . "</td></tr>";
-echo "<tr><td colspan=\"1\" style=\"font-family: arial, helvetica, sans-serif; font-size: 12; color: maroon; width:30%\" align=\"left\">" . $wk_row['wcomment'] . "</td></tr>";
-echo "</table>";
+	echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 15; color: blue;\">";
+	echo "<td width=\"70%\" align=\"left\">" .  $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
+	echo "<td class=\"r120\" width=\"30%\">Results for " . $Who . "</td></tr>";
+	echo "<tr><td colspan=\"1\" style=\"font-family: arial, helvetica, sans-serif; font-size: 12; color: maroon; width:30%\" align=\"left\">" . $wk_row['wcomment'] . "</td></tr>";
+	echo "</table>";
 
-echo "<table width=\"900\">";
+	echo "<table width=\"900\">";
 	$res = mysql_query("SELECT * FROM questions WHERE qwid = " . $qid . " ORDER BY qnum");
 
 	while ($row = mysql_fetch_array($res))
@@ -67,19 +68,20 @@ echo "<table width=\"900\">";
 
 	echo "</table>";
 
-echo "<nav>";
-echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
-echo "<tr></tr>";
-echo '<td width="20%" class="bk90i"><input type="submit" value="Save" name="save"></td>';
-echo '<td width="30%" class="bk90i"><a href="ViewResults.php">View the recorded results</a></td>';
+	echo "<nav>";
+	echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
+	echo "<tr></tr>";
+	echo '<td width="20%" class="bk90i"><input type="submit" value="Save" name="save"></td>';
+	echo '<td width="30%" class="bk90i"><a href="ViewResults.php">View the recorded results</a></td>';
 //echo '<td width="30%" class="bk90i"><a href="Preferences.php?Pid=' . $pid . '&Question=' . $id . '">Change your recording preferences</a></td>';
-echo '<td width="30%" class="bk90i"><input type="submit" value="Change Recording Preferences" name="CRP">';
-echo '<td width="20%" class="bk90i"><a href="index.php">Home</a></td>';
-echo "<tr></tr></table>";
-echo "</nav>";
+	echo '<td width="30%" class="bk90i"><input type="submit" value="Change Recording Preferences" name="CRP">';
+	echo '<td width="20%" class="bk90i"><a href="index.php">Home</a></td>';
+	echo "<tr></tr></table>";
+	echo "</nav>";
+}
 
 	mysql_close();
-	
+
 
 
 ?>
