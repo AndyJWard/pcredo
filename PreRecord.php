@@ -35,7 +35,7 @@ ob_start();
 	echo "<tr></tr>";
  	echo "<td width=\"40%\" align=\"center\">";
  	
- 	echo '<select style="width: 170px;" id="WHO" name="WHO" size="1")>';
+ 	echo '<select style="width: 170px;" id="WHO" name="Pid" size="1")>';
  	
  	echo "<option value=\"0\">Choose Your Name";
 	$per_res = mysql_query("SELECT * FROM persons ORDER BY Pname");

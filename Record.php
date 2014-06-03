@@ -28,17 +28,15 @@ ob_start();
 foreach ($_POST as $key => $value)
   echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
-	// $pid = $_POST["Pid"];
+	$pid = $_POST["Pid"];
 		
-//	$id = $_POST["Qid"]);
-	$id = 12;
-	$pid = 84;
-	
+	$qid = $_POST["Qid"]);
+		
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
 	$Who = $per_row['Pname'];
 	
-	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $id . " limit 1";
+	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $qid . " limit 1";
 
 	$wk_res = mysql_query($query);
 
@@ -47,7 +45,7 @@ foreach ($_POST as $key => $value)
 echo '<form action="PostSubmit.php" method="post">';
 
 	echo '<input type="hidden" name="Pid" value ="' . $pid . '">';
-	echo '<input type="hidden" name="Qid" value ="' . $id . '">';
+	echo '<input type="hidden" name="Qid" value ="' . $qid . '">';
 //echo '<form action="SaveResults.php?Question=' . $id . '&Pid='. $pid . '" method="post" action="#">';
 echo "<table width=\"900\"><tr align=\"left\" style=\"font-size: 15; color: blue;\">";
 echo "<td width=\"70%\" align=\"left\">" .  $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
@@ -56,7 +54,7 @@ echo "<tr><td colspan=\"1\" style=\"font-family: arial, helvetica, sans-serif; f
 echo "</table>";
 
 echo "<table width=\"900\">";
-	$res = mysql_query("SELECT * FROM questions WHERE qwid = " . $id . " ORDER BY qnum");
+	$res = mysql_query("SELECT * FROM questions WHERE qwid = " . $qid . " ORDER BY qnum");
 
 	while ($row = mysql_fetch_array($res))
 		{
