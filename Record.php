@@ -84,7 +84,7 @@ else {
 	echo "<nav>";
 	echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 	echo "<tr></tr>";
-	echo '<td  width="30%" class="bk90i"> Sorry, wrong password.</td>' 
+	echo '<td  width="30%" class="bk90i"> Sorry, wrong password.</td>';
 	echo '<td width="20%" class="bk90i"><a href="index.php">Home</a></td>';
 	echo "<tr></tr></table>";
 	echo "</nav>";
