@@ -25,17 +25,18 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-foreach ($_POST as $key => $value)
-  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+//foreach ($_POST as $key => $value)
+//  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
 	$pid = $_POST["Pid"];
 	$qid = $_POST["Qid"];
 	$pwd = $_POST["Pwd"];
-echo 'Pid ' . $pid;		
+		
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
 
 	$Who = $per_row['Pname'];
+	
 if ($per_row["Password"]==$pwd) {
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $qid . " limit 1";
 
@@ -79,7 +80,12 @@ if ($per_row["Password"]==$pwd) {
 	echo "<tr></tr></table>";
 	echo "</nav>";
 }
-
+else {
+	echo "<nav>";
+	echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
+	echo "<tr></tr>";
+	echo '<td  width="30%" class="bk90i"> Sorry, wrong password.</td>' 
+echo '<td width="20%" class="bk90i"><a href="index.php">Home</a></td>';
 	mysql_close();
 
 
