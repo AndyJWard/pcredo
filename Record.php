@@ -25,9 +25,12 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-	$pid = htmlspecialchars($_GET["Pid"]);
+foreach ($_POST as $key => $value)
+  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+
+	// $pid = $_POST["Pid"];
 		
-	$id = htmlspecialchars($_GET["Question"]);
+	$id = $_POST["Qid"]);
 	
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
@@ -40,6 +43,7 @@ ob_start();
 	$wk_row = mysql_fetch_array($wk_res);
 	
 echo '<form action="PostSubmit.php" method="post">';
+
 	echo '<input type="hidden" name="Pid" value ="' . $pid . '">';
 	echo '<input type="hidden" name="Qid" value ="' . $id . '">';
 //echo '<form action="SaveResults.php?Question=' . $id . '&Pid='. $pid . '" method="post" action="#">';
