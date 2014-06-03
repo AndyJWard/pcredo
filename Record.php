@@ -31,12 +31,12 @@ ob_start();
 	$pid = $_POST["Pid"];
 	$qid = $_POST["Qid"];
 	$pwd = $_POST["Pwd"];
-		
+echo 'Pid ' . $pid;		
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
 
 	$Who = $per_row['Pname'];
-if($per_row["Password"]==$pwd) {
+if ($per_row["Password"]==$pwd) {
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $qid . " limit 1";
 
 	$wk_res = mysql_query($query);
