@@ -29,6 +29,8 @@ ob_start();
 	$id = htmlspecialchars($_GET["question"]);
 
 	echo "<nav>";
+	echo '<form action="Record.php" method="post">';
+	echo '<input type="hidden" name="Qid" value="' . $id . '">';
 	echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 	echo "<tr></tr>";
  	echo "<td width=\"40%\" align=\"center\">";
@@ -43,7 +45,7 @@ ob_start();
  		echo '<option value="' . $per_row['Pid'] . '">' . $per_row['Pname'] . '</option>';
  		}
  	echo '</td>';
- 	echo '<td width="30%" class="bk90i">Enter Your Password<input type="text" name="PWD"></a></td><input type="submit" value="Go"';
+ 	echo '<td width="30%" class="bk90i">Enter Your Password<input type="text" name="Pwd">  <input type="submit" value="Go"></td>';
 	echo "<td width=\"15%\" class=\"bk90i\"><a href=\"Question.php?question=" . $id . "\">Questions</a></td>";
 	echo "<td width=\"15%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
 	echo "<tr></tr></table>";
