@@ -57,14 +57,14 @@ echo "<table width=\"1200\">";
 		echo "<tr><td></td><td class=\"bl\">" . $row['qanswer'] . "</td></tr>";
 		}
 
-	echo "</table>";
+	echo '</table>';
 
 $test = htmlspecialchars($_GET["test"]);
 
 if($test==1) {
-echo "<nav>";
-echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
-echo "<tr></tr>";
+echo '<nav>';
+echo '<table width="800"><tr align="left" style="font-size: 12; color: black;">';
+echo '<tr></tr>';
 // echo "<td width=\"40%\" align=\"center\">";
 // echo "<select style=\"width: 170px;\" id=\"WHO\" size=\"1\" onchange=\"who_change(" . $id . ")\">";
 // echo "<option value=\"0\">Record Your Score";
@@ -72,12 +72,12 @@ echo "<tr></tr>";
 // 		{			
 // 		echo "<option value=\"" . $per_row['Pid'] . "\">" . $per_row['Pname'] . "</option>";
 // 		}
-echo "<td width=\"30%\" class=\"bk90i\"><a href=\"PreRecord.php\">Recorded Your Results</a></td>";
- echo "<td width=\"30%\" class=\"bk90i\"><a href=\"ViewResults.php\">View the recorded results</a></td>";
-echo "<td width=\"15%\" class=\"bk90i\"><a href=\"Question.php?question=" . $id . "\">Questions</a></td>";
-echo "<td width=\"15%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
-echo "<tr></tr></table>";
-echo "</nav>";
+echo '<td width="30%" class="bk90i"><a href="PreRecord.php?question=' . $id . '">Recorded Your Results</a></td>';
+echo '<td width="30%" class="bk90i"><a href="ViewResults.php">View the recorded results</a></td>';
+echo '<td width="15%" class="bk90i"><a href="Question.php?question=' . $id . '">Questions</a></td>';
+echo '<td width="15%" class="bk90i"><a href="index.php">Home</a></td>';
+echo '<tr></tr></table>';
+echo '</nav>';
 }
 else {
 echo "<nav>";
