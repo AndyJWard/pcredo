@@ -41,22 +41,13 @@ ob_start();
 	$post_wid = htmlspecialchars($_GET["wid"]);		// only set after we have added the blanks in first pass
 
 
-
-	$string = file_get_contents("QDataR.js");
-
-	$json=json_decode($string,true);
-
-	$jsonIterator = new RecursiveIteratorIterator(
-    new RecursiveArrayIterator(json_decode($json, TRUE)),
-    RecursiveIteratorIterator::SELF_FIRST);
-
-//	foreach ($jsonIterator as $key => $val) {
-//    if(is_array($val)) {
-        echo "$key:\n";
-//    } else {
-        echo "$key => $val\n";
-//    }
-//	}
+	// Read the file contents into a string variable,
+// and parse the string into a data structure
+$str_data = file_get_contents("QDataR.js");
+$data = json_decode($str_data,true);
+ 
+echo "Question 1 week 1?: ".$data["week"]["questions"][qnum][0]."n";
+ 
 
 	mysql_close();
 
