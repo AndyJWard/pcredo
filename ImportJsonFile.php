@@ -46,9 +46,9 @@ ob_start();
 
 	$json=json_decode($string,true);
 
-//	$jsonIterator = new RecursiveIteratorIterator(
-//    new RecursiveArrayIterator(json_decode($json, TRUE)),
-//    RecursiveIteratorIterator::SELF_FIRST);
+	$jsonIterator = new RecursiveIteratorIterator(
+    new RecursiveArrayIterator(json_decode($json, TRUE)),
+    RecursiveIteratorIterator::SELF_FIRST);
 
 //	foreach ($jsonIterator as $key => $val) {
 //    if(is_array($val)) {
