@@ -42,7 +42,7 @@ ob_start();
 
 
 
-//	$string = file_get_contents("QDataR.js");
+	$string = file_get_contents("QDataR.js");
 
 //	$json=json_decode($string,true);
 
