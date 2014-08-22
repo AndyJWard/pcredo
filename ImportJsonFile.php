@@ -44,7 +44,7 @@ ob_start();
 
 	$string = file_get_contents("QDataR.js");
 
-//	$json=json_decode($string,true);
+	$json=json_decode($string,true);
 
 //	$jsonIterator = new RecursiveIteratorIterator(
 //    new RecursiveArrayIterator(json_decode($json, TRUE)),
