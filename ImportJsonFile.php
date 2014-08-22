@@ -28,21 +28,21 @@ ob_start();
 
 
 
-	$string = file_get_contents("QDataR.js");
+//	$string = file_get_contents("QDataR.js");
 
-	$json=json_decode($string,true);
+//	$json=json_decode($string,true);
 
-	$jsonIterator = new RecursiveIteratorIterator(
+//	$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($json, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
 
-	foreach ($jsonIterator as $key => $val) {
-    if(is_array($val)) {
+//	foreach ($jsonIterator as $key => $val) {
+//    if(is_array($val)) {
         echo "$key:\n";
-    } else {
+//    } else {
         echo "$key => $val\n";
-    }
-	}
+//    }
+//	}
 
 	mysql_close();
 
