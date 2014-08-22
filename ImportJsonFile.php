@@ -1,15 +1,29 @@
-<?php 	
+<?php 
 header('Content-Type: text/html; charset=utf-8');
+date_default_timezone_set('Europe/London'); 
 ob_start();
 ?>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Post Credo Edit Week</title>
+
+  <!-- Site details -->
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="language" content="en">
+
+  <!-- Character encoding -->
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="post-credo.css">
+
+  <!-- Document title -->
+
+  <title>Json File Import</title>
 
 </head>
-
 <body>
 
 <?php
