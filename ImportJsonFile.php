@@ -46,7 +46,7 @@ ob_start();
 $str_data = file_get_contents("QDataR.js");
 $data = json_decode($str_data,true);
  
-echo "Question 1 week 1?: ".$data["week"]["questions"]["qnum"][0]."n";
+echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["qnum"][0]."n";
  
 
 	mysql_close();
