@@ -34,7 +34,7 @@ ob_start();
 	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
 	
 	
-	define( "DB_REP",  getenv('OPENSHIFT_DATA_DIR') );
+	$FileHome = $_ENV["OPENSHIFT_DATA_DIR"];
 
 
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
@@ -47,7 +47,7 @@ ob_start();
 
 	// Read the file contents into a string variable,
 // and parse the string into a data structure
-$str_data = file_get_contents(DB_REP . "QDataR.js");
+$str_data = file_get_contents($FileHome . "/QDataR.js");
 $data = json_decode($str_data,true);
  echo $data."<br>";
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][0]."n";
