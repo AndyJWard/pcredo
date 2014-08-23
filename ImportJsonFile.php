@@ -34,7 +34,7 @@ ob_start();
 	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
 	
 	
-	define( "DB_REP",  getenv('OPENSHIFT_REPO_DIR') );
+	define( "DB_REP",  getenv('OPENSHIFT_DATA_DIR') );
 
 
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
