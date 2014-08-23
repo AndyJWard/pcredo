@@ -21,10 +21,10 @@
  mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());  New	
  mysql_select_db(DB_DATABASE) or die(mysql_error()); 
  
- // $qry="INSERT INTO `images` (image_name, image_category, image_caption, image) VALUES ('$name', '$category', '$caption', '$pic')";
+ $qry="INSERT INTO `images` (image_name, image_category, image_caption, image) VALUES ('$name', '$category', '$caption', '$pic')";
 
  //Writes the information to the database 
- mysql_query($qry) ; 
+ // mysql_query($qry) ; 
 
 
  // Writes the photo to the server in .../app-root/data/images/  - $OPENSHIFT_DATA_DIR/images/
