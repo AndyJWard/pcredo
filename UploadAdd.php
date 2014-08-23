@@ -18,8 +18,8 @@
  $pic=($_FILES['photo']['name']); 
  
  // Connects to your Database
- mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());  New	
- mysql_select_db(DB_DATABASE) or die(mysql_error()); 
+ //mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());  New	
+ //mysql_select_db(DB_DATABASE) or die(mysql_error()); 
  
  $qry="INSERT INTO `images` (image_name, image_category, image_caption, image) VALUES ('$name', '$category', '$caption', '$pic')";
 
