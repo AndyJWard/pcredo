@@ -1,0 +1,51 @@
+body{ background-color:OrangeRed;}
+
+p{font-family:"Verdana"; color:black; text-decoration:none}
+p.bl { font-size:100%; color:blue}
+p.r90 { font-size:90%; color:red}
+p.bk75 { font-size:75%; color:black}
+p.bk   { font-size:100%; color:black}
+p.bl90i { font-size:90%; font-style:italic; color:blue}
+p.bk90i { font-size:90%; font-style:italic; color:black}
+p.bkh1 { font-size:400%; color:black}
+
+table 	{border:none}
+td	{font-family:"Verdana"; color:black; font-size:130%; height:150%}
+td.bk   { font-size:100%; color:black}
+td.bk80   { font-size:80%; color:black; padding-right:40px}
+td.bk70   { font-size:70%; color:black; padding-right:40px}
+td.bl { font-size:130%; color:blue}
+td.bl80 { font-size:80%; color:blue}
+td.bl70 { font-size:70%; color:blue}
+td.bl90i { font-size:90%; font-style:italic; color:blue}
+td.bk200 { font-size:200%; color:black}
+td.bk90i { font-size:90%; font-style:italic; color:black}
+td.bk90 { font-size:90%; color:black}
+td.r120 { font-size:120%; color:red}
+td.r90 { font-size:90%; color:red}
+td.r80 { font-size:80%; color:red}
+td.r70 { font-size:70%; color:red}
+td.t-home {font-size:100%}
+td.t-link { font-size:200%}
+
+
+td.index_left { font-size:90%; color:black; padding-right:40px; width:100px}
+td.index_right { font-size:90%; color:blue; width:600px}
+
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  padding: 10px;
+}
+
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
