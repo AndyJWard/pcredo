@@ -52,8 +52,9 @@ $data = json_decode($str_data,true);
  echo $data."<br>";
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][0]."<br>";
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][1]."<br>";
-echo "Weeks 0: " . $data["weeks"][0];
-echo "Weeks 1: " . $data["weeks"][1]; 
+echo "Weeks 0: " . $data["weeks"][0] . "<br>";
+echo "Weeks 1: " . $data["weeks"][1] . "<br>"; 
+echo var_dump(json_decode($data, $assoc = null);)
 
 	mysql_close();
 
