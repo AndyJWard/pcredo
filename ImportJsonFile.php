@@ -50,9 +50,10 @@ ob_start();
 $str_data = file_get_contents($FileHome . "/QDataR.js");
 $data = json_decode($str_data,true);
  echo $data."<br>";
-echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][0]."n";
-echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][1]."n";
- 
+echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][0]."<br>";
+echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][1]."<br>";
+echo "Weeks 0: " . $data["weeks"][0];
+echo "Weeks 1: " . $data["weeks"][1]; 
 
 	mysql_close();
 
