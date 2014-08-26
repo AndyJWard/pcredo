@@ -42,7 +42,7 @@ ob_start();
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
 
-	$post_wid = htmlspecialchars($_GET["wid"]);		// only set after we have added the blanks in first pass
+//	$post_wid = htmlspecialchars($_GET["wid"]);		// only set after we have added the blanks in first pass
 
 
 	// Read the file contents into a string variable,
