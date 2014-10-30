@@ -47,7 +47,7 @@ ob_start();
 
 	// Read the file contents into a string variable,
 // and parse the string into a data structure
-$str_data = file_get_contents($FileHome . "/QDataR.js");
+$str_data = file_get_contents($FileHome . "QDataR.js");
 $data = json_decode($str_data,true);
 echo $FileHome . "<br>";
 // echo $print_r($str_data)."<br>";
