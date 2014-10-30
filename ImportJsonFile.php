@@ -49,7 +49,7 @@ ob_start();
 // and parse the string into a data structure
 $str_data = file_get_contents($FileHome . "/QDataR.js");
 $data = json_decode($str_data,true);
-echo $data."<br>";
+echo $print_r($str_data)."<br>";
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][0]."<br>";
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][1]."<br>";
 //echo "hello";
