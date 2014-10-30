@@ -35,7 +35,7 @@ ob_start();
 	
 	
 	$FileHome = getenv('OPENSHIFT_DATA_DIR');
-
+echo $FileHome . "<br><br>";
 
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
 
@@ -48,9 +48,11 @@ ob_start();
 	// Read the file contents into a string variable,
 // and parse the string into a data structure
 $str_data = file_get_contents($FileHome . "QDataR.js");
+echo $FileHome . "QDataR.js" . "<br><br>";
+
 $data = json_decode($str_data,true);
-echo $FileHome . "<br>";
-// echo $print_r($str_data)."<br>";
+echo $print_r($str_data)."<br><br>";
+
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][0]."<br>";
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][1]."<br>";
 // echo "hello";
