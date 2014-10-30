@@ -49,11 +49,14 @@ echo $FileHome . "<br><br>";
 // and parse the string into a data structure
 echo $FileHome . "QDataR.js" . "<br><br>";
 // $str_data = file_get_contents($FileHome . "QDataR.js");
+echo "file_get_contents<br>";
 echo file_get_contents($FileHome . "QDataR.js");
 
-echo $print_r($str_data)."<br><br>";
+echo "$data<br>";
+$data = json_decode(file_get_contents($FileHome . "QDataR.js"),true);
+echo $print_r($data)."<br><br>";
 
-$data = json_decode($str_data,true);
+
 
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][0]."<br>";
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][1]."<br>";
