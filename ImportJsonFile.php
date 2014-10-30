@@ -34,7 +34,7 @@ ob_start();
 	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
 	
 	
-	$FileHome = $_ENV["OPENSHIFT_DATA_DIR"];
+	$FileHome = getenv('OPENSHIFT_DATA_DIR');
 
 
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
