@@ -50,9 +50,10 @@ echo $FileHome . "<br><br>";
 echo $FileHome . "QDataR.js" . "<br><br>";
 // $str_data = file_get_contents($FileHome . "QDataR.js");
 echo "file_get_contents<br>";
-echo file_get_contents($FileHome . "QDataR.js");
+echo file_get_contents($FileHome . "QDataR.js") . "<br><br>";
 
-echo "$data<br>";
+echo "$print-r($data) follows <br>";
+
 $data = json_decode(file_get_contents($FileHome . "QDataR.js"),true);
 echo $print_r($data)."<br><br>";
 
