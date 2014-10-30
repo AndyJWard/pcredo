@@ -47,11 +47,13 @@ echo $FileHome . "<br><br>";
 
 	// Read the file contents into a string variable,
 // and parse the string into a data structure
-$str_data = file_get_contents($FileHome . "QDataR.js");
 echo $FileHome . "QDataR.js" . "<br><br>";
+// $str_data = file_get_contents($FileHome . "QDataR.js");
+echo file_get_contents($FileHome . "QDataR.js");
+
+echo $print_r($str_data)."<br><br>";
 
 $data = json_decode($str_data,true);
-echo $print_r($str_data)."<br><br>";
 
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][0]."<br>";
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][1]."<br>";
