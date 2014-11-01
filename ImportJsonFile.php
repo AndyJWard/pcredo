@@ -63,6 +63,7 @@ foreach ($result['weeks'] as $weeks) {
 //    if (isset($week['ending'])) {
 //        foreach ($group['items'] as $item) {
 //            if (isset($item['venue'])) {
+					echo "wheres the value";
                 echo varDumpToString($week['ending']['qhead']);
 	}
 //            }
