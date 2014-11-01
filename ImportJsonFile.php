@@ -52,7 +52,7 @@ $data =file_get_contents($FileHome . "QDataR.js");
 
 $result = json_decode($data, true);
 
-echo "var_dump of $result from $result = json_decode($data, true)<br>";
+echo "var_dump of $result from json_decode<br>";
 
 var_dump($result);
 
