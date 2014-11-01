@@ -59,7 +59,7 @@ var_dump($result);
 echo "<br><br><br><br>And now for the loop";
 
 foreach ($result['weeks'] as $weeks) {
-	for each($weeks['week'] as $week) {
+	foreach($weeks['week'] as $week) {
 //    if (isset($week['ending'])) {
 //        foreach ($group['items'] as $item) {
 //            if (isset($item['venue'])) {
