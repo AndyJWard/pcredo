@@ -52,12 +52,17 @@ echo $FileHome . "QDataR.js" . "<br><br>";
 echo "file_get_contents<br>";
 echo file_get_contents($FileHome . "QDataR.js") . "<br><br>";
 
-echo "$print-r($data) follows <br>";
+$data =file_get_contents($FileHome . "QDataR.js");
 
-$data = json_decode(file_get_contents($FileHome . "QDataR.js"),true);
-echo $print_r($data)."<br><br>";
+//echo "print-r($data) follows <br>";
+$result = json_decode($data, true);
+//echo $print_r($data)."<br><br>";
 
+var_dump($result);
 
+echo $result['week'];
+
+echo "that was week <br>";
 
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][0]."<br>";
 echo "Question 1 week 1?: ".$data["weeks"]["week"]["questions"]["q"][1]."<br>";
