@@ -50,7 +50,7 @@ echo $FileHome . "<br><br>";
 echo $FileHome . "QDataR.js" . "<br><br>";
 // $str_data = file_get_contents($FileHome . "QDataR.js");
 echo "file_get_contents<br>";
-echo file_get_contents($FileHome . "QDataR.js") . "<br><br>";
+// echo file_get_contents($FileHome . "QDataR.js") . "<br><br>";
 
 $data =file_get_contents($FileHome . "QDataR.js");
 
@@ -59,6 +59,8 @@ $result = json_decode($data, true);
 //echo $print_r($data)."<br><br>";
 
 var_dump($result);
+
+echo "<br><br><br><br>And now for week";
 
 echo $result['week'];
 
