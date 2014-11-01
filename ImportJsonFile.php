@@ -45,24 +45,23 @@ echo $FileHome . "<br><br>";
 //	$post_wid = htmlspecialchars($_GET["wid"]);		// only set after we have added the blanks in first pass
 
 
-	// Read the file contents into a string variable,
-// and parse the string into a data structure
-echo $FileHome . "QDataR.js" . "<br><br>";
-// $str_data = file_get_contents($FileHome . "QDataR.js");
-echo "file_get_contents<br>";
-// echo file_get_contents($FileHome . "QDataR.js") . "<br><br>";
+// echo $FileHome . "QDataR.js" . "<br><br>";
+
 
 $data =file_get_contents($FileHome . "QDataR.js");
 
-//echo "print-r($data) follows <br>";
 $result = json_decode($data, true);
-//echo $print_r($data)."<br><br>";
+
+echo "var_dump of $result from $result = json_decode($data, true)<br>";
 
 var_dump($result);
 
-echo "<br><br><br><br>And now for week";
+echo "<br><br><br><br>And now for the loop";
 
-echo $result['week'];
+foreach ($result AS $key => $value) {
+    echo $key . ': ' . $value;
+}
+
 
 echo "that was week <br>";
 
