@@ -56,16 +56,16 @@ echo "var_dump of $result from json_decode<br>";
 
 var_dump($result);
 
-echo "<br><br><br><br>And now for the loop";
+echo "<br><br>". $result['weeks'][0]['week'][0]['qhead']."<br><br>";
 
-foreach ($result['weeks'] as $weeks) {
-	foreach($weeks['week'] as $week) {
+echo "<br><br><br><br>And now for the loop<br>";
+
+foreach ($result['weeks'][0]['week'] as $week) {
 //    if (isset($week['ending'])) {
 //        foreach ($group['items'] as $item) {
 //            if (isset($item['venue'])) {
 					echo "wheres the value";
                 echo varDumpToString($week['ending']['qhead']);
-	}
 //            }
 //        }
 //    }
