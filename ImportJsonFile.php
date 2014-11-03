@@ -57,10 +57,15 @@ $result = json_decode($data, true);
 //var_dump($result);
 
 $a = json_encode( array('a'=>1, 'b'=>2, 'c'=>'I <3 JSON') );
-echo $a;
+echo $a."<br>";
+
 // Outputs: {"a":1,"b":2,"c":"I <3 JSON"}
 $b = json_decode( $a );
-echo "$b->a, $b->b, $b->c";
+
+echo "$b->a, $b->b, $b->c"."<br>";
+// Outputs: 1, 2, I <3 JSON
+
+echo "weeks   "."$result->weeks"."<br>;
 
 
 
