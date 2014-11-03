@@ -79,7 +79,9 @@ echo "weeks   "."$result->weeks"."<br>";
 //        foreach ($group['items'] as $item) {
 //            if (isset($item['venue'])) {
 					echo "wheres the value";
-                echo $result[0][0];
+                echo "0/0   ".$result[0][0]."<br>";
+                echo "0/0/0   ".$result[0][0][0]."<br>";
+                echo "0/0/1   ".$result[0][0][1]."<br>";
 //            }
 //        }
 //    }
