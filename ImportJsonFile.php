@@ -52,16 +52,24 @@ $data =file_get_contents($FileHome . "QDataR.js");
 
 $result = json_decode($data, true);
 
-echo "var_dump of $result from json_decode<br>";
+//echo "var_dump of $result from json_decode<br>";
 
-var_dump($result);
+//var_dump($result);
+
+$a = json_encode( array('a'=>1, 'b'=>2, 'c'=>'I <3 JSON') );
+echo $a;
+// Outputs: {"a":1,"b":2,"c":"I <3 JSON"}
+$b = json_decode( $a );
+echo "$b->a, $b->b, $b->c";
 
 
-echo "<br> using -> to get qhead <br>". $result->week ."<br><br>";
 
-echo "<br><br><br><br>And now for the loop<br>";
+// echo "<br> using -> to get qhead <br>". $result->week ."<br><br>";
 
-foreach ($result['weeks'][0]['week'] as $week) {
+//echo "<br><br><br><br>And now for the loop<br>";
+
+//foreach ($result as $weeks=>$weeksvalue) { 		// weeks is also an array
+//	foreach ()
 //    if (isset($week['ending'])) {
 //        foreach ($group['items'] as $item) {
 //            if (isset($item['venue'])) {
@@ -70,7 +78,7 @@ foreach ($result['weeks'][0]['week'] as $week) {
 //            }
 //        }
 //    }
-}
+//}
 
 
 echo "that was week <br>";
