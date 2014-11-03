@@ -65,7 +65,7 @@ $b = json_decode( $a );
 echo "$b->a, $b->b, $b->c"."<br>";
 // Outputs: 1, 2, I <3 JSON
 
-echo "weeks   "."$result->weeks"."<br>;
+echo "weeks   "."$result->weeks"."<br>";
 
 
 
