@@ -56,7 +56,8 @@ echo "var_dump of $result from json_decode<br>";
 
 var_dump($result);
 
-echo "<br><br>". $result['weeks'][0]['week'][0]['qhead']."<br><br>";
+
+echo "<br> using -> to get qhead <br>". $result->week ."<br><br>";
 
 echo "<br><br><br><br>And now for the loop<br>";
 
