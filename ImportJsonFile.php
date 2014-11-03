@@ -54,7 +54,7 @@ $result = json_decode($data, true);
 
 //echo "var_dump of $result from json_decode<br>";
 
-//var_dump($result);
+var_dump($result);
 
 $a = json_encode( array('a'=>1, 'b'=>2, 'c'=>'I <3 JSON') );
 echo $a."<br>";
@@ -64,9 +64,6 @@ $b = json_decode( $a );
 
 echo "$b->a, $b->b, $b->c"."<br>";
 // Outputs: 1, 2, I <3 JSON
-
-echo "weeks   "."$result->weeks"."<br>";
-
 
 
 // echo "<br> using -> to get qhead <br>". $result->week ."<br><br>";
@@ -79,9 +76,9 @@ echo "weeks   "."$result->weeks"."<br>";
 //        foreach ($group['items'] as $item) {
 //            if (isset($item['venue'])) {
 					echo "wheres the value";
-                echo "0/0   ".$result[0][0]."<br>";
-                echo "0/0/0   ".$result[0][0][0]."<br>";
-                echo "0/0/1   ".$result[0][0][1]."<br>";
+                echo "0/0   ".var_dump($result[0][0])."<br>";
+                echo "0/0/0   ".var_dump($result[0][0][0])."<br>";
+                echo "0/0/1   ".var_dump($result[0][0][1])."<br>";
 //            }
 //        }
 //    }
