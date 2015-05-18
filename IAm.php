@@ -32,10 +32,11 @@ session_start();
 	$pid = $_POST['Pid'];
 	$_SESSION["PersonId"] = $pid;
 
+	echo '<nav>';
 	echo 'Person Id ' + $pid;
  	echo '<br></br>';
  	echo 'Week Id ' + $wid;
  	echo '<br></br>';
- 	
+	echo '</nav>'; 	
 
 ?>
