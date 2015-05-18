@@ -33,10 +33,9 @@ session_start();
 	$_SESSION["PersonId"] = $pid;
 
 	echo '<nav>';
-	echo 'Person Id ' + $pid;
- 	echo '<br></br>';
- 	echo 'Week Id ' + $wid;
- 	echo '<br></br>';
+	echo "Person Id " . $pid ."<br>";
+ 	echo "Week Id " . $wid ."<br>";
+ 	
 	echo '</nav>'; 	
 
 ?>
