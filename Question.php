@@ -31,6 +31,7 @@ session_start();
 // echo "Post select_db <br/>";
 
 	$id = htmlspecialchars($_GET["question"]);
+	$_SESSION["QuestionWeek"] = $id;
 
 	$ans = htmlspecialchars($_GET["reveal"]);	// reveal=Y or reveal=N
 
