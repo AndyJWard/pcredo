@@ -61,7 +61,7 @@ session_start();
 function who_change(id) {
 	var x=document.getElementById("WHO");
 	var pid=x.value;
-	var redirect = "IAm.php?Pid=" + pid;
+	var redirect = "xxxIAm.php?Pid=" + pid;
 	document.location.href = redirect;
 }
 </script>

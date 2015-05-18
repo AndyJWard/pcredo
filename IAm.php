@@ -28,6 +28,9 @@ session_start();
 
 	$pid = $_POST['Pid'];
 	$_SESSION["PersonId"] = $pid;
+	
+	$pwd = $_POST['Pwd'];
+	$_SESSION["Password"] = $pwd;
 
 	$wid = htmlspecialchars($_GET["question"]);
 	$wid = $_SESSION["WeekId"];

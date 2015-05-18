@@ -3,7 +3,6 @@ header('Content-Type: text/html; charset=utf-8');
 ob_start();
 session_start();
 
-
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
 	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
@@ -13,12 +12,9 @@ session_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-//foreach ($_POST as $key => $value)
-//	echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-
-	$pid = $_POST["Pid"];
-	$qid = $_POST["Qid"];
-	$pwd = $_POST["Pwd"];
+	$pid = $_SESSION["PersonId"];
+	$qid = $_SESSION["WeekId"];
+	$pwd = $_SESSION["Password"];
 		
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
@@ -26,9 +22,8 @@ session_start();
 	$Who = $per_row['Pname'];
 	
 	$_SESSION["PersonName"] = $Who;
-	$_SESSION["PersonId"] = $pid;
-	$_SESSION["QuestionId"] = $qid;
-	$_SESSION["Password"] = $pwd;
+//	$_SESSION["PersonId"] = $pid;
+//	$_SESSION["Password"] = $pwd;
 	
 if ($per_row["Initial"]=="Y") {			// this person hasn't set their recording preferences (also the password is rubbish))
 	$_SESSION["Initial"] = "Y";
