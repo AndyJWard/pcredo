@@ -44,9 +44,9 @@ ob_start();
  		{			
  		echo '<option value="' . $per_row['Pid'] . '">' . $per_row['Pname'] . '</option>';
  		}
- 	echo '</td>';
- 	echo '<td width="30%" class="bk90i">Enter Your Password<input type="text" name="Pwd">  <input type="submit" value="Go"></td>';
-	echo "<td width=\"15%\" class=\"bk90i\"><a href=\"Question.php?question=" . $id . "\">Questions</a></td>";
+ 	echo '</td><tr></tr>';
+ 	echo '<td width="30%" class="bk90i">Enter Your Password (if you have already set one)<input type="text" name="Pwd">  <input type="submit" value="Go"></td><tr></tr>';
+	echo "<td width=\"15%\" class=\"bk90i\"><a href=\"Question.php?question=" . $id . "\">Questions</a></td><tr></tr>";
 	echo "<td width=\"15%\" class=\"bk90i\"><a href=\"index.php\">Home</a></td>";
 	echo "<tr></tr></table>";
 	echo "</nav>";
