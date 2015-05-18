@@ -2,19 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 ob_start();
 session_start();
-?>
-<head>
-<!--[if lt IE 9]>
-<script src="html5shiv.js"></script>
-<![endif]-->
-</head>
-<header>
-<link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Post Credo Record1</title>
-</header>
 
-
-<?php
 
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
@@ -42,12 +30,24 @@ session_start();
 	$_SESSION["QuestionId"] = $qid;
 	$_SESSION["Password"] = $pwd;
 	
-if($per_row["Initial"]=="Y") {			// this person hasn't set their recording preferences (also the password is rubbish))
+if ($per_row["Initial"]=="Y") {			// this person hasn't set their recording preferences (also the password is rubbish))
 	$_SESSION["Initial"] = "Y";
 	header("Location: PostSubmit.php");
 	exit;
 }
+?>
+
+<head>
+<!--[if lt IE 9]>
+<script src="html5shiv.js"></script>
+<![endif]-->
+</head>
+<header>
+<link rel="stylesheet" type="text/css" href="post-credo.css">
+<title>Post Credo Record1</title>
+</header>	
 	
+<?php
 if ($per_row["Password"]==$pwd) {
 	
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $qid . " limit 1";
