@@ -1,7 +1,7 @@
 <?php 	
 header('Content-Type: text/html; charset=utf-8');
 ob_start();
-session();
+session_start();
 ?>
  
 <head>
@@ -28,6 +28,7 @@ session();
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
 	$id = htmlspecialchars($_GET["question"]);
+	$_SESSION["WeekId"] = $id;
 	
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $id;
 
@@ -73,7 +74,7 @@ echo '<tr></tr>';
 // 		{			
 // 		echo "<option value=\"" . $per_row['Pid'] . "\">" . $per_row['Pname'] . "</option>";
 // 		}
-echo '<td width="30%" class="bk90i"><a href="PreRecord.php?question=' . $id . '">Recorded Your Results</a></td>';
+echo '<td width="30%" class="bk90i"><a href="WhoAreYou.php?question=' . $id . '">Record Your Results</a></td>';
 echo '<td width="30%" class="bk90i"><a href="ViewResults.php">View the recorded results</a></td>';
 echo '<td width="15%" class="bk90i"><a href="Question.php?question=' . $id . '">Questions</a></td>';
 echo '<td width="15%" class="bk90i"><a href="index.php">Home</a></td>';
