@@ -38,10 +38,6 @@ session_start();
 		header("Location: SetPreferences.php");	
 	}
 
-	echo '<nav>';
-	echo "Person Id " . $pid ."<br>";
- 	echo "Week Id " . $wid ."<br>";
- 	
-	echo '</nav>'; 	
+	header("Location: Record1.php");
 
 ?>
