@@ -31,8 +31,8 @@ session_start();
 	$_SESSION["WeekId"] = $wid;
 
 	echo "<nav>";
-	echo '<form action="Record1.php" method="post">';
-	echo '<input type="hidden" name="Qid" value="' . $id . '">';
+	echo '<form action="IAm.php" method="post">';
+//	echo '<input type="hidden" name="Qid" value="' . $wid . '">';
 	echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 	echo "<tr></tr>";
  	echo "<td width=\"40%\" align=\"center\">";
