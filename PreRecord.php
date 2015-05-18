@@ -29,7 +29,7 @@ ob_start();
 	$id = htmlspecialchars($_GET["question"]);
 
 	echo "<nav>";
-	echo '<form action="Record.php" method="post">';
+	echo '<form action="Record1.php" method="post">';
 	echo '<input type="hidden" name="Qid" value="' . $id . '">';
 	echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 	echo "<tr></tr>";
@@ -60,7 +60,7 @@ ob_start();
 function who_change(id) {
 	var x=document.getElementById("WHO");
 	var pid=x.value;
-	var redirect = "Record.php?Question=" + id + "&Pid=" + pid;
+	var redirect = "Record1.php?Question=" + id + "&Pid=" + pid;
 	document.location.href = redirect;
 }
 </script>
