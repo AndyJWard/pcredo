@@ -32,7 +32,7 @@ session_start();
 	
 if ($per_row["Initial"]=="Y") {			// this person hasn't set their recording preferences (also the password is rubbish))
 	$_SESSION["Initial"] = "Y";
-	header("Location: PostSubmit.php");
+	header("Location: PostSubmitNew.php");
 	exit;
 }
 ?>
