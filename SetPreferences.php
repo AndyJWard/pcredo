@@ -27,7 +27,7 @@ session_start();
 	$pid = $_SESSION["PersonId"];
 	$wid = $_SESSION["WeekId"];
 	
-	echo $pid;
+	echo "pid pid " . $pid . "<br>";
 
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
