@@ -26,11 +26,17 @@ session_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-	$wid = htmlspecialchars($_GET["question"]);
-	$wid = $_SESSION["WeekId"];
-
 	$pid = $_POST['Pid'];
 	$_SESSION["PersonId"] = $pid;
+
+	$wid = htmlspecialchars($_GET["question"]);
+	$wid = $_SESSION["WeekId"];
+	
+	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
+	$per_row = mysql_fetch_assoc($per_res);
+	if($per_row['Initial']=="Y") {
+		header("Location: SetPreferences.php");	
+	}
 
 	echo '<nav>';
 	echo "Person Id " . $pid ."<br>";
