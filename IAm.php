@@ -32,7 +32,7 @@ session_start();
 	$pwd = $_POST['Pwd'];
 	$_SESSION["Password"] = $pwd;
 
-	$wid = htmlspecialchars($_GET["question"]);
+//	$wid = htmlspecialchars($_GET["question"]);
 	$wid = $_SESSION["WeekId"];
 	
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");

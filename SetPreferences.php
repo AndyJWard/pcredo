@@ -39,6 +39,7 @@ session_start();
 	$Recy = $per_row['Receive'];
 	$Sec = $per_row['Secret'];
 	
+	echo "Person " . $Who . "<br>;
 	
 	echo '<form action="SavePreferences.php" method="post">';
 	echo '<input type="hidden" name="Pid" value="' . $pid . '">';

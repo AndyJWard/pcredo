@@ -28,6 +28,7 @@ session_start();
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
 	$wid = htmlspecialchars($_GET["question"]);
+	
 	$_SESSION["WeekId"] = $wid;
 
 	echo "<nav>";
@@ -57,11 +58,4 @@ session_start();
 
 ?>
 
-<script type="text/javascript" >
-function who_change(id) {
-	var x=document.getElementById("WHO");
-	var pid=x.value;
-	var redirect = "xxxIAm.php?Pid=" + pid;
-	document.location.href = redirect;
-}
-</script>
+
