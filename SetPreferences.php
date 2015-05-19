@@ -17,30 +17,35 @@ session_start();
 
 <?php
 
-	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
-	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
-	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
-	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
+//	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
+//	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
+//	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
+//	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
 
-	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
+//	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
 
-	mysql_select_db(DB_DATABASE) or die(mysql_error());
+//	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
 	$pid = $_SESSION["PersonId"];
 	$wid = $_SESSION["WeekId"];
 	$Who = $_SESSION["PersonName"];
+	$email = $_SESSION["email"];
+	$Annony = $_SESSION["Anon"];
+	$Pub = $_SESSION["Publish"];
+	$Recy = $_SESSION["Recieve"];
+	$Sec = $_SESSION["Secret"];	
 
-	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
-	$per_row = mysql_fetch_assoc($per_res);
-	$email = $per_row['Pemail'];
-	$Pwd = $per_row['Password'];
-	$Annony = $per_row['Annonymous'];
-	$Pub = $per_row['Publish'];
-	$Recy = $per_row['Receive'];
-	$Sec = $per_row['Secret'];
+//	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
+//	$per_row = mysql_fetch_assoc($per_res);
+//	$email = $per_row['Pemail'];
+//	$Pwd = $per_row['Password'];
+//	$Annony = $per_row['Annonymous'];
+//	$Pub = $per_row['Publish'];
+//	$Recy = $per_row['Receive'];
+//	$Sec = $per_row['Secret'];
 		
 	echo '<form action="SavePreferences.php" method="post">';
-//	echo '<input type="hidden" name="Pid" value="' . $pid . '">';
+	echo '<input type="hidden" name="Pid" value="' . $pid . '">';
 	echo '<table>';
 	echo '<tr><td class="bl"><input type="text" value="' . $Who . '" name="person" size="50"></td></tr>';
 	echo '<tr></tr><tr>';

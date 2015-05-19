@@ -32,6 +32,12 @@ session_start();
 	$per_row = mysql_fetch_assoc($per_res);
 	
 	$_SESSION["PersonName"] = $per_row['Pname'];
+	$_SESSION["email"] = $per_row['Pemail'];
+	$_SESSION["Anon"] = $per_row['Annonymous'];
+	$_SESSION["Publish"] = $per_row['Publish'];
+	$_SESSION["Recieve"] = $per_row['Receive'];
+	$_SESSION["Secret"] = $per_row['Secret'];	
+	
 	
 	$init = $per_row['Initial'];
 	
