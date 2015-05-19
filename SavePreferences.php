@@ -54,7 +54,7 @@ if (isset($_POST['save'])){
 	
 	$Pwd = $_POST['pwd'];
 		
-	$query= 'UPDATE persons SET Pname="' . $Who . '", Pemail="' . $email . '", Password="' . $Pwd . '", Annonymous="' . $Annony . '", Publish="' . $publish . '", Receive="' . $receive . '", Secret="' . $secret . '" WHERE pid=' . $pid . ' limit 1';
+	$query= 'UPDATE persons SET Pname="' . $Who . '", Pemail="' . $email . '", Password="' . $Pwd . '", Annonymous="' . $Annony . '", Publish="' . $publish . '", Receive="' . $receive . '", Secret="' . $secret . '", Initial="N" WHERE pid=' . $pid . ' limit 1';
 //	$per_row = mysql_fetch_assoc($per_res);
 //echo $query;
 	mysql_query($query);
