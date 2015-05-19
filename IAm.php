@@ -31,12 +31,14 @@ session_start();
 	
 	$per_row = mysql_fetch_assoc($per_res);
 	
+	$_SESSION["PersonName"] = $per_row['Pname'];
+	
 	$init = $per_row['Initial'];
 	
 	if($init=="Y") {
-		header("Location: SetPreferences.php?" . $pid . $per_row['Initial']);	
+		header("Location: SetPreferences.php?");	
 	} else {
-		header("Location: Record1.php?init=" . $init . "&pid=" . $pid);
+		header("Location: Record1.php");
 	}
 ?>
 
