@@ -22,7 +22,7 @@ if (isset($_POST["save"])) {
 	}		
 
 if (isset($_POST["CRP"])) {
-	$url = "http://pcredo-fridayquiz.rhcloud.com/Preferences.php" ;
+	$url = "http://pcredo-fridayquiz.rhcloud.com/SetPreferences.php" ;
 	}		
 
 //echo $url;
