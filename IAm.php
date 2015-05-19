@@ -4,15 +4,7 @@ ob_start();
 session_start();
 ?>
  
-<head>
-<!--[if lt IE 9]>
-<script src="html5shiv.js"></script>
-<![endif]-->
-</head>
-<header>
-<link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Post Credo Iam</title>
-</header>
+
 
 
 <?php
@@ -48,3 +40,14 @@ session_start();
 	header("Location: Record1.php?init=" . $init . "&pid=" . $pid);
 
 ?>
+
+
+<head>
+<!--[if lt IE 9]>
+<script src="html5shiv.js"></script>
+<![endif]-->
+</head>
+<header>
+<link rel="stylesheet" type="text/css" href="post-credo.css">
+<title>Post Credo Iam</title>
+</header>
