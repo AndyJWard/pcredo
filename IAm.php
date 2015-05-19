@@ -39,11 +39,12 @@ session_start();
 	
 	$per_row = mysql_fetch_assoc($per_res);
 	
+	$init = $per_row['Initial'];
 	
-	if($per_row['Initial']=="Y") {
+	if($init=="Y") {
 		header("Location: SetPreferences.php?" . $pid . $per_row['Initial']);	
 	}
 
-	header("Location: Record1.php");
+	header("Location: Record1.php?init=" . $init . "&pid=" . $pid);
 
 ?>
