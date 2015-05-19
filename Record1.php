@@ -27,7 +27,7 @@ session_start();
 	
 if ($per_row["Initial"]=="Y") {			// this person hasn't set their recording preferences (also the password is rubbish))
 	$_SESSION["Initial"] = "Y";
-	header("Location: PostSubmitNew.php?andy=123");
+	header("Location: PostSubmitNew.php?initwas=" . htmlspecialchars($_GET["init"]) . "&pidws=" . htmlspecialchars($_GET["pid"]));
 	exit;
 }
 ?>
