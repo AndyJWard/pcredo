@@ -35,10 +35,9 @@ session_start();
 	
 	if($init=="Y") {
 		header("Location: SetPreferences.php?" . $pid . $per_row['Initial']);	
+	} else {
+		header("Location: Record1.php?init=" . $init . "&pid=" . $pid);
 	}
-
-	header("Location: Record1.php?init=" . $init . "&pid=" . $pid);
-
 ?>
 
 
