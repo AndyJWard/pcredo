@@ -36,9 +36,12 @@ session_start();
 	$wid = $_SESSION["WeekId"];
 	
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
+	
 	$per_row = mysql_fetch_assoc($per_res);
+	
+	
 	if($per_row['Initial']=="Y") {
-		header("Location: SetPreferences.php");	
+		header("Location: SetPreferences.php?" . $pid . $per_row['Initial']);	
 	}
 
 	header("Location: Record1.php");
