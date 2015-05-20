@@ -21,15 +21,28 @@ $id = $_SESSION["WeekId"]);
 
 
 $chk1=$_SESSION["chk1"];
-$chk1=$_SESSION["chk2"];
-$chk1=$_SESSION["chk3"];
-$chk1=$_SESSION["chk4"];
-$chk1=$_SESSION["chk5"];
-$chk1=$_SESSION["chk6"];
-$chk1=$_SESSION["chk7"];
-$chk1=$_SESSION["chk8"];
-$chk1=$_SESSION["chk9"];
-$chk1=$_SESSION["chk10"];
+$chk2=$_SESSION["chk2"];
+$chk3=$_SESSION["chk3"];
+$chk4=$_SESSION["chk4"];
+$chk5=$_SESSION["chk5"];
+$chk6=$_SESSION["chk6"];
+$chk7=$_SESSION["chk7"];
+$chk8=$_SESSION["chk8"];
+$chk9=$_SESSION["chk9"];
+$chk10=$_SESSION["chk10"];
+
+echo 'week id ' . $id . '<br>';
+echo 'person ' . $pid . '  -  ' . $_SESSION["PersonName"] . '<br>';
+echo 'Q1 ' . $chk1 , '<br>';
+echo 'Q2 ' . $chk2 , '<br>';
+echo 'Q3 ' . $chk3 , '<br>';
+echo 'Q4 ' . $chk4 , '<br>';
+echo 'Q5 ' . $chk5 , '<br>';
+echo 'Q6 ' . $chk6 , '<br>';
+echo 'Q7 ' . $chk7 , '<br>';
+echo 'Q8 ' . $chk8 , '<br>';
+echo 'Q9 ' . $chk9 , '<br>';
+echo 'Q10 ' . $chk10 , '<br>';
 
 
 	$query = 'INSERT INTO results (Wid, Qid, Pid, Result) VALUES (' . $id . ', 1, ' . $pid . ', "' . $chk1 . '")';
