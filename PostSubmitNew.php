@@ -2,25 +2,63 @@
 header('Content-Type: text/html; charset=utf-8');
 ob_start();
 session_start();
-?>
-<head>
-<!--[if lt IE 9]>
-<script src="html5shiv.js"></script>
-<![endif]-->
-</head>
-<header>
-<link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Save Preferences</title>
-</header>
-
-<?php
-
-//foreach ($_POST as $key => $value)
-//  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
 if (isset($_POST["save"])) {
-	$url = "http://pcredo-fridayquiz.rhcloud.com/SaveResults.php" ;
-	}		
+	if ($_POST['check1']) {
+		$_SESSION["chk1"] = "Y";
+	} else {
+		$_SESSION["chk1"] = "N";
+	}
+	if ($_POST['check2']) {
+		$_SESSION["chk2"] = "Y";
+	} else {
+		$_SESSION["chk2"] = "N";
+	}	
+	if ($_POST['check3']) {
+		$_SESSION["chk3"] = "Y";
+	} else {
+		$_SESSION["chk3"] = "N";
+	}
+	if ($_POST['check4']) {
+		$_SESSION["chk4"] = "Y";
+	} else {
+		$_SESSION["chk4"] = "N";
+	}
+	if ($_POST['check5']) {
+		$_SESSION["chk5"] = "Y";
+	} else {
+		$_SESSION["chk5"] = "N";
+	}
+	if ($_POST['check6']) {
+		$_SESSION["chk6"] = "Y";
+	} else {
+		$_SESSION["chk6"] = "N";
+	}
+	if ($_POST['check7']) {
+		$_SESSION["chk7"] = "Y";
+	} else {
+		$_SESSION["chk7"] = "N";
+	}
+	if ($_POST['check8']) {
+		$_SESSION["chk8"] = "Y";
+	} else {
+		$_SESSION["chk8"] = "N";
+	}
+	if ($_POST['check9']) {
+		$_SESSION["chk9"] = "Y";
+	} else {
+		$_SESSION["chk9"] = "N";
+	}
+	if ($_POST['check10']) {
+		$_SESSION["chk10"] = "Y";
+	} else {
+		$_SESSION["chk10"] = "N";
+	}
+	
+	header("Location: SaveResultsNew.php?");
+	exit;	
+}		
+
 
 if (isset($_POST["CRP"])) {
 	$url = "http://pcredo-fridayquiz.rhcloud.com/Preferences.php" ;
@@ -43,39 +81,16 @@ if ($_SESSION["Initial"] == "Y") {
 		echo 'Curl error: ' .curl_error($ch);
 		}
 
-// $response will contain the output of the OTHER website processing the form submission
-// you can echo it to the screen or do your own processing if you want.
-	echo $response;
 
-//	$ch = curl_init($url);
-//	curl_setopt($ch, CURLOPT_POSTFIELDS,  $encoded);
-//	curl_setopt($ch, CURLOPT_HEADER, 0);
-//	curl_setopt($ch, CURLOPT_POST, 1);
-//	if(curl_errno($ch)) {
-//		echo 'curl error:' . curl_error($ch);	
-//		}
-	curl_close($ch);
-
-
-//$pid = htmlspecialchars($_GET["Pid"]);
-
-//if (isset($_POST['cancel'])) {
-//	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
-//}
-//if (isset($_POST['save'])){
-		
-//	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
-//	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
-//	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
-//	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
-
-//	$id = htmlspecialchars($_GET["Question"]);
-	
-
-
- 
-//}
 ?>
-	
+	<head>
+<!--[if lt IE 9]>
+<script src="html5shiv.js"></script>
+<![endif]-->
+</head>
+<header>
+<link rel="stylesheet" type="text/css" href="post-credo.css">
+<title>Save Preferences</title>
+</header>
 	
 	

@@ -29,7 +29,7 @@ if ($per_row["Password"]==$pwd) {
 	$wk_row = mysql_fetch_array($wk_res);
 
 	
-	echo '<form action="PostSubmit.php" method="post">';
+	echo '<form action="PostSubmitNew.php" method="post">';
 
 	echo '<input type="hidden" name="Pid" value ="' . $pid . '">';
 	echo '<input type="hidden" name="Qid" value ="' . $qid . '">';
