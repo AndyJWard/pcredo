@@ -20,25 +20,6 @@ session_start();
 	$per_res = mysql_query("SELECT * FROM persons WHERE Pid =" . $pid . " limit 1");
 	$per_row = mysql_fetch_assoc($per_res);
 
-	
-//if ($per_row["Initial"]=="Y") {			// this person hasn't set their recording preferences (also the password is rubbish))
-//	$_SESSION["Initial"] = "Y";
-//	header("Location: PostSubmitNew.php?initwas=" . htmlspecialchars($_GET["init"]) . "&pidws=" . htmlspecialchars($_GET["pid"]));
-//	exit;
-//}
-?>
-
-<head>
-<!--[if lt IE 9]>
-<script src="html5shiv.js"></script>
-<![endif]-->
-</head>
-<header>
-<link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Post Credo Record1</title>
-</header>	
-	
-<?php
 if ($per_row["Password"]==$pwd) {
 	
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $qid . " limit 1";
@@ -46,6 +27,7 @@ if ($per_row["Password"]==$pwd) {
 	$wk_res = mysql_query($query);
 
 	$wk_row = mysql_fetch_array($wk_res);
+
 	
 	echo '<form action="PostSubmit.php" method="post">';
 
@@ -94,3 +76,13 @@ else {
 	mysql_close();
 
 ?>
+
+<head>
+<!--[if lt IE 9]>
+<script src="html5shiv.js"></script>
+<![endif]-->
+</head>
+<header>
+<link rel="stylesheet" type="text/css" href="post-credo.css">
+<title>Post Credo Record1</title>
+</header>	

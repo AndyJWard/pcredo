@@ -1,24 +1,14 @@
 <?php 	
 header('Content-Type: text/html; charset=utf-8');
 ob_start();
-?>
-<head>
-<!--[if lt IE 9]>
-<script src="html5shiv.js"></script>
-<![endif]-->
-</head>
-<header>
-<link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Save Results</title>
-</header>
+session_start();
 
-<?php
-$pid = htmlspecialchars($_GET["Pid"]);
-$id = htmlspecialchars($_GET["Question"]);
+$pid = $_SESSION["PersonId"];
+$id = $_SESSION["WeekId"]);
 
-if (isset($_POST['cancel'])) {
-	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
-}
+//if (isset($_POST['cancel'])) {
+//	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
+//}
 if (isset($_POST['save'])){
 		
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
@@ -29,8 +19,6 @@ if (isset($_POST['save'])){
 	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
-
-//	$id = htmlspecialchars($_GET["Question"]);
 
 $chk1="N";
 if ($_POST['check1']) {
@@ -119,11 +107,16 @@ echo "</nav>";
 //foreach ($_POST as $key => $value)
 // echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 		
-		
-		
-		
 }
 ?>
-	
+<head>
+<!--[if lt IE 9]>
+<script src="html5shiv.js"></script>
+<![endif]-->
+</head>
+<header>
+<link rel="stylesheet" type="text/css" href="post-credo.css">
+<title>Save Results</title>
+</header>
 	
 	
