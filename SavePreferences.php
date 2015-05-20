@@ -21,7 +21,6 @@ if (isset($_POST['save'])){
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-//	$id = htmlspecialchars($_GET["Question"]);
 	
 	$Who = $_POST['person'];
 	$email = $_POST['email'];
@@ -45,18 +44,13 @@ if (isset($_POST['save'])){
 	$Pwd = $_POST['pwd'];
 		
 	$query= 'UPDATE persons SET Pname="' . $Who . '", Pemail="' . $email . '", Password="' . $Pwd . '", Annonymous="' . $Annony . '", Publish="' . $publish . '", Receive="' . $receive . '", Secret="' . $secret . '", Initial="N" WHERE pid=' . $pid . ' limit 1';
-//	$per_row = mysql_fetch_assoc($per_res);
-//echo $query;
+
 	mysql_query($query);
 	mysql_close();
+	
+	header("Location: Record1.php?");
+	exit;	
 
-// foreach ($_POST as $key => $value)
-//  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-
-echo '<body>';
-echo 'Where to now?</br><a href="ViewResults.php">View all results</a>';
-echo '</body>';
-		
 }
 ?>
 	<head>
