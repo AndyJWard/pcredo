@@ -1,24 +1,14 @@
 <?php 	
 header('Content-Type: text/html; charset=utf-8');
 ob_start();
-?>
-<head>
-<!--[if lt IE 9]>
-<script src="html5shiv.js"></script>
-<![endif]-->
-</head>
-<header>
-<link rel="stylesheet" type="text/css" href="post-credo.css">
-<title>Save Preferences</title>
-</header>
+session_start();
 
-<?php
-// $pid = htmlspecialchars($_GET["Pid"]);
 
-	$pid = $_POST['Pid'];
+	$pid = $_SESSION["PersonId"];
 
 if (isset($_POST['cancel'])) {
-	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
+	header("Location: Record1.php?");
+	exit;	
 }
 if (isset($_POST['save'])){
 		
@@ -69,6 +59,14 @@ echo '</body>';
 		
 }
 ?>
-	
+	<head>
+<!--[if lt IE 9]>
+<script src="html5shiv.js"></script>
+<![endif]-->
+</head>
+<header>
+<link rel="stylesheet" type="text/css" href="post-credo.css">
+<title>Save Preferences</title>
+</header>
 	
 	
