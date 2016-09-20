@@ -14,10 +14,10 @@ ob_start();
 $pwd=$_POST["pwd"];
 $encore = htmlspecialchars($_GET["encore"]);
 if($encore=="1") {
-	$pwd="quizmaster";
+	$pwd="quizmistress";
 }
 
-if ($pwd == "quizmaster")	{
+if ($pwd == "quizmistress")	{
 
 echo "<nav>";
 echo "<table width=\"200\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
