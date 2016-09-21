@@ -42,7 +42,7 @@ echo "<nav>";
 echo "<table width=\"600\">";
 // echo "<tr></tr>";
 echo "<td class=\"bk90\" width=\"30%\"><a href=\"WeekChange.php?wid=" .$post_wid . "\">Amend Week Header</a></td>";
-echo "<td class=\"bk90\" width=\"30%\"><a href=\"DataChange.php\">Amend Home</a></td>";
+echo "<td class=\"bk90\" width=\"30%\"><a href=\"DataChange.php?encore=1\">Amend Home</a></td>";
 echo "<td class=\"bk\" width=\"40%\"><form action=\"SaveWeek.php\" method=\"post\"><input type=\"submit\" value=\"Save Changes\"></td>";
 echo "<tr></tr></table>";
 echo "</nav>";
