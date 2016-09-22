@@ -13,11 +13,18 @@ ob_start();
 
 $pwd=$_POST["pwd"];
 $encore = htmlspecialchars($_GET["encore"]);
+
+
+$ddir = $_ENV["OPENSHIFT_DATA_DIR"] ;
+$myfile = fopen($ddir . "/pass.txt", "r") or die("Unable to open file!");
+$pword = fgets($myfile);
+fclose($myfile);
+
 if($encore=="1") {
-	$pwd="quizmistress";
+	$pwd = $pword ;
 }
 
-if ($pwd == "quizmistress")	{
+if ($pwd == $pword )	{
 
 echo "<nav>";
 echo "<table width=\"200\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
