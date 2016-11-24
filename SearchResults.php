@@ -41,7 +41,7 @@ ob_start();
 
 $srchstrg = "%dog%";
 
-	$qry1 = "SELECT wrelease, wsubject, wid, qnum FROM weeks INNER JOIN questions WHERE  qquestion LIKE '" . $srchstrg . "' ORDER BY wid";
+	$qry1 = "SELECT wrelease, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qquestion LIKE '" . $srchstrg . "' ORDER BY wid";
 	
 	echo $qry1;
 
