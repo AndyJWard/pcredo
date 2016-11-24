@@ -63,7 +63,8 @@ $srchstrg = "%dog%";
 		
 
 		echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
-		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . " Q " . $row['qnum'] . "</a></td></tr>";
+		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td>;
+		echo "<td class=\"index_right\">Question " . $row['qnum'] . "</td></tr>;
 
 	}
 //	echo "<tr><td><input type=\"password\" name=\"pwd\" style></td></tr>";	
