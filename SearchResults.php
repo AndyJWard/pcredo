@@ -41,7 +41,7 @@ ob_start();
 
 $srchstrg = "%dog%";
 
-	$qry1 = "SELECT wrelease, wsubject, wid, qnum FROM weeks INNER JOIN questions WHERE  qquestion LIKE" . $srchstrg . " ORDER BY wid";
+	$qry1 = "SELECT wrelease, wsubject, wid, qnum FROM weeks INNER JOIN questions WHERE  qquestion LIKE " . $srchstrg . " ORDER BY wid";
 
 //	$qry1 = "SELECT wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks";
 //	$qry2 = " WHERE DATE_FORMAT(wrelease, '%Y%m%d%k%i') <= " . date("YmdHi") . " ORDER BY wrelease DESC";
