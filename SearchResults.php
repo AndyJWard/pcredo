@@ -41,7 +41,7 @@ ob_start();
 
 $srchstrg = "%dog%";
 
-	$qry1 = "SELECT wrelease, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qquestion LIKE '" . $srchstrg . "' ORDER BY wid";
+	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qquestion LIKE '" . $srchstrg . "' ORDER BY wid";
 	
 	echo $qry1;
 
@@ -63,10 +63,10 @@ $srchstrg = "%dog%";
 		
 
 		echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
-		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td></tr>";
+		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . " Q " . $row['qnum'] . "</a></td></tr>";
 
 	}
-	echo "<tr><td><input type=\"password\" name=\"pwd\" style></td></tr>";	
+//	echo "<tr><td><input type=\"password\" name=\"pwd\" style></td></tr>";	
 		echo "</table>";
 mysql_close();
 
