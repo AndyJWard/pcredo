@@ -49,7 +49,7 @@ ob_start();
 	
 	echo "<form action=\"DataChange.php\" method=\"post\">";
 	
-	echo "<td class=\"bk\" width=\"40%\"><a href=\"SearchFor.php\">Search Page</a></td>";
+	echo "<td class=\"bk\" width=\"40%\"><a href=\"SearchFor.php\">Go To Search Page</a></td><tr></tr>";
 
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
 		

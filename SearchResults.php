@@ -21,12 +21,14 @@ ob_start();
 
   <!-- Document title -->
 
-  <title>Post Credo Index</title>
+  <title>Search Results</title>
 
 </head>
 <body>
 
 <?php
+
+	$srchstrg = "%" . $_POST["srch"] . "%";
 
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
@@ -39,11 +41,11 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-$srchstrg = "%dog%";
+//	$srchstrg = "%dog%";
 
 	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qquestion LIKE '" . $srchstrg . "' ORDER BY wid";
 	
-	echo $qry1;
+//	echo $qry1;
 
 //	$qry1 = "SELECT wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks";
 //	$qry2 = " WHERE DATE_FORMAT(wrelease, '%Y%m%d%k%i') <= " . date("YmdHi") . " ORDER BY wrelease DESC";
@@ -56,6 +58,7 @@ $srchstrg = "%dog%";
 //	echo "<form action=\"DataChange.php\" method=\"post\">";
 
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
+	
 		
 	while($row=mysql_fetch_array($results))
 	{
@@ -64,7 +67,7 @@ $srchstrg = "%dog%";
 
 		echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
 		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td>";
-		echo "<td class=\"index_right\">Question " . $row['qnum'] . "</td></tr>";
+		echo "<td class=\"index_left\">Question " . $row['qnum'] . "</td></tr>";
 
 	}
 //	echo "<tr><td><input type=\"password\" name=\"pwd\" style></td></tr>";	
