@@ -46,8 +46,8 @@ ob_start();
 	$results = mysql_query($qry1) or die(mysql_error());
 	
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
-	
-	echo "<tr><td></td><td class=\"td.bl90i\">Showing results for " . $_POST['srch'] . "</td></tr>";
+//	<p>My mother has <span style="color:blue">blue</span> eyes.</p>
+	echo "<tr><td></td><td class=\"td.bl90i\">Showing results for <span style=\"p.bl\"> " . $_POST['srch'] . "</span></td></tr>";
 		
 	while($row=mysql_fetch_array($results))
 	{
@@ -59,7 +59,7 @@ ob_start();
 		echo "<td class=\"index_left\">Question " . $row['qnum'] . "</td></tr>";
 
 	}
-		echo "<tr><td class=\"td.t-link\"><a href=\"index.php\">Home</a></td><td class=\"td.t-link\"><a href=\"SearchFor.php\">New Search</a></td></tr>";	
+		echo "<tr></tr><tr><td class=\"td.t-link\"><a href=\"index.php\">Home</a></td><td class=\"td.t-link\"><a href=\"SearchFor.php\">New Search</a></td></tr>";	
 		echo "</table>";
 
 		
