@@ -45,10 +45,9 @@ ob_start();
 	
 	$results = mysql_query($qry1) or die(mysql_error());
 	
-	echo "<tr><td class=\"td.bl90i\"Showing results for " . $_POST["srch"] . "<\td></tr>";
-	
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
 	
+	echo "<tr><td class=\"td.bl90i\"Showing results for " . $_POST["srch"] . "<\td></tr>";
 		
 	while($row=mysql_fetch_array($results))
 	{
@@ -62,7 +61,7 @@ ob_start();
 	}
 //	echo "<tr><td><input type=\"password\" name=\"pwd\" style></td></tr>";	
 		echo "</table>";
-		echo "<p></p><a href=\"index.php\">Home</a>";
+		echo "<p></p><a href=\"index.php\">Home</a>      <a href=\"SearchFor.php\">New Search</a>";
 		
 mysql_close();
 
