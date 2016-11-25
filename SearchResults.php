@@ -57,6 +57,9 @@ ob_start();
 	
 //	echo "<form action=\"DataChange.php\" method=\"post\">";
 
+	echo "Showing results for " . $srchstrg;
+	echo "<br />";
+
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
 	
 		
@@ -72,6 +75,8 @@ ob_start();
 	}
 //	echo "<tr><td><input type=\"password\" name=\"pwd\" style></td></tr>";	
 		echo "</table>";
+		echo "<p></p><a href=\"index.php\">Home</a>";
+		
 mysql_close();
 
 ?>
