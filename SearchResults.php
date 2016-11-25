@@ -41,25 +41,12 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-//	$srchstrg = "%dog%";
-
 	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qquestion LIKE '" . $srchstrg . "' ORDER BY wid";
 	
-//	echo $qry1;
-
-//	$qry1 = "SELECT wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks";
-//	$qry2 = " WHERE DATE_FORMAT(wrelease, '%Y%m%d%k%i') <= " . date("YmdHi") . " ORDER BY wrelease DESC";
-
-// echo $qry1 . $qry2;
-
-//	$results = mysql_query($qry1.$qry2) or die(mysql_error());
 	$results = mysql_query($qry1) or die(mysql_error());
 	
-//	echo "<form action=\"DataChange.php\" method=\"post\">";
-
-	echo "Showing results for " . $srchstrg;
-	echo "<br />";
-
+	echo "<tr><td class=\"td.bl90i\"Showing results for " . $_POST["srch"] . "<\td></tr>";
+	
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
 	
 		
