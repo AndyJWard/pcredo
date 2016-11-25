@@ -47,7 +47,7 @@ ob_start();
 	
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 75%;\"></colgroup>";
 	
-	echo "<tr><td class=\"td.bl90i\">Showing results for " . $_POST['srch'] . "<\td></tr>";
+	echo "<tr><td></td><td class=\"td.bl90i\">Showing results for " . $_POST['srch'] . "</td></tr>";
 		
 	while($row=mysql_fetch_array($results))
 	{
