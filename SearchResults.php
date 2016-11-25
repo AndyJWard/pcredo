@@ -59,9 +59,9 @@ ob_start();
 		echo "<td class=\"index_left\">Question " . $row['qnum'] . "</td></tr>";
 
 	}
-//	echo "<tr><td><input type=\"password\" name=\"pwd\" style></td></tr>";	
+		echo "<tr><td class=\"td.t-link\"><a href=\"index.php\">Home</a></td><td class=\"td.t-link\"><a href=\"SearchFor.php\">New Search</a></td></tr>";	
 		echo "</table>";
-		echo "<p></p><a href=\"index.php\">Home</a>      <a href=\"SearchFor.php\">New Search</a>";
+
 		
 mysql_close();
 
