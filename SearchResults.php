@@ -12,6 +12,7 @@ ob_start();
   <meta name="keywords" content="">
   <meta name="language" content="en">
 
+
   <!-- Character encoding -->
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -49,9 +50,9 @@ ob_start();
 
 	echo "<tr><td></td><td class=\"td.bl90i\">Showing results for <span class=\"td.bl\"> " . $_POST['srch'] . "</span></td></tr>";
 
-	$lastwid = "";	
-	$nums="";
-echo 'pre-while';
+//	$lastwid = "";	
+//	$nums="";
+
 	while($row=mysql_fetch_array($results))
 
 	{
