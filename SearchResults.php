@@ -72,7 +72,7 @@ ob_start();
 			echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
 			echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td>";	
 			echo "<td class=\"index_left\">Question " . $nums . "</td></tr>";	
-			echo "</table>";
+//			echo "</table>";
 
 			$lastwid = $row['wid'];
 			$nums = "";
