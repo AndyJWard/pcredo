@@ -57,11 +57,11 @@ ob_start();
 
 	{
 
-//		if ($lastwid==$row['wid']) {
+		if ($lastwid==$row['wid']) {
 		
 			$nums = $nums . ", " . $row['qnum'];
 		
-//		} else {
+		} else {
 		
 			if ($nums=="")	{
 	
@@ -77,7 +77,7 @@ ob_start();
 			$lastwid = $row['wid'];
 			$nums = "";
 		
-//		}
+		}
 
 	}
 		echo "<tr></tr><tr><td class=\"td.t-link\"><a href=\"index.php\">Home</a></td><td class=\"td.t-link\"><a href=\"SearchFor.php\">New Search</a></td></tr>";	
