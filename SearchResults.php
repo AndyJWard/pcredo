@@ -88,7 +88,7 @@ ob_start();
 	$nums = "";
 	
 //	while($row=mysql_fetch_array($results)) {
-	while $qct<-1 {
+	while $qct>-1 {
 		if($lastwid==""){
 			
 //			$lastwid = $row['wid'];
