@@ -58,7 +58,7 @@ ob_start();
 	{
 
 		if ($row['wid'] == $lastwid) {
-			echo 'line 61';
+			echo "line 61" . $row['wid'] ;
 			$nums = $nums . ", " . $row['qnum'];
 		
 		} else {
