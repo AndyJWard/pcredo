@@ -88,6 +88,11 @@ ob_start();
 			}
 		}
 	}
+	
+		echo "<tr><td class=\"index_left\">" . $rdat . "</td>";
+		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $lastwid . "\"> " . $subj . "</a></td>";	
+		echo "<td class=\"index_left\">Q " . $nums . "</td></tr>";	
+	
 		echo "<tr></tr><tr><td class=\"td.t-link\"><a href=\"index.php\">Home</a></td><td class=\"td.t-link\"><a href=\"SearchFor.php\">New Search</a></td></tr>";	
 		echo "</table>";
 
