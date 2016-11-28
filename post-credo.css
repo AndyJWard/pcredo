@@ -1,5 +1,8 @@
 body{ background-color:Lavender;}
 
+.bl90i { font-size:90%; font-style:italic; color:blue}
+.bk90 { font-size:90%; color:black}
+
 p{font-family:"Verdana"; color:black; text-decoration:none}
 p.bl { font-size:100%; color:blue}
 p.r90 { font-size:90%; color:red}
