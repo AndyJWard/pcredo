@@ -57,27 +57,27 @@ ob_start();
 
 	{
 
-//		if $lastwid==$row['wid'] {
+		if $lastwid==$row['wid'] {
 		
 			$nums = $nums . ", " . $row['qnum'];
 		
-//		} else {
+		} else {
 		
-//			if $nums==""	{
+			if $nums==""	{
 	
 				$nums = $row['qnum'];
 			
-//			}	
+			}	
 		
 			echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
 			echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td>";	
 			echo "<td class=\"index_left\">Question " . $nums . "</td></tr>";	
-//			echo "</table>";
+
 
 			$lastwid = $row['wid'];
 			$nums = "";
 		
-//		}
+		}
 
 	}
 		echo "<tr></tr><tr><td class=\"td.t-link\"><a href=\"index.php\">Home</a></td><td class=\"td.t-link\"><a href=\"SearchFor.php\">New Search</a></td></tr>";	
