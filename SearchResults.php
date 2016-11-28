@@ -57,13 +57,13 @@ ob_start();
 
 	{
 
-//		if $lastwid==$row['wid'] {
+//		if ($lastwid==$row['wid']) {
 		
 			$nums = $nums . ", " . $row['qnum'];
 		
 //		} else {
 		
-			if $nums==""	{
+			if ($nums=="")	{
 	
 				$nums = $row['qnum'];
 			
