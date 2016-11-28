@@ -57,23 +57,23 @@ ob_start();
 
 	{
 
-		if ($lastwid==$row['wid']) {
-		
+		if ($row['wid'] == $lastwid) {
+			echo 'line 61';
 			$nums = $nums . ", " . $row['qnum'];
 		
 		} else {
 		
-			if ($nums=="")	{
-	
+			if ($nums == "")	{
+	echo 'line67';
 				$nums = $row['qnum'];
 			
 			}	
 		
 			echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
 			echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td>";	
-			echo "<td class=\"index_left\">Question " . $nums . "</td></tr>";	
+			echo "<td class=\"index_left\">Q " . $nums . "</td></tr>";	
 
-
+echo 'line 76';
 			$lastwid = $row['wid'];
 			$nums = "";
 		
