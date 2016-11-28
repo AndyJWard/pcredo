@@ -45,10 +45,12 @@ ob_start();
 	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qquestion LIKE '" . $srchstrg . "' ORDER BY wid";
 	
 	$results = mysql_query($qry1) or die(mysql_error());
+
+	echo "<span class=\"td.bl90i\">Showing results for </span><span class=\"td.r120\"> " . $_POST['srch'] . "</span>";
 	
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 50%;\"><col span=\"1\" style=\"width=: 25%;\"></colgroup>";
 
-	echo "<tr><td></td><td class=\"td.bl90i\">Showing results for <span class=\"td.r120\"> " . $_POST['srch'] . "</span></td></tr>";
+//	echo "<tr><td></td><td class=\"td.bl90i\">Showing results for <span class=\"td.r120\"> " . $_POST['srch'] . "</span></td></tr>";
 
 	$lastwid = "";	
 	$nums = "";
