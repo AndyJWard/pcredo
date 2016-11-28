@@ -29,7 +29,8 @@ ob_start();
 
 <?php
 
-	$srchstrg = "%" . $_POST["srch"] . "%";
+	$srchstrg = "%" . $_POST["srchQ"] . "%";
+
 
 	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
 	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
@@ -42,39 +43,70 @@ ob_start();
 
 	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
-	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qquestion LIKE '" . $srchstrg . "' ORDER BY wid";
+	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qquestion LIKE '" . $srchstrg . "' ORDER BY wid, qnum";
 	
 	$results = mysql_query($qry1) or die(mysql_error());
 
-	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srch'] . "\n</span>");
+	$qct = 0;
+	$qwid = [];
+	$qnum = [];
+	$qrdat = [];
+	$qsubj = [];
+	while($row=mysql_fetch_array($results)) {
+		$qwid[$qct] = $row['wid'];
+		$qnum[$qct] = $row['qnum'];
+		$qrdat[$qct] = $row['rdat'];
+		$qsubj[$qct++] = $row['wsubject'];			// includes increment of $qct
+	}
+
+	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qanswer LIKE '" . $srchstrg . "' ORDER BY wid, qnum";
 	
-	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 50%;\"><col span=\"1\" style=\"width=: 25%;\"></colgroup>";
+	$results = mysql_query($qry1) or die(mysql_error());
+
+	$act = 0;
+	$awid = [];
+	$anum = [];
+	$ardat = [];
+	$asubj = [];
+	while($row=mysql_fetch_array($results)) {
+		$awid[$act] = $row['wid'];
+		$anum[$act] = $row['qnum'];
+		$ardat[$act] = $row['rdat'];
+		$asubj[$act++] = $row['wsubject'];			// includes increment of $act
+	}
+	
+	mysql_close();
+	
+	
+
+	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results from questions for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srch'] . "\n</span>");
+	
+	echo "<table><colgroup><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 10%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 10%;\"></colgroup>";
 
 
 	$lastwid = "";	
 	$nums = "";
-
-	while($row=mysql_fetch_array($results)) {
+	
+//	while($row=mysql_fetch_array($results)) {
+	while $qct<-1 {
 		if($lastwid==""){
 			
-			$lastwid = $row['wid'];		
-			$nums = $row['qnum'];
-			$rdat = $row['rdat'];
-			$subj = $row['wsubject'];
+//			$lastwid = $row['wid'];
+			$lastwid = $qwid[$qct};		
+//			$nums = $row['qnum'];
+			$nums = $qnum[$qct];
+//			$rdat = $row['rdat'];
+			$rdat = $rdat[$qct];
+//			$subj = $row['wsubject'];
+			$subj = $qsubj[$qct];
 		
 		} else {
 
-			if ($row['wid'] == $lastwid) {
+			if ($qwid[$qct] == $lastwid) {
 
 				$nums = $nums . ", " . $row['qnum'];
 		
 			} else {
-		
-//				if ($nums == "")	{
-
-//					$nums = $row['qnum'];
-			
-//				}	
 		
 				echo "<tr><td class=\"index_left\">" . $rdat . "</td>";
 				echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $lastwid . "\"> " . $subj . "</a></td>";	
@@ -98,7 +130,7 @@ ob_start();
 		echo "</table>";
 
 		
-mysql_close();
+// mysql_close();
 
 ?>
 
