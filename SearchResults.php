@@ -46,7 +46,7 @@ ob_start();
 	
 	$results = mysql_query($qry1) or die(mysql_error());
 
-	echo "<span class=\"td.bl90i\">Showing results for </span><span class=\"td.r120\"> " . $_POST['srch'] . "</span>";
+	echo "<span class=\"p.bk\">Showing results for </span><span class=\"p.bl\"> " . $_POST['srch'] . "</span>";
 	
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 50%;\"><col span=\"1\" style=\"width=: 25%;\"></colgroup>";
 
