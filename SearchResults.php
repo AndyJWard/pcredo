@@ -63,11 +63,11 @@ ob_start();
 		
 //		} else {
 		
-			if $nums==""	{
+//			if $nums==""	{
 	
 				$nums = $row['qnum'];
 			
-			}	
+//			}	
 		
 			echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
 			echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td>";	
