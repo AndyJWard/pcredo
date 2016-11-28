@@ -53,32 +53,40 @@ ob_start();
 	$lastwid = "";	
 	$nums = "";
 
-	while($row=mysql_fetch_array($results))
-
-	{
-
-		if ($row['wid'] == $lastwid) {
-			echo "line 61" . $row['wid'] ;
-			$nums = $nums . ", " . $row['qnum'];
+	while($row=mysql_fetch_array($results)) {
+		if($lastwid==""){
+			
+			$lastwid = $row['wid'];		
+			$nums = $row['qnum'];
+			$rdat = $row['rdat'];
+			$subj = $row['wsubject'];
 		
 		} else {
+
+			if ($row['wid'] == $lastwid) {
+
+				$nums = $nums . ", " . $row['qnum'];
 		
-			if ($nums == "")	{
-	echo 'line67';
-				$nums = $row['qnum'];
+			} else {
+		
+//				if ($nums == "")	{
+
+//					$nums = $row['qnum'];
 			
-			}	
+//				}	
 		
-			echo "<tr><td class=\"index_left\">" . $row['rdat'] . "</td>";
-			echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $row['wid'] . "\"> " . $row['wsubject'] . "</a></td>";	
-			echo "<td class=\"index_left\">Q " . $nums . "</td></tr>";	
+				echo "<tr><td class=\"index_left\">" . $rdat . "</td>";
+				echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $lastwid . "\"> " . $subj . "</a></td>";	
+				echo "<td class=\"index_left\">Q " . $nums . "</td></tr>";	
 
-echo 'line 76';
-			$lastwid = $row['wid'];
-			$nums = "";
+
+				$lastwid = $row['wid'];
+				$nums = $row['qnum'];
+				$rdat = $row['rdat'];
+				$subj = $row['wsubject'];
 		
+			}
 		}
-
 	}
 		echo "<tr></tr><tr><td class=\"td.t-link\"><a href=\"index.php\">Home</a></td><td class=\"td.t-link\"><a href=\"SearchFor.php\">New Search</a></td></tr>";	
 		echo "</table>";
