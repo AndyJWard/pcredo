@@ -98,13 +98,13 @@ ob_start();
 //			$rdat = $row['rdat'];
 			$dats = $rdat[$qct];
 //			$subj = $row['wsubject'];
-			$subj = $qsubj[$qct];
+			$subj = $qsubj[$qct--];
 		
 		} else {
 
 			if ($qwid[$qct] == $lastwid) {
 
-				$nums = $nums . ", " . $qnum[$qct];
+				$nums = $nums . ", " . $qnum[$qct--];
 		
 			} else {
 		
@@ -116,11 +116,11 @@ ob_start();
 				$lastwid = $qwid[$qct];
 				$nums = $qnum[$qct];
 				$dats = $dats = $rdat[$qct];
-				$subj = $qsubj[$qct];
+				$subj = $qsubj[$qct--];
 		
 			}
 		}
-		$qct--;
+		
 	}
 	
 		echo "<tr><td class=\"index_left\">" . $rdat . "</td>";
