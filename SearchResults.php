@@ -92,7 +92,7 @@ ob_start();
 		if($lastwid==""){
 			
 //			$lastwid = $row['wid'];
-			$lastwid = $qwid[$qct};		
+			$lastwid = $qwid[$qct];		
 //			$nums = $row['qnum'];
 			$nums = $qnum[$qct];
 //			$rdat = $row['rdat'];
