@@ -88,7 +88,7 @@ ob_start();
 	$nums = "";
 	
 //	while($row=mysql_fetch_array($results)) {
-	while $qct>-1 {
+	while $qct > -1 {
 		if($lastwid==""){
 			
 //			$lastwid = $row['wid'];
@@ -96,7 +96,7 @@ ob_start();
 //			$nums = $row['qnum'];
 			$nums = $qnum[$qct];
 //			$rdat = $row['rdat'];
-			$rdat = $rdat[$qct];
+			$dats = $rdat[$qct];
 //			$subj = $row['wsubject'];
 			$subj = $qsubj[$qct];
 		
@@ -104,22 +104,23 @@ ob_start();
 
 			if ($qwid[$qct] == $lastwid) {
 
-				$nums = $nums . ", " . $row['qnum'];
+				$nums = $nums . ", " . $qnum[$qct];
 		
 			} else {
 		
-				echo "<tr><td class=\"index_left\">" . $rdat . "</td>";
+				echo "<tr><td class=\"index_left\">" . $dats . "</td>";
 				echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $lastwid . "\"> " . $subj . "</a></td>";	
 				echo "<td class=\"index_left\">Q " . $nums . "</td></tr>";	
 
 
-				$lastwid = $row['wid'];
-				$nums = $row['qnum'];
-				$rdat = $row['rdat'];
-				$subj = $row['wsubject'];
+				$lastwid = $qwid[$qct];
+				$nums = $qnum[$qct];
+				$dats = $dats = $rdat[$qct];
+				$subj = $qsubj[$qct];
 		
 			}
 		}
+		$qct--;
 	}
 	
 		echo "<tr><td class=\"index_left\">" . $rdat . "</td>";
