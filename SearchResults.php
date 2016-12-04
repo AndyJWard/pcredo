@@ -48,26 +48,28 @@ ob_start();
 	$results = mysql_query($qry1) or die(mysql_error());
 
 	$qct = 0;
-	$qwid = [];
-	$qnum = [];
-	$qrdat = [];
-	$qsubj = [];
+	$qwid = array();
+	$qnum = array();
+	$qrdat = array();
+	$qsubj = array();
 	while($row=mysql_fetch_array($results)) {
 		$qwid[$qct] = $row['wid'];
 		$qnum[$qct] = $row['qnum'];
 		$qrdat[$qct] = $row['rdat'];
 		$qsubj[$qct++] = $row['wsubject'];			// includes increment of $qct
 	}
+echo "query of questions done";
+
 
 	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qanswer LIKE '" . $srchstrg . "' ORDER BY wid, qnum";
 	
 	$results = mysql_query($qry1) or die(mysql_error());
 
 	$act = 0;
-	$awid = [];
-	$anum = [];
-	$ardat = [];
-	$asubj = [];
+	$awid = array();
+	$anum = array();
+	$ardat = array();
+	$asubj = array();
 	while($row=mysql_fetch_array($results)) {
 		$awid[$act] = $row['wid'];
 		$anum[$act] = $row['qnum'];
@@ -77,7 +79,7 @@ ob_start();
 	
 	mysql_close();
 	
-	
+echo "query of answers done";	
 
 	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results from questions for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srch'] . "\n</span>");
 	
