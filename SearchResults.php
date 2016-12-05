@@ -79,7 +79,7 @@ ob_start();
 	
 	mysql_close();
 	
-//echo "query of answers done";	
+var_dump $results;	
 
 	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results from questions for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srch'] . "\n</span>");
 	
