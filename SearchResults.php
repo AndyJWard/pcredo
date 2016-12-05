@@ -89,8 +89,8 @@ echo "query of answers done";
 	$lastwid = "";	
 	$nums = "";
 	
-//	while($row=mysql_fetch_array($results)) {
-	while $qct > -1 {
+	while($row=mysql_fetch_array($results)) {
+
 		if($lastwid==""){
 			
 //			$lastwid = $row['wid'];
@@ -133,7 +133,7 @@ echo "query of answers done";
 		echo "</table>";
 
 		
-// mysql_close();
+ mysql_close();
 
 ?>
 
