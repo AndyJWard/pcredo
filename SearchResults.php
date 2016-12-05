@@ -58,7 +58,7 @@ ob_start();
 		$qrdat[$qct] = $row['rdat'];
 		$qsubj[$qct++] = $row['wsubject'];			// includes increment of $qct
 	}
-echo "query of questions done";
+//echo "query of questions done";
 
 
 	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qanswer LIKE '" . $srchstrg . "' ORDER BY wid, qnum";
@@ -79,13 +79,13 @@ echo "query of questions done";
 	
 	mysql_close();
 	
-echo "query of answers done";	
+//echo "query of answers done";	
 
 	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results from questions for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srch'] . "\n</span>");
 	
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 10%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 10%;\"></colgroup>";
 
-
+echo $qct . "   " . $act;
 	$lastwid = "";	
 	$nums = "";
 	
