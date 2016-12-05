@@ -80,17 +80,16 @@ ob_start();
 	mysql_close();
 	
 
-	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results from questions for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srch'] . "\n</span>");
+	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results from questions for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'] . "\n</span>");
 	
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 10%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 10%;\"></colgroup>";
 
-echo $qct . "   " . $act;
+
 	$lastwid = "";	
 	$nums = "";
 
-echo $qry1;
 	
-	while($row=mysql_fetch_array($results)) {
+	while ($qct>-1) {
 
 		if($lastwid==""){
 			
