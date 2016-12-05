@@ -88,19 +88,15 @@ ob_start();
 	$lastwid = "";	
 	$nums = "";
 
-	
-	while ($qct>-1) {
+	$ctout=0;	
+	while ($ctout!=$qct) {
 
 		if($lastwid==""){
 			
-//			$lastwid = $row['wid'];
-			$lastwid = $qwid[$qct];		
-//			$nums = $row['qnum'];
-			$nums = $qnum[$qct];
-//			$rdat = $row['rdat'];
-			$dats = $rdat[$qct];
-//			$subj = $row['wsubject'];
-			$subj = $qsubj[$qct--];
+			$lastwid = $qwid[$ctout];		
+			$nums = $qnum[$ctout];
+			$dats = $rdat[$ctout];
+			$subj = $qsubj[$ctout--];
 		
 		} else {
 
@@ -114,11 +110,10 @@ ob_start();
 				echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $lastwid . "\"> " . $subj . "</a></td>";	
 				echo "<td class=\"index_left\">Q " . $nums . "</td></tr>";	
 
-
-				$lastwid = $qwid[$qct];
-				$nums = $qnum[$qct];
-				$dats = $dats = $rdat[$qct];
-				$subj = $qsubj[$qct--];
+			$lastwid = $qwid[$ctout];		
+			$nums = $qnum[$ctout];
+			$dats = $rdat[$ctout];
+			$subj = $qsubj[$ctout--];
 		
 			}
 		}
