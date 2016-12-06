@@ -95,7 +95,7 @@ ob_start();
 
 	$ctout=0;	
 	
-	if($ctout!>$qct) {
+	if($ctout<=$qct) {
 
 		if($qlastwid==""){
 			
