@@ -60,6 +60,8 @@ ob_start();
 	}
 //echo "query of questions done";
 
+	$srchstrg = "%" . $_POST["srchA"] . "%";
+
 
 	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qanswer LIKE '" . $srchstrg . "' ORDER BY wid, qnum";
 	
@@ -85,44 +87,51 @@ ob_start();
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 10%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 10%;\"></colgroup>";
 
 
-	$lastwid = "";	
-	$nums = "";
+	$qlastwid = "";	
+	$qnums = "";
+
+	$alastwid = "";	
+	$anums = "";
 
 	$ctout=0;	
-	while ($ctout!=$qct) {
+	
+	if($ctout<$qct) {
 
-		if($lastwid==""){
+		if($qlastwid==""){
 			
-			$lastwid = $qwid[$ctout];		
-			$nums = $qnum[$ctout];
+			$qlastwid = $qwid[$ctout];		
+			$qnums = $qnum[$ctout];
 			$dats = $rdat[$ctout];
 			$subj = $qsubj[$ctout++];
 		
 		} else {
 
-			if ($qwid[$qct] == $lastwid) {
+			if ($qwid[$qct] == $qlastwid) {
 
-				$nums = $nums . ", " . $qnum[$qct++];
+				$qnums = $qnums . ", " . $qnum[$qct++];
 		
 			} else {
 		
 				echo "<tr><td class=\"index_left\">" . $dats . "</td>";
-				echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $lastwid . "\"> " . $subj . "</a></td>";	
-				echo "<td class=\"index_left\">Q " . $nums . "</td></tr>";	
+				echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $qlastwid . "\"> " . $subj . "</a></td>";	
+				echo "<td class=\"index_left\">Q " . $qnums . "</td></tr>";	
 
-			$lastwid = $qwid[$ctout];		
-			$nums = $qnum[$ctout];
+			$qlastwid = $qwid[$ctout];		
+			$qnums = $qnum[$ctout];
 			$dats = $rdat[$ctout];
 			$subj = $qsubj[$ctout++];
 		
 			}
 		}
-		
-	}
+	}	
+	
 	
 		echo "<tr><td class=\"index_left\">" . $rdat . "</td>";
-		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $lastwid . "\"> " . $subj . "</a></td>";	
-		echo "<td class=\"index_left\">Q " . $nums . "</td></tr>";	
+		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $qlastwid . "\"> " . $subj . "</a></td>";	
+		echo "<td class=\"index_left\">Q " . $qnums . "</td></tr>";	
+	
+// finished ALL questions here	
+	
 	
 		echo "<tr></tr><tr><td class=\"td.t-link\"><a href=\"index.php\">Home</a></td><td class=\"td.t-link\"><a href=\"SearchFor.php\">New Search</a></td></tr>";	
 		echo "</table>";
