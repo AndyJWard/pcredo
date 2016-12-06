@@ -56,7 +56,8 @@ ob_start();
 	$x= array();	
 	
 	while($row=mysql_fetch_array($results)) {
-
+echo "index for wid in result is " . array_search('wid', array_keys($row)) . "  ";
+echo "index for rdat in result is " . array_search('rdat', array_keys($row)) . "  ";
 		$x[$qct++]=array($row['wid'],$row['qnum'],$row['rdat'],$row['wsubject']);
 		
 //		$qwid[$qct] = $row['wid'];
@@ -88,8 +89,7 @@ ob_start();
 	
 	mysql_close();
 	
-echo "index for wid in result is " . array_search('wid', array_keys($row)) . "  ";
-echo "index for rdat in result is " . array_search('rdat', array_keys($row)) . "  ";
+
 
 	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results from questions for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'] . "\n</span>");
 	
