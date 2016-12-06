@@ -56,8 +56,7 @@ ob_start();
 	$x= array();	
 	
 	while($row=mysql_fetch_array($results)) {
-echo "index for wid in result is " . array_search('wid', array_keys($row)) . "  ";
-echo "index for rdat in result is " . array_search('rdat', array_keys($row)) . "  ";
+
 		$x[$qct++]=array($row['wid'],$row['qnum'],$row['rdat'],$row['wsubject']);
 		
 //		$qwid[$qct] = $row['wid'];
@@ -66,7 +65,8 @@ echo "index for rdat in result is " . array_search('rdat', array_keys($row)) . "
 //		$qsubj[$qct++] = $row['wsubject'];			// includes increment of $qct
 
 	}
-//echo "query of questions done";
+echo "query of questions done";
+echo "array $x created [0][0] = " . $x[0][0] . " /[0][1] = " . $x[0][1] . " /[1][0] = " . $x[1][0] . " /[1][1] = " . $x[1][1];   
 
 	$srchstrg = "%" . $_POST["srchA"] . "%";
 
