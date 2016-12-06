@@ -96,13 +96,13 @@ ob_start();
 			$lastwid = $qwid[$ctout];		
 			$nums = $qnum[$ctout];
 			$dats = $rdat[$ctout];
-			$subj = $qsubj[$ctout--];
+			$subj = $qsubj[$ctout++];
 		
 		} else {
 
 			if ($qwid[$qct] == $lastwid) {
 
-				$nums = $nums . ", " . $qnum[$qct--];
+				$nums = $nums . ", " . $qnum[$qct++];
 		
 			} else {
 		
@@ -113,7 +113,7 @@ ob_start();
 			$lastwid = $qwid[$ctout];		
 			$nums = $qnum[$ctout];
 			$dats = $rdat[$ctout];
-			$subj = $qsubj[$ctout--];
+			$subj = $qsubj[$ctout++];
 		
 			}
 		}
