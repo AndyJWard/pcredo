@@ -54,8 +54,8 @@ ob_start();
 	}
 
 
-echo "query of questions done";
-echo "array $q created [0][0] = " . $q[0][0] . " /[0][1] = " . $q[0][1] . " /[1][0] = " . $q[1][0] . " /[1][1] = " . $q[1][1];   
+//echo "query of questions done";
+//echo "array $q created [0][0] = " . $q[0][0] . " /[0][1] = " . $q[0][1] . " /[1][0] = " . $q[1][0] . " /[1][1] = " . $q[1][1];   
 
 
 
@@ -73,8 +73,8 @@ echo "array $q created [0][0] = " . $q[0][0] . " /[0][1] = " . $q[0][1] . " /[1]
 	}
 
 
-echo "query of answers done";
-echo "array $a created [0][0] = " . $a[0][0] . " /[0][1] = " . $a[0][1] . " /[1][0] = " . $a[1][0] . " /[1][1] = " . $a[1][1];   
+//echo "query of answers done";
+//echo "array $a created [0][0] = " . $a[0][0] . " /[0][1] = " . $a[0][1] . " /[1][0] = " . $a[1][0] . " /[1][1] = " . $a[1][1];   
 	
 	
 	
@@ -133,11 +133,11 @@ if($act>$qct) {
 	$whct = $act;
 }
 
-while($loop++ <= $whct) {
+while($lp++ <= $whct) {
 		
-		echo "<tr><td class=\"index_left\">" . $q[$whct][$dat] . "</td>";
-		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $q[$whct][$wid] . "\"> " . $q[$whct][$subj] . "</a></td>";	
-		echo "<td class=\"index_left\">Q " . $q[$whct][$num] . "</td></tr>";	
+		echo "<tr><td class=\"index_left\">" . $q[$lp][$dat] . "</td>";
+		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $q[$lp][$wid] . "\"> " . $q[$lp][$subj] . "</a></td>";	
+		echo "<td class=\"index_left\">Q " . $q[$lp][$num] . "</td></tr>";	
 	
 // question output, next do answer (on same line)
 	
