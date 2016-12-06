@@ -52,11 +52,18 @@ ob_start();
 	$qnum = array();
 	$qrdat = array();
 	$qsubj = array();
+	
+	$x= array();	
+	
 	while($row=mysql_fetch_array($results)) {
-		$qwid[$qct] = $row['wid'];
-		$qnum[$qct] = $row['qnum'];
-		$qrdat[$qct] = $row['rdat'];
-		$qsubj[$qct++] = $row['wsubject'];			// includes increment of $qct
+
+		$x[$qct++]=array($row['wid'],$row['qnum'],$row['rdat'],$row['wsubject']);
+		
+//		$qwid[$qct] = $row['wid'];
+//		$qnum[$qct] = $row['qnum'];
+//		$qrdat[$qct] = $row['rdat'];
+//		$qsubj[$qct++] = $row['wsubject'];			// includes increment of $qct
+
 	}
 //echo "query of questions done";
 
@@ -81,6 +88,8 @@ ob_start();
 	
 	mysql_close();
 	
+echo "index for wid in result is " . array_search('wid', array_keys($row)) . "  ";
+echo "index for rdat in result is " . array_search('rdat', array_keys($row)) . "  ";
 
 	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results from questions for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'] . "\n</span>");
 	
@@ -95,35 +104,7 @@ ob_start();
 
 	$ctout=0;	
 	
-	if($ctout<=$qct) {
 
-		if($qlastwid==""){
-			
-			$qlastwid = $qwid[$ctout];		
-			$qnums = $qnum[$ctout];
-			$dats = $rdat[$ctout];
-			$subj = $qsubj[$ctout++];
-		
-		} else {
-
-			if ($qwid[$qct] == $qlastwid) {
-
-				$qnums = $qnums . ", " . $qnum[$qct++];
-		
-			} else {
-		
-				echo "<tr><td class=\"index_left\">" . $dats . "</td>";
-				echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $qlastwid . "\"> " . $subj . "</a></td>";	
-				echo "<td class=\"index_left\">Q " . $qnums . "</td></tr>";	
-
-			$qlastwid = $qwid[$ctout];		
-			$qnums = $qnum[$ctout];
-			$dats = $rdat[$ctout];
-			$subj = $qsubj[$ctout++];
-		
-			}
-		}
-	}	
 	
 	
 		echo "<tr><td class=\"index_left\">" . $rdat . "</td>";
