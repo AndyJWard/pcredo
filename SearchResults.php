@@ -48,25 +48,21 @@ ob_start();
 	$results = mysql_query($qry1) or die(mysql_error());
 
 	$qct = 0;
-	$qwid = array();
-	$qnum = array();
-	$qrdat = array();
-	$qsubj = array();
+//	$qwid = array();
+//	$qnum = array();
+//	$qrdat = array();
+//	$qsubj = array();
 	
-	$x= array();	
+	$q= array();	
 	
 	while($row=mysql_fetch_array($results)) {
 
-		$x[$qct++]=array($row['wid'],$row['qnum'],$row['rdat'],$row['wsubject']);
-		
-//		$qwid[$qct] = $row['wid'];
-//		$qnum[$qct] = $row['qnum'];
-//		$qrdat[$qct] = $row['rdat'];
-//		$qsubj[$qct++] = $row['wsubject'];			// includes increment of $qct
+		$q[$qct++]=array($row['wid'],$row['qnum'],$row['rdat'],$row['wsubject']);
 
 	}
+
 echo "query of questions done";
-echo "array $x created [0][0] = " . $x[0][0] . " /[0][1] = " . $x[0][1] . " /[1][0] = " . $x[1][0] . " /[1][1] = " . $x[1][1];   
+echo "array $q created [0][0] = " . $q[0][0] . " /[0][1] = " . $q[0][1] . " /[1][0] = " . $q[1][0] . " /[1][1] = " . $q[1][1];   
 
 	$srchstrg = "%" . $_POST["srchA"] . "%";
 
@@ -76,16 +72,26 @@ echo "array $x created [0][0] = " . $x[0][0] . " /[0][1] = " . $x[0][1] . " /[1]
 	$results = mysql_query($qry1) or die(mysql_error());
 
 	$act = 0;
-	$awid = array();
-	$anum = array();
-	$ardat = array();
-	$asubj = array();
+//	$awid = array();
+//	$anum = array();
+//	$ardat = array();
+//	$asubj = array();
+	
+	$a= array();	
+		
 	while($row=mysql_fetch_array($results)) {
-		$awid[$act] = $row['wid'];
-		$anum[$act] = $row['qnum'];
-		$ardat[$act] = $row['rdat'];
-		$asubj[$act++] = $row['wsubject'];			// includes increment of $act
+//		$awid[$act] = $row['wid'];
+//		$anum[$act] = $row['qnum'];
+//		$ardat[$act] = $row['rdat'];
+//		$asubj[$act++] = $row['wsubject'];			// includes increment of $act
+
+		$a[$act++]=array($row['wid'],$row['qnum'],$row['rdat'],$row['wsubject']);
+
 	}
+
+echo "query of answers done";
+echo "array $a created [0][0] = " . $a[0][0] . " /[0][1] = " . $a[0][1] . " /[1][0] = " . $a[1][0] . " /[1][1] = " . $a[1][1];   
+	
 	
 	mysql_close();
 	
