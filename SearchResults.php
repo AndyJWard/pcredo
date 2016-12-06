@@ -138,9 +138,9 @@ while($lp++ <= $whct) {
 		echo "<tr><td class=\"index_left\">" . $q[$lp][$dat] . "</td>";
 		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $q[$lp][$wid] . "\"> " . $q[$lp][$subj] . "</a></td>";
 		if($q[$lp][$num]!="") {	
-			echo "<td class=\"index_left\">Q " . $q[$lp][$num] . "</td></tr>";	
+			echo "<td class=\"index_left\">Q " . $q[$lp][$num] . "</td>";	
 		}
-		echo "<tr><td class=\"index_left\">" . $a[$lp][$dat] . "</td>";
+		echo "<td class=\"index_left\">" . $a[$lp][$dat] . "</td>";
 		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $a[$lp][$wid] . "\"> " . $a[$lp][$subj] . "</a></td>";
 		if($a[$lp][$num]!="") {	
 			echo "<td class=\"index_left\">Q " . $q[$lp][$num] . "</td></tr>";	
