@@ -125,7 +125,7 @@ while ($ct<=$act) {
 
 	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results from questions for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'] . "\n</span>");
 	
-	echo "<table><colgroup><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 10%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 25%;\"><col span=\"1\" style=\"width=: 10%;\"></colgroup>";
+	echo "<table><colgroup><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 20%;\"><col span=\"1\" style=\"width=: 10%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 20%;\"><col span=\"1\" style=\"width=: 10%;\"></colgroup>";
 
 // choos how long the 'while' should run for
 $whct = $qct;
@@ -136,13 +136,20 @@ if($act>$qct) {
 while($lp++ <= $whct) {
 		
 		echo "<tr><td class=\"index_left\">" . $q[$lp][$dat] . "</td>";
-		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $q[$lp][$wid] . "\"> " . $q[$lp][$subj] . "</a></td>";	
-		echo "<td class=\"index_left\">Q " . $q[$lp][$num] . "</td></tr>";	
-	
-// question output, next do answer (on same line)
-	
+		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $q[$lp][$wid] . "\"> " . $q[$lp][$subj] . "</a></td>";
+		if($q[$lp][$num]!="") {	
+			echo "<td class=\"index_left\">Q " . $q[$lp][$num] . "</td></tr>";	
+		}
+		echo "<tr><td class=\"index_left\">" . $a[$lp][$dat] . "</td>";
+		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $a[$lp][$wid] . "\"> " . $a[$lp][$subj] . "</a></td>";
+		if($a[$lp][$num]!="") {	
+			echo "<td class=\"index_left\">Q " . $q[$lp][$num] . "</td></tr>";	
+		}
+		
 }
-	
+
+// question output, next do answer (on same line)
+
 		echo "<tr></tr><tr><td class=\"td.t-link\"><a href=\"index.php\">Home</a></td><td class=\"td.t-link\"><a href=\"SearchFor.php\">New Search</a></td></tr>";	
 		echo "</table>";
 
