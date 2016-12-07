@@ -138,9 +138,9 @@ if($_POST['srchQ']!="") {
 }
 
 
-	$longecho = "<span STYLE='font-size:100%; font-style:italic; color:black'>Showing" . $txt1 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'];
-	$longecho .= "</span><span STYLE='font-size:100%; font-style:italic; color:black'>" . $txt2 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchA'] . "\n</span>");
-	echo nl2br($longecho);
+//	$longecho = "<span STYLE='font-size:100%; font-style:italic; color:black'>Showing" . $txt1 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'];
+//	$longecho .= "</span><span STYLE='font-size:100%; font-style:italic; color:black'>" . $txt2 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchA'] . "\n</span>");
+//	echo nl2br($longecho);
 		
 	echo "<table><colgroup><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 10%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 10%;\"></colgroup>";
 
