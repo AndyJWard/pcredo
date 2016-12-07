@@ -121,11 +121,28 @@ while ($ct<=$act) {
 }
 
 
+if($_POST['srchQ']!="") {
+	$txt1 = " results from QUESTIONS for ";
+	if($_POST['srchA']!="") {
+		$txt2 = " and from ANSWERS for ";
+	} else {
+		$txt2 = "";
+	}
+} else {
+	$txt1 = "";
+	if($_POST('srchA']!="") {
+		$txt2 = " results from ANSWERS for ";	
+	} else {
+		$txt2 = "";
+	}
+}
 
 
-	echo nl2br("<span STYLE='font-size:100%; font-style:italic; color:black'>Showing results from questions for </span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'] . "\n</span>");
-	
-	echo "<table><colgroup><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 20%;\"><col span=\"1\" style=\"width=: 10%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 20%;\"><col span=\"1\" style=\"width=: 10%;\"></colgroup>";
+	$longecho = "<span STYLE='font-size:100%; font-style:italic; color:black'>Showing" . $txt1 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'];
+	$longecho .= "</span><span STYLE='font-size:100%; font-style:italic; color:black'>" . $txt2 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchA'] . "\n</span>");
+	echo nl2br($longecho);
+		
+	echo "<table><colgroup><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 10%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 15%;\"><col span=\"1\" style=\"width=: 10%;\"></colgroup>";
 
 // choos how long the 'while' should run for
 $whct = $qct;
@@ -145,7 +162,7 @@ while($lp++ <= $whct) {
 		echo "<td class=\"index_left\">" . $a[$lp][$dat] . "</td>";
 		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $a[$lp][$wid] . "\"> " . $a[$lp][$subj] . "</a></td>";
 		if($a[$lp][$num]!="") {	
-			echo "<td class=\"index_left\">Q " . $q[$lp][$num] . "</td></tr>";	
+			echo "<td class=\"index_left\">A " . $a[$lp][$num] . "</td></tr>";	
 		} else {
 			echo "<td></td>";
 		}
