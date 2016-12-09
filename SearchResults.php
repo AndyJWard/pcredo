@@ -142,7 +142,7 @@ if($_POST['srchQ']!="") {
 //	$longecho .= "</span><span STYLE='font-size:100%; font-style:italic; color:black'>" . $txt2 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchA'] . "\n</span>");
 //	echo nl2br($longecho);
 		
-	echo "<table><col width=: 150><col width=: 150><col width=: 100><col width=: 150><col width=: 150><col width=: 100>";
+	echo "<table><col width=: \"150\"><col width=: \"150\"><col width=: \"100\"><col width=: \"150\"><col width=: \"150\"><col width=: \"100\">";
 
 // choos how long the 'while' should run for
 $whct = $qct;
