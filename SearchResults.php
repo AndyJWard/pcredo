@@ -150,6 +150,8 @@ if($act>$qct) {
 	$whct = $act;
 }
 
+echo $whct;
+
 while($lp++ <= $whct) {
 		
 		echo "<tr><td class=\"index_left\">" . $q[$lp][$dat] . "</td>";
