@@ -57,10 +57,11 @@ ob_start();
 //echo "query of questions done";
 //echo "array $q created [0][0] = " . $q[0][0] . " /[0][1] = " . $q[0][1] . " /[1][0] = " . $q[1][0] . " /[1][1] = " . $q[1][1];   
 
-
+	if ($_POST["srchA"]=="") {
+		$_POST["srchA"]=$_POST["srchQ"];
+	}
 
 	$srchstrg = "%" . $_POST["srchA"] . "%";
-
 
 	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qanswer LIKE '" . $srchstrg . "' ORDER BY wid, qnum";
 	
