@@ -138,9 +138,9 @@ if($_POST['srchQ']!="") {
 }
 
 
-	$longecho = "<span STYLE='font-size:100%; font-style:italic; color:black'>Showing" . $txt1 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'];
-	$longecho .= "</span><span STYLE='font-size:100%; font-style:italic; color:black'>" . $txt2 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchA'] . "\n</span>";
-	echo $longecho."<br/>";
+	$longecho = "<span STYLE='font-size:100%; font-style:italic; color:black'>Showing" . $txt1 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'] . "</span>";
+	$longecho .= "<span STYLE='font-size:100%; font-style:italic; color:black'>" . $txt2 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchA'] . "\n</span>";
+	echo $longecho."<br/><br/>";
 		
 	echo "<table><col width=: \"150\"><col width=: \"150\"><col width=: \"100\"><col width=: \"150\"><col width=: \"150\"><col width=: \"100\">";
 
@@ -163,7 +163,7 @@ while($lp++ <= $whct) {
 			echo "<td></td>";
 		}
 		echo "<td class=\"index_left\">" . $a[$lp][$dat] . "</td>";
-		echo "<td class=\"index_right\"><a href=\"Question.php?question=" . $a[$lp][$wid] . "\"> " . $a[$lp][$subj] . "</a></td>";
+		echo "<td class=\"index_right\"><a href=\"Answer.php?question=" . $a[$lp][$wid] . "\"> " . $a[$lp][$subj] . "</a></td>";
 		if($a[$lp][$num]!="") {	
 			echo "<td class=\"index_left\">A " . $a[$lp][$num] . "</td></tr>";	
 		} else {
