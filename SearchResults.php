@@ -130,7 +130,7 @@ if($_POST['srchQ']!="") {
 	}
 } else {
 	$txt1 = "";
-	if($_POST('srchA']!="") {
+	if($_POST['srchA']!="") {
 		$txt2 = " results from ANSWERS for ";	
 	} else {
 		$txt2 = "";
