@@ -4,7 +4,7 @@ ob_start();
 session_start();
 
 $pid = $_SESSION["PersonId"];
-$id = $_SESSION["WeekId"]);
+$id = $_SESSION["WeekId"];
 
 //if (isset($_POST['cancel'])) {
 //	echo '<meta http-equiv="refresh" content="0;URL=Preferences.php?Pid=' . $pid . '">';	
