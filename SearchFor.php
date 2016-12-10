@@ -24,7 +24,7 @@ session_start();
 	echo '<form action="SearchResults.php" method="post">';
 	echo "<table width=\"800\"><tr align=\"left\" style=\"font-size: 12; color: black;\">";
 	echo "<tr></tr>";
- 	echo "<td width=\"40%\" align=\"center\">";
+// 	echo "<td width=\"40%\" align=\"center\">";
  	
   	echo '<td width="30%" class="bk90i">Enter the word or phrase you want to search the QUESTIONS for <input type="text" name="srchQ">  <input type="submit" value="Go"></td><tr></tr>';
 	
