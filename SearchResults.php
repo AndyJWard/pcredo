@@ -139,7 +139,7 @@ if($_POST['srchQ']!="") {
 
 
 	$longecho = "<span STYLE='font-size:100%; font-style:italic; color:black'>Showing" . $txt1 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchQ'];
-	$longecho .= "</span><span STYLE='font-size:100%; font-style:italic; color:black'>" . $txt2 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchA'] . "\n</span>");
+	$longecho .= "</span><span STYLE='font-size:100%; font-style:italic; color:black'>" . $txt2 . "</span><span  STYLE='font-size:130%; font-style:italic; color:blue'> " . $_POST['srchA'] . "\n</span>";
 	echo $longecho."<br/>";
 		
 	echo "<table><col width=: \"150\"><col width=: \"150\"><col width=: \"100\"><col width=: \"150\"><col width=: \"150\"><col width=: \"100\">";
