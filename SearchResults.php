@@ -29,6 +29,14 @@ ob_start();
 
 <?php
 
+	if ($_POST["srchQ"]=="") {
+		$_POST["srchQ"]=$_POST["srchA"];
+	}
+
+   if ($_POST["srchQ"]=="") {
+		$_POST["srchQ"]="Blank";
+   }
+
 	$srchstrg = "%" . $_POST["srchQ"] . "%";
 
 
