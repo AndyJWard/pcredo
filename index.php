@@ -1,5 +1,5 @@
 <?php 	
-header('Content-Type: text/html; charset=utf-8');
+header('Content-Type: text/html; charset=UTF-8');
 date_default_timezone_set('Europe/London'); 
 ob_start();
 ?>
@@ -11,7 +11,7 @@ ob_start();
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="language" content="en">
-  <meta name="copyright" content="&copy; 2003-2007 Zymic.com. All rights reserved">
+
 
   <!-- Character encoding -->
 
