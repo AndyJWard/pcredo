@@ -47,7 +47,11 @@ if($loc=="localhost"){
 	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
 }
 
-	$con = mysqli_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysqli_error());
+	$con = mysqli_connect(DB_SERVER,DB_USER,DB_PASSWORD);
+	if (mysqli_connect_errno()){
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
+
 	mysqli_select_db($con, DB_DATABASE);
 
 // echo "Post defines <br/>";
