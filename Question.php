@@ -47,7 +47,7 @@ require('db.php');
 
 	echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=Answer.php?question=" . $id . ">Answers</a>";
 	
-	mysqli_close();
+	mysqli_close($con);
 
 ?>
 </body>

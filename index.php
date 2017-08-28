@@ -60,7 +60,7 @@ require('db.php');
 		// Free result set
 	mysqli_free_result($results);
 	
-	mysqli_close();
+	mysqli_close($con);
 
 ?>
 
