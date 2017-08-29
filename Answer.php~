@@ -18,16 +18,23 @@ session_start();
 
 <?php
 
-require('db.php');
+	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
+	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
+	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
+	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
+
+	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
+
+	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
 	$id = htmlspecialchars($_GET["question"]);
 	$_SESSION["WeekId"] = $id;
 	
 	$query = "SELECT  DATE_FORMAT(wrelease, '%d %b %Y') as rdate, wsubject, wcomment FROM weeks WHERE wid = " . $id;
 
-	$wk_res = mysqli_query($con, $query);
+	$wk_res = mysql_query($query);
 
-	$wk_row = mysqli_fetch_array($wk_res);
+	$wk_row = mysql_fetch_array($wk_res);
 
 echo "<table width=\"1200\"><tr align=\"left\" style=\"font-size: 15; color: blue;\">";
 
@@ -35,7 +42,7 @@ echo "<td>" .  $wk_row['rdate'] . " - " . $wk_row['wsubject'] . "</td>";
 // Top line on page -  left side is date and title ... right side is person selector;
 
 //	$per_res = mysql_query("SELECT * FROM persons ORDER BY Fieldtype, Pname");
-	$per_res = mysqli_query($con, "SELECT * FROM persons ORDER BY Pname");
+	$per_res = mysql_query("SELECT * FROM persons ORDER BY Pname");
 	// find the names for the select field (to save results);
 
 
@@ -43,9 +50,9 @@ echo "</td></tr></table>";
 
 echo "<table width=\"1200\">";
 
-	$res = mysqli_query($con, "SELECT * FROM questions WHERE qwid = " . $id . " ORDER BY qnum");
+	$res = mysql_query("SELECT * FROM questions WHERE qwid = " . $id . " ORDER BY qnum");
 
-	while ($row = mysqli_fetch_array($res))
+	while ($row = mysql_fetch_array($res))
 		{
 		echo "<tr><td class=\"bk\" style=\"width:4%\">" . $row['qnum'] . "</td>";
 		echo "<td class=\"bk\" style=\"width:80%\">" . $row['qquestion'] . "</td></tr>";
@@ -84,7 +91,7 @@ echo "<tr></tr></table>";
 echo "</nav>";
 }	
 	
-	mysqli_close($con);
+	mysql_close();
 
 ?>
 

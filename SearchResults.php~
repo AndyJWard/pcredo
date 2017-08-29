@@ -40,15 +40,24 @@ ob_start();
 	$srchstrg = "%" . $_POST["srchQ"] . "%";
 
 
-	require('db.php');
+	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
+	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
+	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
+	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
+
+// echo "Post defines <br/>";
+
+	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
+
+	mysql_select_db(DB_DATABASE) or die(mysql_error());
 
 	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qquestion LIKE '" . $srchstrg . "' ORDER BY wid, qnum";
 	
-	$results = mysqli_query($con, $qry1);
+	$results = mysql_query($qry1) or die(mysql_error());
 
 	$qct = 0;
 	$q= array();	
-	while($row=mysqli_fetch_array($results)) {
+	while($row=mysql_fetch_array($results)) {
 		$q[$qct++]=array($row['wid'],$row['qnum'],$row['rdat'],$row['wsubject']);
 	}
 
@@ -64,11 +73,11 @@ ob_start();
 
 	$qry1 = "SELECT DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wsubject, wid, qnum FROM weeks INNER JOIN questions ON wid = qwid WHERE  qanswer LIKE '" . $srchstrg . "' ORDER BY wid, qnum";
 	
-	$results = mysqli_query($con, $qry1);
+	$results = mysql_query($qry1) or die(mysql_error());
 
 	$act = 0;
 	$a= array();	
-	while($row=mysqli_fetch_array($results)) {
+	while($row=mysql_fetch_array($results)) {
 		$a[$act++]=array($row['wid'],$row['qnum'],$row['rdat'],$row['wsubject']);
 	}
 
@@ -78,7 +87,7 @@ ob_start();
 	
 	
 	
-	mysqli_close($con);
+	mysql_close();
 
 	
 //  now put multiple questions (or answers) for a single week into a single line)
@@ -179,7 +188,7 @@ while($lp++ <= $whct) {
 		echo "</table>";
 
 		
- mysqli_close($con);
+ mysql_close();
 
 ?>
 

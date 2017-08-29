@@ -33,7 +33,15 @@ echo "<td width=\"50%\"><a href=\"index.php\">Home</a></td>";
 echo "<tr></tr></table>";
 echo "</nav>";
 
-require('db.php');
+	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
+	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
+	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
+	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
+
+	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
+
+	mysql_select_db(DB_DATABASE) or die(mysql_error());
+
 
 // this form lists the weeks and presents options to
 // 		add a new week (in EditWeek),by re-displaying this form with a parameter set to Y and posting the values enneterd by the user
@@ -41,12 +49,12 @@ require('db.php');
 
 	$ans = htmlspecialchars($_GET["new"]);	// new=Y or new=N
 
-	$wk_res = mysqli_query($con, "SELECT wid, wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks ORDER BY wrelease DESC");
+	$wk_res = mysql_query("SELECT wid, wsubject, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks ORDER BY wrelease DESC");
 
 
 	echo "<table>";
 
-	while($wk_row=mysqli_fetch_array($wk_res))
+	while($wk_row=mysql_fetch_array($wk_res))
 	{
 		echo "<tr><td class=\"bk80\">" . $wk_row['rdat'] . "</td>";
 		echo "<td class=\"bk80\"><a href=\"EditWeek.php?wid=" . $wk_row['wid'] . "\">" . $wk_row['wsubject'] . "</a></tr>";
@@ -68,9 +76,6 @@ require('db.php');
 	echo "<p></p><a href=\"index.php\">Home</a>";
 
 	}
-	
-		mysqli_close($con);
-		
 ?>
 </body>
 

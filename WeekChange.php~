@@ -16,11 +16,18 @@ ob_start();
 
 	$post_wid = htmlspecialchars($_GET["wid"]);
 
-	require('db.php');
+	define( "DB_SERVER",    getenv('OPENSHIFT_MYSQL_DB_HOST') );
+	define( "DB_USER",      getenv('OPENSHIFT_MYSQL_DB_USERNAME') );
+	define( "DB_PASSWORD",  getenv('OPENSHIFT_MYSQL_DB_PASSWORD') );
+	define( "DB_DATABASE",  getenv('OPENSHIFT_APP_NAME') );
 
-	$week = mysqli_query($con, "SELECT wcomment, wsubject, DATE_FORMAT(wrelease, '%d %b %Y %T') AS rdat, wid from weeks WHERE wid = ".$post_wid);
+	mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die(mysql_error());
+
+	mysql_select_db(DB_DATABASE) or die(mysql_error());
+
+$week = mysql_query("SELECT wcomment, wsubject, DATE_FORMAT(wrelease, '%d %b %Y %T') AS rdat, wid from weeks WHERE wid = ".$post_wid);
 	
-	$wk = mysqli_fetch_array($week);
+	$wk = mysql_fetch_array($week);
 
 	echo "<table>";
 
@@ -40,7 +47,7 @@ ob_start();
 
 	echo "<p></p>&nbsp;&nbsp;&nbsp;<a href=\"DataChange.php\">Amend Home</a>&nbsp;&nbsp;&nbsp;";
 
-	mysqli_close($con);
+	mysql_close();
 
 
 ?>
