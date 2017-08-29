@@ -15,10 +15,11 @@ $pwd=$_POST["pwd"];
 $encore = htmlspecialchars($_GET["encore"]);
 
 
-$ddir = $_ENV["OPENSHIFT_DATA_DIR"] ;
-$myfile = fopen($ddir . "/pass.txt", "r") or die("Unable to open file!");
-$pword = fgets($myfile);
-fclose($myfile);
+//$ddir = $_ENV["OPENSHIFT_DATA_DIR"] ;
+//$myfile = fopen($ddir . "/pass.txt", "r") or die("Unable to open file!");
+//$pword = fgets($myfile);
+$pword = $_ENV["QUIZ_PASSWORD"];
+//fclose($myfile);
 
 if($encore=="1") {
 	$pwd = $pword ;
