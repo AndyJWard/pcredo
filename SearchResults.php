@@ -29,6 +29,7 @@ ob_start();
 
 <?php
 
+
 	if ($_POST["srchQ"]=="") {
 		$_POST["srchQ"]=$_POST["srchA"];
 	}
@@ -78,7 +79,7 @@ ob_start();
 	
 	
 	
-	mysqli_close($con);
+//	mysqli_close($con);
 
 	
 //  now put multiple questions (or answers) for a single week into a single line)
