@@ -33,7 +33,7 @@ ini_set('display_errors', 1);
 require('db.php');
 
 // echo "Post defines <br/>";
-
+	echo "Test";
 	$qry1 = "SELECT wsubject, wrelease, DATE_FORMAT(wrelease, '%d %b %Y') AS rdat, wid from weeks";
 	$qry2 = " WHERE DATE_FORMAT(wrelease, '%Y%m%d%k%i') <= " . date("YmdHi") . " ORDER BY wrelease DESC";
 
